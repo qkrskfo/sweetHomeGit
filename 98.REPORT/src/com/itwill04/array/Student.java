@@ -38,8 +38,7 @@ public class Student {
 		this.kor = kor;
 		this.eng = eng;
 		this.math = math;
-	}
-	
+	}	
 
 	
 	/*

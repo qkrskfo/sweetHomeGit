@@ -1,7 +1,5 @@
 package com.itwill04.array;
 
-import java.util.Iterator;
-
 public class StudentArrayMain {
 
 	public static void main(String[] args) {
@@ -41,9 +39,9 @@ public class StudentArrayMain {
 			students[i].setRank(1);
 			for (int j = 0; j < students.length; j++) {
 				if(students[i].getTot() < students[j].getTot()) {
-					int k = students[i].getRank();
-					k += 1;
-					students[i].setRank(k);
+					int tempBox = students[i].getRank();
+					tempBox += 1;
+					students[i].setRank(tempBox);
 				}
 			}				
 		}
@@ -83,15 +81,15 @@ public class StudentArrayMain {
 		}
 		System.out.println(); 
 		/*
-		 * 6. 학생총점으로 오름차순정렬
+		 * 6. 학생총점으로 내림차순정렬
 		 */
-		System.out.println("6. 학생총점으로 오름차순정렬");
-		for (int i = 0; i < students.length; i++) {
-			for (int j = 0; j < students.length; j++) {
-				if(students[i].getTot() < students[j].getTot()) {					
-					Student tempBox = students[i];
-					students[i] = students[j];
-					students[j] = tempBox;
+		System.out.println("6. 학생총점으로 내림차순정렬");
+		for (int i = 0; i < students.length-1; i++) {
+			for (int j = 0; j < students.length-1; j++) {
+				if(students[j].getTot() > students[j+1].getTot()) {					
+					Student tempBox = students[j];
+					students[j] = students[j+1];
+					students[j+1] = tempBox;
 				}
 			}
 		}		 
@@ -100,21 +98,18 @@ public class StudentArrayMain {
 			students[i].print();
 		}
 		System.out.println(); 
+		
+				
 		/*
 		 * 7. 학생학점순으로 오름차순정렬
 		 */
 		System.out.println("7. 학생학점순으로 오름차순정렬");
-		for(int i = 0; i < students.length; i++){
-			for (int j = 0; j < students.length; j++) {
-				if(students[i].getGrade() < students[j].getGrade()) {
-					Student tempBox = students[i];
-					students[i] = students[j];
-					students[j] = tempBox;
-				}
-				if(students[i].getTot() > students[j].getTot()) {
-					Student tempBox = students[i];
-					students[i] = students[j];
-					students[j] = tempBox;
+		for(int i = 0; i < students.length-1; i++){
+			for (int j = 0; j < students.length-1; j++) {
+				if(students[j].getGrade() < students[j+1].getGrade()) {
+					Student tempBox = students[j];
+					students[j] = students[j+1];
+					students[j+1] = tempBox;
 				}
 			}
 		}
