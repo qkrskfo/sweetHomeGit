@@ -40,6 +40,8 @@ public class Student {
 		this.math = math;
 	}
 	
+
+	
 	/*
 	멤버메쏘드 선언
 	*/
@@ -61,7 +63,6 @@ public class Student {
 	}
 
 	public char calculateGrade() {
-
 		if (this.avg >= 90)
 			this.grade = 'A';
 		else if (this.avg < 90 && this.avg >= 80)
@@ -76,6 +77,9 @@ public class Student {
 		return grade;
 	}
 	
+	public void rank(int r) {
+		this.rank += r;
+	}
 	
 
 	public static void headerPrint() {

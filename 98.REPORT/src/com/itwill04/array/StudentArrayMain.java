@@ -20,7 +20,7 @@ public class StudentArrayMain {
 
 		/*
 		 * 1. 전체학생총점,평균,평점계산
-		 */
+		*/
 		System.out.println("1. 전체학생총점,평균,평점계산");
 		
 		for (int i = 0; i < students.length; i++) {
@@ -28,38 +28,65 @@ public class StudentArrayMain {
 			students[i].calculateAvg();
 			students[i].calculateGrade();
 		}
-		Student.headerPrint();
 		
-		for (int i = 0; i < students.length; i++) {
-			students[i].print();
-		}
-		System.out.println();
 		/*
 		 * 2. 전체학생 총점으로 석차계산
 		 */
+		System.out.println(); 
 		System.out.println("2. 전체학생 총점으로 석차계산");
-		for (int j = 0; j < students.length-1; j++) {
+		/*
+		for (int j = 0; j < students.length; j++) {
 			for (int i = 0; i < students.length-1; i++) {
 				if(students[i].getTot() < students[i+1].getTot()) {
-					students[i].setRank(i++);
+					students[i].rank(+1);
+				} else {
+					students[i].rank(-1);
 				}
 			}
+		}				
+		*/
+
+		for (int i = 0; i < students.length; i++) {
+			students[i].setRank(1);
+			for (int j = 0; j < students.length; j++) {
+				if(students[i].getTot() < students[j].getTot()) {
+					int k = students[i].getRank();
+					k += 1;
+					students[i].setRank(k);
+				}
+			}				
 		}
-				
+		
 		Student.headerPrint();
 		for (int i = 0; i < students.length; i++) {
 			students[i].print();
 		}
+		
 		
 		/*
 		 * 3. 전체학생출력
 		 */
+		System.out.println(); 
 		System.out.println("3. 전체학생출력 ");
+		Student.headerPrint();
+		for (int i = 0; i < students.length; i++) {
+			students[i].print();
+		}
+		
 		/*
+		 * 
+		 * 
 		 * 4. 번호3번 학생한명 출력
 		 */
+		System.out.println(); 
 		System.out.println("4.번호3번 학생한명 출력  ");
-
+		Student.headerPrint();
+		for (int i = 0; i < students.length; i++) {
+			if(students[i].getNo()==3) {
+				students[i].print();
+			}
+		}
+		System.out.println(); 
 		/*
 		 * 5. 학점A인 학생들 출력
 		 */
