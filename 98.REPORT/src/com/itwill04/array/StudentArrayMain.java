@@ -1,5 +1,7 @@
 package com.itwill04.array;
 
+import java.util.Iterator;
+
 public class StudentArrayMain {
 
 	public static void main(String[] args) {
@@ -34,17 +36,6 @@ public class StudentArrayMain {
 		 */
 		System.out.println(); 
 		System.out.println("2. 전체학생 총점으로 석차계산");
-		/*
-		for (int j = 0; j < students.length; j++) {
-			for (int i = 0; i < students.length-1; i++) {
-				if(students[i].getTot() < students[i+1].getTot()) {
-					students[i].rank(+1);
-				} else {
-					students[i].rank(-1);
-				}
-			}
-		}				
-		*/
 
 		for (int i = 0; i < students.length; i++) {
 			students[i].setRank(1);
@@ -56,13 +47,7 @@ public class StudentArrayMain {
 				}
 			}				
 		}
-		
-		Student.headerPrint();
-		for (int i = 0; i < students.length; i++) {
-			students[i].print();
-		}
-		
-		
+				
 		/*
 		 * 3. 전체학생출력
 		 */
@@ -74,8 +59,6 @@ public class StudentArrayMain {
 		}
 		
 		/*
-		 * 
-		 * 
 		 * 4. 번호3번 학생한명 출력
 		 */
 		System.out.println(); 
@@ -92,21 +75,50 @@ public class StudentArrayMain {
 		 */
 
 		System.out.println("5. 학점A인 학생들 출력");
-
+		Student.headerPrint();	
+		for (int i = 0; i < students.length; i++) {		
+			if(students[i].getGrade()=='A') {
+				students[i].print();
+			}
+		}
+		System.out.println(); 
 		/*
 		 * 6. 학생총점으로 오름차순정렬
 		 */
 		System.out.println("6. 학생총점으로 오름차순정렬");
-
+		for (int i = 0; i < students.length; i++) {
+			for (int j = 0; j < students.length; j++) {
+				if(students[i].getTot() < students[j].getTot()) {					
+					Student tempBox = students[i];
+					students[i] = students[j];
+					students[j] = tempBox;
+				}
+			}
+		}		 
 		Student.headerPrint();
 		for (int i = 0; i < students.length; i++) {
 			students[i].print();
 		}
+		System.out.println(); 
 		/*
 		 * 7. 학생학점순으로 오름차순정렬
 		 */
-		System.out.println("6. 학생학점순으로 오름차순정렬");
-
+		System.out.println("7. 학생학점순으로 오름차순정렬");
+		for(int i = 0; i < students.length; i++){
+			for (int j = 0; j < students.length; j++) {
+				if(students[i].getGrade() < students[j].getGrade()) {
+					Student tempBox = students[i];
+					students[i] = students[j];
+					students[j] = tempBox;
+				}
+				if(students[i].getTot() > students[j].getTot()) {
+					Student tempBox = students[i];
+					students[i] = students[j];
+					students[j] = tempBox;
+				}
+			}
+		}
+		
 		Student.headerPrint();
 		for (int i = 0; i < students.length; i++) {
 			students[i].print();

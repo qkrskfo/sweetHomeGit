@@ -83,7 +83,7 @@ public class ReferenceTypeArrayAccountMain {
 		}
 		
 		System.out.println("9. 계좌잔고 순으로 내림차순 정렬");
-		for (int j = 0; j < accounts.length -j; j++) {
+		for (int j = 0; j < accounts.length -1; j++) {
 			for (int i = 0; i < accounts.length -1; i++) {
 				if(accounts[i].getBalance() < accounts[i+1].getBalance()) {				
 					Account tempAccount = accounts[i+1];
