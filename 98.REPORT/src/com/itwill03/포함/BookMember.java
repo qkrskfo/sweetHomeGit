@@ -17,7 +17,7 @@ public class BookMember {
 	private String memberName;
 	private String memberMobile;
 	
-	private Book book;
+	private Book[] book;
 
 	public BookMember() {
 	
@@ -29,10 +29,6 @@ public class BookMember {
 		this.memberMobile = memberMobile;
 	}
 	
-	public BookMember(Book book) {
-		this.book = book;
-	}
-	
 	public static void headerPrint() {
 		System.out.println("----------------------------------------------------------------------------");
 		System.out.printf("%s %s %13s %17s %n","회원번호","회원이름","전화번호","빌린책");
@@ -41,7 +37,13 @@ public class BookMember {
 	
 	public void print() {
 		System.out.printf("%d \t %s \t %s \t", this.memberNo, this.memberName, this.memberMobile);
-		book.print();
+		for (int i = 0; i < book.length; i++) {
+			System.out.printf(book[i].getBookName());
+			if(i != book.length-1) {
+				System.out.printf("%s",", ");
+			}
+		}
+		System.out.println("");
 	}
 
 	public int getMemberNo() {
@@ -68,11 +70,11 @@ public class BookMember {
 		this.memberMobile = memberMobile;
 	}
 
-	public Book getBook() {
+	public Book[] getBook() {
 		return book;
 	}
 
-	public void setBook(Book book) {
+	public void setBook(Book[] book) {
 		this.book = book;
 	}
 

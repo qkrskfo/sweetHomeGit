@@ -30,13 +30,14 @@ public class BookLibraryMain {
 		Book book2 = new Book(64899, "완벽하지 않은 것들에 대한 사랑", "에세이", "혜민 스님의 따뜻한 응원");
 		Book book3 = new Book(73815, "나미야 잡화점의 기적", "소설", "독자를 위로한 고민 상담소");
 		Book book4 = new Book(78623, "나의 라임 오렌지나무", "소설", "다섯 살 소년 제제의 이야기");
+		//"회원"이 책"들" 대여
+		Book[] bookArray = {book1, book2};
 		
-		// 책 객체 참조변수를 회원의 멤버변수에 대입
-		
-		member1.setBook(book1);
-		member2.setBook(book2);
-		member3.setBook(book3);
-		member4.setBook(book4);
+		// 책 객체 참조변수를 회원의 멤버변수에 대입		
+		member1.setBook(bookArray);
+		member2.setBook(new Book[] {book2});
+		member3.setBook(new Book[] {book3});
+		member4.setBook(new Book[] {book4});
 		
 		// 회원정보 출력
 		BookMember.headerPrint();
