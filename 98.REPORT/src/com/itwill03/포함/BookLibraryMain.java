@@ -19,20 +19,31 @@ public class BookLibraryMain {
 		 */
 		
 		// 회원 객체 생성
-		BookMember member1 = new BookMember();
-		BookMember member2 = new BookMember();
-		BookMember member3 = new BookMember();
-		BookMember member4 = new BookMember();
+		BookMember member1 = new BookMember(1111, "박나래", "010-1111-1111");
+		BookMember member2 = new BookMember(2222, "김나래", "010-2222-2222");
+		BookMember member3 = new BookMember(3333, "조나래", "010-3333-3333");
+		BookMember member4 = new BookMember(4444, "최나래", "010-4444-4444");
 		
 		
 		//책 객체 생성
-		Book book1 = new Book();
+		Book book1 = new Book(39210, "알파벳 abc", "교육", "영어공부");
 		Book book2 = new Book(64899, "완벽하지 않은 것들에 대한 사랑", "에세이", "혜민 스님의 따뜻한 응원");
 		Book book3 = new Book(73815, "나미야 잡화점의 기적", "소설", "독자를 위로한 고민 상담소");
 		Book book4 = new Book(78623, "나의 라임 오렌지나무", "소설", "다섯 살 소년 제제의 이야기");
 		
 		// 책 객체 참조변수를 회원의 멤버변수에 대입
 		
+		member1.setBook(book1);
+		member2.setBook(book2);
+		member3.setBook(book3);
+		member4.setBook(book4);
+		
+		// 회원정보 출력
+		BookMember.headerPrint();
+		member1.print();
+		member2.print();
+		member3.print();
+		member4.print();
 		
 		
 		

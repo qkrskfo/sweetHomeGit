@@ -44,7 +44,7 @@ public class Book {
 	}
 	
 	public void print() {
-		System.out.println(this+"-->"+bookNumber+","+bookName);
+		System.out.println("\t"+bookNumber+", "+bookName+" ("+bookCate+", "+bookDesc+")");
 	}
 	
 	// getter, setter
