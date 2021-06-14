@@ -75,7 +75,7 @@ public class BookMember {
 	}
 
 	public void setBook(Book[] book) {
-		this.book = book;
+ 		this.book = book;
 	}
 
 	

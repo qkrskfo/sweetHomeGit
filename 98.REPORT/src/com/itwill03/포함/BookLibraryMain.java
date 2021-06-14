@@ -31,14 +31,14 @@ public class BookLibraryMain {
 		Book book3 = new Book(73815, "나미야 잡화점의 기적", "소설", "독자를 위로한 고민 상담소");
 		Book book4 = new Book(78623, "나의 라임 오렌지나무", "소설", "다섯 살 소년 제제의 이야기");
 		//"회원"이 책"들" 대여
-		Book[] bookArray = {book1, book2};
+		Book[] book = {book1, book2};
 		
 		// 책 객체 참조변수를 회원의 멤버변수에 대입		
-		member1.setBook(bookArray);
+		member1.setBook(book);
 		member2.setBook(new Book[] {book2});
 		member3.setBook(new Book[] {book3});
 		member4.setBook(new Book[] {book4});
-		
+
 		// 회원정보 출력
 		BookMember.headerPrint();
 		member1.print();
