@@ -40,6 +40,9 @@ public class Car {
 	*/
 	
 	//1.필드(멤버변수)(속성)
+	/**
+	 * 차량번호 저장 필드
+	 */
 	String no;//차량번호
 	int inTime;//입차시간
 	int outTime;//출차시간

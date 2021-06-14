@@ -1,4 +1,10 @@
 
+/**
+ * 계좌객체를 생성하기 위한 클래스
+ * @author 박나래
+ *
+ */
+
 public class Account {
 
 	/*
@@ -9,11 +15,21 @@ public class Account {
 	private String owner; // 예금주명
 	private int balance; // 잔고
 	private double interest; // 이율
+
+	
+	/**
+	 * 계좌데이터를 설정하는 메소드
+	 * @param no 계좌번호
+	 * @param owner 예금주명
+	 * @param balance 잔고
+	 * @param interest 이율
+	 */
+	
 	
 	/*
 	 * 멤버메소드
 	 */
-	// 계좌데이터를 set하는 메소드
+	
 	public void setAccountData(int no, String owner, int balance, double interest) {
 		this.no = no;
 		this.owner = owner;
@@ -22,6 +38,10 @@ public class Account {
 	}
 	
 	//입금
+	/**
+	 * 계좌입금
+	 * @param m 입금할 금액
+	 */
 	public void deposit(int m) {
 		this.balance += m;
 	}
@@ -37,13 +57,19 @@ public class Account {
 		System.out.printf("%s %n","-------------------------------------------");		
 	}
 	
-	
+	/**
+	 * 계좌 객체의 정보 출력
+	 */	
 	
 	public void print() {
 		System.out.printf("%d %6s %8d %5.1f %n",this.no, this.owner,this.balance, this.interest);
 	}
 	
 	// getter method
+	/**
+	 * 잔고를 반환하는 메소드
+	 * @return 계좌잔고
+	 */
 	public int getBalance() {
 		return this.balance;
 	}

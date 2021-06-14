@@ -1,4 +1,10 @@
 
+/**
+ * 뭐라고 써야하는지 까먹음
+ * @author 박나래
+ *
+ */
+
 public class Account {
 
 	/*
@@ -15,7 +21,13 @@ public class Account {
 		
 	}
 	
-	// 내가 뭘 잘못한거니 ㅠㅠㅠㅠ미치겠네
+	/**
+	 * 매개변수값으로 초기화된 계좌객체 생성
+	 * @param no 계좌번호
+	 * @param owner 예금주명
+	 * @param balance 잔고
+	 * @param interest 이율
+	 */
 	
 	public Account(int no, String owner, int balance, double interest) {
 		this.no = no;
