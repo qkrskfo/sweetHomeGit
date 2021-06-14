@@ -34,7 +34,7 @@ public class StudentArrayMain {
 		 */
 		System.out.println(); 
 		System.out.println("2. 전체학생 총점으로 석차계산");
-
+		/*
 		for (int i = 0; i < students.length; i++) {
 			students[i].setRank(1);
 			for (int j = 0; j < students.length; j++) {
@@ -45,7 +45,20 @@ public class StudentArrayMain {
 				}
 			}				
 		}
-				
+		*/	
+		
+		for (int i = 0; i < students.length; i++) {
+			students[i].setRank();
+		}
+		
+		for (int i = 0; i < students.length; i++) {
+			for (int j = 0; j < students.length; j++) {
+				if(students[i].getTot() < students[j].getTot()) {
+					students[i].calculateRank();
+				}
+			}
+		}
+		
 		/*
 		 * 3. 전체학생출력
 		 */
@@ -65,6 +78,7 @@ public class StudentArrayMain {
 		for (int i = 0; i < students.length; i++) {
 			if(students[i].getNo()==3) {
 				students[i].print();
+				break;
 			}
 		}
 		System.out.println(); 
