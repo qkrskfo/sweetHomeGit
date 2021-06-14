@@ -11,7 +11,7 @@
  */
 
 // 클래스파일을 메인파일에 쓰려면 public을 빼고 가져와야해!
-class Parent {
+class Parent extends Object {
 	public int member1;
 	public int member2;
 	public void method1() {
