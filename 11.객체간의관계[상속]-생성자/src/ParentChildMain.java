@@ -11,8 +11,8 @@ class Parent extends Object{
 		 * 부모클래스의 생성자(디폴트)가 반드시 호출되어야한다.
 		 * 생략 시 부모의 디폴트생성자가 자동호출된다.
 		 */
-		// 기본생성자
-		super();
+
+		super(); //Object클래스 기본생성자
 		System.out.println("2.Parent() default 생성자");
 	}
 		
@@ -23,7 +23,7 @@ class Parent extends Object{
 		System.out.println("2.Parent(int member1, int member2) 생성자 호출 ");
 	}
 	public void print() {
-		System.out.print(this.member1+"\t"+this.member2);
+		System.out.print(this.member1+"\t"+this.member2+"\t");
 	}
 
 	public void method1() {
@@ -127,6 +127,7 @@ public class ParentChildMain {
 		Child c1 = new Child();
 		System.out.println("-------Child(int member1, int member2, int member3)--------");
 		Child c2 = new Child(1, 2, 3);
+		c2.print();
 	}
 
 }
