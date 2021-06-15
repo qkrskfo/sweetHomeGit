@@ -14,7 +14,7 @@ public class AcademyMember {
 	}
 
 	public void print() {
-		System.out.println(no+"\t"+name);
+		System.out.print(no+"\t"+name+"\t");
 	}
 	
 	public int getNo() {

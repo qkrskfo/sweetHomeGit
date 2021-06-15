@@ -1,11 +1,11 @@
 
-public class AcademyGansa extends AcademyMember {
+public class AcademyGangsa extends AcademyMember {
 
 	public String subject;
-	public AcademyGansa() {
-		// TODO Auto-generated constructor stub
+	public AcademyGangsa() {
+
 	}
-	public AcademyGansa(int no, String name, String subject) {
+	public AcademyGangsa(int no, String name, String subject) {
 		this.no = no;
 		this.name = name;
 		this.subject = subject;

@@ -1,17 +1,17 @@
 
-public class AcademyGansa extends AcademyMember {
+public class AcademyGangsa extends AcademyMember {
 
 	public String subject;
-	public AcademyGansa() {
+	public AcademyGangsa() {
 		// TODO Auto-generated constructor stub
 	}
-	public AcademyGansa(int no, String name, String subject) {
+	public AcademyGangsa(int no, String name, String subject) {
 		this.no = no;
 		this.name = name;
 		this.subject = subject;
 	}
 	
-	public void gansaPrint() {
+	public void gangsaPrint() {
 		this.print();
 		System.out.println(this.subject);
 	}
