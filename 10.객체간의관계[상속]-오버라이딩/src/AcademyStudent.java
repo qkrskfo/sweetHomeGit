@@ -47,9 +47,15 @@ public class AcademyStudent extends AcademyMember {
 		this.name=name;
 		this.ban=ban;
 	}
-	
+	/*
 	public void studentPrint() {
 		this.print();
+		System.out.println(this.ban);
+	}
+	*/
+	
+	public void print() {
+		super.print();
 		System.out.println(this.ban);
 	}
 	
