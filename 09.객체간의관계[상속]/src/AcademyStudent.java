@@ -47,6 +47,12 @@ public class AcademyStudent extends AcademyMember {
 		this.name=name;
 		this.ban=ban;
 	}
+	
+	public void studentPrint() {
+		this.print();
+		System.out.println(this.ban);
+	}
+	
 	//alt+shift+s --> r
 	public String getBan() {
 		return ban;
@@ -55,9 +61,6 @@ public class AcademyStudent extends AcademyMember {
 		this.ban = ban;
 	}
 	
-	public void studentPrint() {
-		this.print();
-		System.out.println(this.ban);
-	}
+
 	
 }

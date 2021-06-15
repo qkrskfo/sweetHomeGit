@@ -11,6 +11,19 @@ public class AcademyStaff extends AcademyMember {
 		this.depart = depart;
 	}
 	
+	public void staffPrint() {
+		this.print();
+		System.out.println(depart);
+	}
+	
+	public String getDepart() {
+		return depart;
+	}
+	public void setDepart(String depart) {
+		this.depart = depart;
+	}
+	
+	
 	
 	
 }
