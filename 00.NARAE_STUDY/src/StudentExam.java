@@ -1,9 +1,8 @@
-
 /*
  * 성적처리를 위한 필요한 학생객체를 만들기 위한 클래스
  *  - 캡슐화
  */
-public class Student {
+public class StudentExam {
 	/*
 	 * << 속성 >> 번호 이름 국어 영어 수학 총점 평균 평점 석차 
 	 * << 기능 >> 기본데이타입력,총점계산,평균계산,평점계산, 출력
@@ -26,20 +25,19 @@ public class Student {
 	 *  - 인자 0개짜리 생성자(기본생성자선언) 
 	 *  - 인자 5개짜리(번호 이름 국어 영어 수학) 생성자선언
 	 */
+	public StudentExam() {
+		// TODO Auto-generated constructor stub
+	}
 	
-	public Student() {
-		
-	}	
-	
-	public Student(int no, String name, int kor, int eng, int math) {
+	public StudentExam(int no, String name, int kor, int eng, int math) {
+		super();
 		this.no = no;
 		this.name = name;
 		this.kor = kor;
 		this.eng = eng;
 		this.math = math;
-	}	
+	}
 
-	
 	/*
 	멤버메쏘드 선언
 	*/
@@ -61,6 +59,7 @@ public class Student {
 	}
 
 	public char calculateGrade() {
+
 		if (this.avg >= 90)
 			this.grade = 'A';
 		else if (this.avg < 90 && this.avg >= 80)
@@ -74,19 +73,30 @@ public class Student {
 
 		return grade;
 	}
-	/*
-	public void rank(int r) {
-		this.rank += r;
-	}
-	*/
+	
 	public void calculateRank() {
 		this.rank ++;
 	}
+	
+	public int getTot() {
+		return tot;
+	}
+
+	public void setRank() {
+		this.rank = 1;
+	}
+	public int getNo() {
+		return this.no;
+	}
+	
+	public char getGrade() {
+		return this.grade;
+	}
 
 	public static void headerPrint() {
-		System.out.printf("---------------학생 성적출력-------------------%n");
-		System.out.printf("%s %s %s %s %s %s %3s %s %s%n", "학번", "이름", "국어", "영어", "수학", "총점", "평균", "평점", "석차");
-		System.out.printf("-----------------------------------------------%n");
+		System.out.printf("------------------ 학생 성적 출력 ------------------%n");
+		System.out.printf(" %s  %s   %s   %s  %s  %s  %3s   %s  %s%n", "학번", "이름", "국어", "영어", "수학", "총점", "평균", "평점", "석차");
+		System.out.printf("------------------------------------------------%n");
 
 	}
 
@@ -94,66 +104,5 @@ public class Student {
 		System.out.printf("%3d %5s %4d %4d %4d %4d %5.1f %3c %4d%n", this.no, this.name, this.kor, this.eng, this.math,
 				this.tot, this.avg, this.grade, this.rank);
 	}
-	
-	
-	// setter
-	public void setNo(int no) {
-		this.no = no;
-	}
-	
-	public void setName(String name) {
-		this.name = name;
-	}
-	public void setKor(int kor) {
-		this.kor = kor;
-	}
-	public void setEng(int eng) {
-		this.eng = eng;
-	}
-	public void setMath(int math) {
-		this.math = math;
-	}
-	/*
-	public void setRank(int rank) {
-		this.rank = rank;
-	}
-	*/
-	public void setRank() {
-		this.rank = 1;
-	}
-	
-	// getter
-	public int getNo() {
-		return no;
-	}
-	
-	public String getName() {
-		return name;
-	}
-	
-	public int getKor() {
-		return kor;
-	}
-	
-	public int getEng() {
-		return eng;
-	}
-	
-	public int getMath() {
-		return math;
-	}
-
-	public int getTot() {
-		return tot;
-	}
-	
-	public char getGrade() {
-		return grade;
-	}
-	
-	public int getRank() {
-		return rank;
-	}
-	
 
 }

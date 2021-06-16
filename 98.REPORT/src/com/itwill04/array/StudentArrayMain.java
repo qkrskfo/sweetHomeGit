@@ -1,5 +1,7 @@
 package com.itwill04.array;
 
+import com.itwill00.variable.StudentScorePrint;
+
 public class StudentArrayMain {
 
 	public static void main(String[] args) {
@@ -12,7 +14,7 @@ public class StudentArrayMain {
 				new Student(3, "AIM", 65, 87, 99), 
 				new Student(4, "BIM", 75, 97, 60), 
 				new Student(5, "XIM", 85, 98, 90),
-				new Student(6, "TIM", 95, 88, 77), 
+				new Student(6, "KIM", 95, 88, 77), 
 				new Student(7, "ZIM", 99, 93, 95), 
 				new Student(8, "LIM", 83, 80, 99),
 				new Student(9, "QIM", 73, 90, 80),
@@ -133,7 +135,46 @@ public class StudentArrayMain {
 			students[i].print();
 		}
 		
-
+		System.out.println();
+		/*
+		 * 8. 이름이 KIM인 학생들 출력
+		 */
+		
+		System.out.println("8. 이름이 KIM인 학생들 출력");
+		
+		String kim = "KIM";
+		Student.headerPrint();
+		for (int i = 0; i < students.length; i++) {
+			if(students[i].getName().equals(kim)) {
+				students[i].print();
+			}
+		}
+		
+		System.out.println();
+		/*
+		 * 9. 학생 이름순으로 오름차순 정렬
+		 */
+		System.out.println("9. 학생학점순으로 오름차순정렬");
+		for (int j = 0; j < students.length -1; j++) {
+			for (int i = 0; i < students.length-1; i++) {
+				int unicodeGap = students[i].getName().compareTo(students[i+1].getName());
+				if(unicodeGap > 0) {
+					Student tempBox = students[i];
+					students[i] = students[i+1];
+					students[i+1] = tempBox;
+				}				
+			}
+		}		
+		Student.headerPrint();
+		for (int i = 0; i < students.length; i++) {
+			students[i].print();
+		}
+		
+		
+		
+		
+		
+		
 	}
 
 }

@@ -112,15 +112,7 @@ public class StringMain {
 		}
 		System.out.println(irum1);
 		System.out.println(irum2);
-		
-		
-		
-		
-		
-		
-		
-		
-		
+			
 		
 		
 		
