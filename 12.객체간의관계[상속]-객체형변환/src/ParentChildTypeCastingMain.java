@@ -29,11 +29,17 @@ class Parent{
 	public void method3() {
 		System.out.println("Parent.method3()");
 	}
-
+	public void method4() {
+		 // child의 method4를 호출하기 위해 이걸 만들어주는거야.
+		
+	}
 }
 	
 
 class Child extends Parent{
+	public void method3() {
+		System.out.println("Child.method3() [Parent.method3]를 child에서 재정의");
+	}
 	public void method4() {
 		System.out.println("Child.method4()");
 	}	
@@ -89,8 +95,17 @@ public class ParentChildTypeCastingMain {
 		 */
 		Parent p3 = new Child();
 		// 객체 생성할 땐 생성자를 봐. 이 객체는 누구 객체야? child객체야!!
+		
 		// Child c3 = p3; 는 에러 발생하지만, 아래와 같이 강제 형변환을 해주면 됨.
 		Child c3 = (Child)p3;
+		
+		//재정의
+		System.out.println("--- 재정의 ---");
+		Parent p4 = new Child();
+		p4.method1(); 
+		p4.method2();
+		p4.method3();
+		p4.method4(); // 재정의한 메소드 호출가능
 		
 		
 		
