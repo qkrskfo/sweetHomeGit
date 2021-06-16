@@ -5,7 +5,7 @@
  *
  */
 
-public class Account {
+public class Account extends Object{
 
 	/*
 	 * 필드(멤버변수)
@@ -64,6 +64,15 @@ public class Account {
 	public void print() {
 		System.out.printf("%d %6s %8d %5.1f %n",this.no, this.owner,this.balance, this.interest);
 	}
+	
+
+	// toString 재정의
+	@Override
+	public String toString() {
+//		return super.toString(); 이건 원래꺼(object의 것)
+		return this.no+"\t"+this.owner+"\t"+this.balance+"\t"+this.interest;				
+	}
+
 	
 	// getter method
 	/**

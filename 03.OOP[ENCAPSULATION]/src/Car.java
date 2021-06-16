@@ -76,6 +76,12 @@ public class Car {
 		System.out.printf("%7s %7d %9d %8d %n",this.no,this.inTime,this.outTime,this.fee);
 	}
 
+	
+
+	@Override
+	public String toString() {
+		return "Car [no=" + no + ", inTime=" + inTime + ", outTime=" + outTime + ", fee=" + fee + "]";
+	}
 
 	//	setter
 	public void setNo(String no) {
