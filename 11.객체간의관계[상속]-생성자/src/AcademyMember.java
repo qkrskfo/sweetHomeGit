@@ -9,6 +9,7 @@ public class AcademyMember {
 	}
 
 	public AcademyMember(int no, String name) {
+		super();
 		this.no = no;
 		this.name = name;
 	}
