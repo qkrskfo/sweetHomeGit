@@ -33,6 +33,42 @@ public class ObjectMain {
 		System.out.println("o2-->"+o2);
 		System.out.println("o2.toString() -->"+o2.toString());
 		System.out.println(str3);
+		
+		/*
+		public boolean equals​(Object obj)
+		- this 객체와 (인자)로 들어온 객체의 주소가 같은지 비교
+		*/
+		boolean isEqual = o1.equals(o2);
+		System.out.println(isEqual);
+		if(o1.equals(o3)) {
+			System.out.println("[o1.equals(o3)] o1과 o3의 주소가 동일하다.");
+		}
+		if(!o1.equals(o2)) {
+			System.out.println("[!o1.equals(o2)] o1과 o2의 주소가 동일하지 않다.");
+		}
+		
+		if(o1 == o3) {
+			System.out.println("[o1==o2] o1과 o3의 주소가 동일하다.");
+		}
+		
+		if(o1 != o2) {
+			System.out.println("[o1 != o2] o1과 o2의 주소가 동일하지 않다.");
+		}
+		
+		
+		System.out.println("--- ObjectChild ---");
+		ObjectChild oc1 = new ObjectChild();
+		ObjectChild oc2 = new ObjectChild();
+		ObjectChild oc3= oc1;
+		
+		System.out.println(oc1.toString());
+		System.out.println(oc2.toString());
+		System.out.println(oc3.toString());
+		
+		if(oc1.equals(oc3)) {
+			System.out.println("[oc1.equals(oc3)] oc1의 주소와 oc3의 주소가 동일하다");
+		}
+		
 	}
 
 }
