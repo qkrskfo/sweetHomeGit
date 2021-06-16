@@ -83,6 +83,47 @@ public class StringMain {
 			System.out.println("name1 == Kim 문자열이 아닌, 주소값을 비교한 것");
 		}
 		
+		
+		// 이름으로 정렬
+		/*
+		 * compareTo 메소드
+		 * public int compareTo​(String anotherString)
+		 * 
+		 * Returns:
+		 * the value 0 if the argument string is equal to this string;
+		 * a value less than 0 if this string is lexicographically less than the string argument; 
+		 * and a value greater than 0 if this string is lexicographically greater than the string argument.
+		 */
+		
+		String irum1 = "홍경호";
+		String irum2 = "김경호";
+		int unicodeGap = irum1.compareTo(irum2);
+		System.out.println("유니코드 차이: "+unicodeGap);
+		
+		int unicodeGap2 = irum2.compareTo(irum1);
+		System.out.println("유니코드 차이: "+unicodeGap2);
+		
+		// sorting 하고 싶다면
+		if(irum1.compareTo(irum2) > 0 ) {
+			System.out.println("irum1과 irum2를 교환[오름차순]");
+			String temp = irum1;
+			irum1 = irum2;
+			irum2 = temp;
+		}
+		System.out.println(irum1);
+		System.out.println(irum2);
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 	}
 
 }
