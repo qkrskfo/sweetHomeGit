@@ -26,8 +26,7 @@ public abstract class AbstractClass {
 		System.out.println("난 concrete(구상) 메쏘드");
 	}
 	
-	public abstract void method2();
-	
+	public abstract void method2();	
 
 
 }
