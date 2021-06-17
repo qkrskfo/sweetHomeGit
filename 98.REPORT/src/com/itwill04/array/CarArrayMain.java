@@ -49,7 +49,7 @@ public class CarArrayMain {
 		 * 2.빈자리찾아서대입 // null을 찾아내서 넣어줘야지
 		 */
 		
-				
+	
 		// 1대 입차
 		for (int i = 0; i < carArray.length; i++) {
 			if(carArray[i]==null) {
@@ -57,20 +57,8 @@ public class CarArrayMain {
 				break;
 			}
 		}
-		
-		/* 2대 입차....는 억지로 해도.. 여러대 입차에서 오류날 예정..
-		for (int i = 0; i < carArray.length; i++) {
-			if(carArray[i]==null) {
-				carArray[i] = new Car("9024",14);
-				if(carArray[i+]==null) {
-					carArray[i+] = new Car("8888", 16);
-					break;
-				} else {
-					i++;
-				}				
-			}			
-		}
-		*/
+
+
 		
 		System.out.print("9024 입차확인 - 주차가능주차구획수: ");
 		count=0;
