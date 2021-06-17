@@ -2,7 +2,11 @@
 public class AcademyMemberCastingMain {
 
 	public static void main(String[] args) {
-
+		/* 추상클래스
+		 * << Cannot instantiate the type AcademyMember >>
+		AcademyMember m = new AcademyMember(0, "unknown");
+		 */
+		
 		AcademyStudent st1 = new AcademyStudent(1, "KIM", "LINUX");
 		AcademyMember m1 = st1;
 		AcademyMember m2 = new AcademyStudent(2, "KANG", "OFFICE");

@@ -1,5 +1,5 @@
 
-public class AcademyMember {
+public abstract class AcademyMember {
 
 	private int no;
 	private String name;
