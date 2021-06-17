@@ -58,13 +58,12 @@ public class CarArrayMain {
 			}
 		}
 		
-		/* 2대 입차.... 까진 대충해도.. 여러대 입차 너무 어려워요 ㅠ_ㅠ
+		/* 2대 입차....는 억지로 해도.. 여러대 입차에서 오류날 예정..
 		for (int i = 0; i < carArray.length; i++) {
 			if(carArray[i]==null) {
 				carArray[i] = new Car("9024",14);
-				i++;
-				if(carArray[i]==null) {
-					carArray[i] = new Car("8888", 16);
+				if(carArray[i+]==null) {
+					carArray[i+] = new Car("8888", 16);
 					break;
 				} else {
 					i++;
