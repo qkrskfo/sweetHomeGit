@@ -110,6 +110,25 @@ public class ReferenceTypeArrayAccountMain {
 			accounts[i].print();
 		}
 		
+		System.out.println("Quiz. 예금주 이름순으로 오름(내림)차순 정렬 ");
+		for (int i = 0; i < accounts.length-1; i++) {
+			boolean isSwap = false;
+			for (int j = 0; j < accounts.length-1; j++) {				
+				if(accounts[j].getOwner().compareTo(accounts[j+1].getOwner()) > 0) {
+					Account tempBox = accounts[j];
+					accounts[j] = accounts[j+1];
+					accounts[j+1] = tempBox;
+				}
+			}
+			if(!isSwap) {
+				break;
+			}
+		}
+		
+		Account.headerPrint();
+		for (int i = 0; i < accounts.length; i++) {
+			accounts[i].print();
+		}
 		
 		
 		System.out.println("11. 5555 계좌 이율을 3.6%로 변경");
