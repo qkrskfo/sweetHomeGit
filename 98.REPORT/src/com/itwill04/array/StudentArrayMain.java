@@ -1,6 +1,5 @@
 package com.itwill04.array;
 
-import com.itwill00.variable.StudentScorePrint;
 
 public class StudentArrayMain {
 

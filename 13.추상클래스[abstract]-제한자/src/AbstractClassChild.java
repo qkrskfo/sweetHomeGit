@@ -8,7 +8,7 @@ public class AbstractClassChild extends AbstractClass {
 	
 	@Override
 	public void method2() {
-		System.out.println("AbstractClass의 추상메소드 --> method2를 재정의함(overriding)[implement]");
+		System.out.println("AbstractClass의 추상메소드 --> method2를 재정의함(overriding)[구현implement]");
 	}
 
 
