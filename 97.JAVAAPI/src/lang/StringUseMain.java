@@ -129,6 +129,50 @@ public class StringUseMain {
 		String copyFilename = fileNameNoExt+"-복사본."+fileExt;
 		System.out.println(copyFilename);
 		
+		System.out.println("----String.startWith,endWith----");
+		String fileName2 = "yy.jpg";
+		if(fileName2.endsWith("gif")||fileName2.endsWith(".jpg")||fileName2.endsWith(".jpeg")) {
+			System.out.println(fileName2+"는 이미지파일입니다.");
+		}
+		
+		String[] names = {"김경호", "이경호", "김미선", "이미숙", "홍수환", "김현미"};
+		int count=0;
+		for (int i = 0; i < names.length; i++) {
+			if(names[i].startsWith("김")) {
+				System.out.print(names[i]+" ");
+				count++;
+			}
+		}
+		System.out.println();
+		
+		// 위에는 그냥 출력한거고, 밑에는 배열에 담은거야.
+		String[] KimArray = new String[count];
+		int index = 0;
+		for (int i = 0; i < names.length; i++) {
+			if(names[i].startsWith("김")) {
+				KimArray[index] = names[i];
+				index++;
+			}
+		}
+		// 배열에 담은거 출력
+		System.out.println("--kim--");
+		for (int i = 0; i < KimArray.length; i++) {
+			System.out.println(KimArray[i]);
+		}
+		
+		System.out.println("-----String.trim------");
+		// trim 메소드 : space를 제거함
+		// 중간에 띄어쓰기가 있으면 그건 제거 못함. 텍스트의 좌측, 우측에 있는 것만 제거함.
+		String idStr = " guard  ";
+		System.out.println(idStr.length());
+		System.out.println(idStr.trim().length());
+		String spaceStr = "        ";
+		if(spaceStr.trim().equals("")) {
+			System.out.println("아이디를 입력하세요!!! spaceStr.trim().equals(\"\") ");
+		}
+		if(spaceStr.trim().length()==0) {
+			System.out.println("아이디를 입력하세요!!! spaceStr.trim().length()==0 ");
+		}
 	}
 
 }
