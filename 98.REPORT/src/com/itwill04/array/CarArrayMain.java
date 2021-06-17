@@ -22,12 +22,14 @@ public class CarArrayMain {
 		}
 		
 		System.out.println();
-		System.out.printf("2.전체주차구획수: ");
+		System.out.println("2.전체주차구획수: ");
 		int count=0;
 		for (int i = 0; i < carArray.length; i++) {
+			if(carArray[i]!=null)
 				count++;
 		}
-		System.out.println(count);
+		System.out.println(" - 주차된 구획수: "+count);
+		System.out.println(" - 총 주차 구획수: "+carArray.length);
 		
 		
 		System.out.println();
@@ -47,19 +49,31 @@ public class CarArrayMain {
 		 * 2.빈자리찾아서대입 // null을 찾아내서 넣어줘야지
 		 */
 		
-		
-		Car carIpcha1 = new Car("9024",14);
-		Car carIpcha2 = new Car("8888",16);
-		// 여러대를 하려면 parking 매니저..가 필요해..흠
-		
+				
+		// 1대 입차
 		for (int i = 0; i < carArray.length; i++) {
 			if(carArray[i]==null) {
-				carArray[i] = carIpcha1;
+				carArray[i] = new Car("9024",14);
 				break;
 			}
 		}
 		
-		System.out.print("9024 차량 입차확인 - 주차가능주차구획수: ");
+		/* 2대 입차.... 까진 대충해도.. 여러대 입차 너무 어려워요 ㅠ_ㅠ
+		for (int i = 0; i < carArray.length; i++) {
+			if(carArray[i]==null) {
+				carArray[i] = new Car("9024",14);
+				i++;
+				if(carArray[i]==null) {
+					carArray[i] = new Car("8888", 16);
+					break;
+				} else {
+					i++;
+				}				
+			}			
+		}
+		*/
+		
+		System.out.print("9024 입차확인 - 주차가능주차구획수: ");
 		count=0;
 		for (int i = 0; i < carArray.length; i++) {
 			if(carArray[i]==null) {
@@ -68,7 +82,7 @@ public class CarArrayMain {
 		}
 		System.out.println(count);
 		
-		System.out.println("9024 차량 입차확인 - 전체 차량출력");
+		System.out.println("9024 입차확인 - 전체 차량출력");
 		Car.headerPrint();
 		for (int i = 0; i < carArray.length; i++) {
 			if(carArray[i]!=null) {
@@ -125,6 +139,13 @@ public class CarArrayMain {
 		}
 		System.out.println(count);
 		
+		System.out.println("2389 출차확인 - 전체 차량출력");
+		Car.headerPrint();
+		for (int i = 0; i < carArray.length; i++) {
+			if(carArray[i]!=null) {
+				carArray[i].print();
+			}
+		}
 		
 	}
 
