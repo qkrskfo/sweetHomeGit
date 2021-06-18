@@ -1535,8 +1535,8 @@
             <constraint>
               <height>-1</height>
               <width>-1</width>
-              <x>783</x>
-              <y>277</y>
+              <x>727</x>
+              <y>285</y>
             </constraint>
             <sourceConnections/>
             <targetConnections>
@@ -1568,8 +1568,8 @@
                   <constraint>
                     <height>-1</height>
                     <width>-1</width>
-                    <x>731</x>
-                    <y>347</y>
+                    <x>675</x>
+                    <y>355</y>
                   </constraint>
                   <sourceConnections>
                     <net.java.amateras.uml.classdiagram.model.GeneralizationModel reference="../../.."/>
@@ -1602,8 +1602,8 @@
                         <constraint>
                           <height>-1</height>
                           <width>-1</width>
-                          <x>686</x>
-                          <y>279</y>
+                          <x>630</x>
+                          <y>287</y>
                         </constraint>
                         <sourceConnections/>
                         <targetConnections>
@@ -1782,15 +1782,15 @@
             <constraint>
               <height>50</height>
               <width>166</width>
-              <x>673</x>
-              <y>223</y>
+              <x>626</x>
+              <y>227</y>
             </constraint>
             <sourceConnections/>
             <targetConnections/>
             <children/>
             <filterProperty/>
-            <content>다중상속 허용x</content>
-            <old></old>
+            <content>클래스는 다중상속 허용x</content>
+            <old>다중상속 허용x</old>
           </net.java.amateras.uml.model.NoteModel>
           <net.java.amateras.uml.classdiagram.model.ClassModel reference="../net.java.amateras.uml.classdiagram.model.ClassModel[19]/targetConnections/net.java.amateras.uml.classdiagram.model.GeneralizationModel/source"/>
         </children>
