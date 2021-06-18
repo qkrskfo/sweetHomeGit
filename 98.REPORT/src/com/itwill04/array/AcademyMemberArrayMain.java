@@ -37,7 +37,6 @@ public class AcademyMemberArrayMain {
 		for (int i = 0; i < members.length; i++) {
 			if(members[i].getName().equals("KIM")) {
 				members[i].print();
-				break;
 			}
 		}
 		
