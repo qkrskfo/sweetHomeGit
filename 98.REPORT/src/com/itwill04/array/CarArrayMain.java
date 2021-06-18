@@ -49,15 +49,16 @@ public class CarArrayMain {
 		 * 2.빈자리찾아서대입 // null을 찾아내서 넣어줘야지
 		 */
 		
-	
+		// 차 객체를 먼저 만들고 빈자리를 찾아야지..
 		// 1대 입차
+		
+		Car carIpCha = new Car("9024", 14);
 		for (int i = 0; i < carArray.length; i++) {
 			if(carArray[i]==null) {
-				carArray[i] = new Car("9024",14);
+				carArray[i] = carIpCha;
 				break;
 			}
 		}
-
 
 		
 		System.out.print("9024 입차확인 - 주차가능주차구획수: ");
