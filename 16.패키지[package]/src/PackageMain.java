@@ -22,7 +22,7 @@ public class PackageMain {
 		System.out.println(am1);
 		
 		com.itwill.shop.admin.MemberService ams1 = new com.itwill.shop.admin.MemberService();
-		System.out.println(am1);
+		System.out.println(ams1);
 		
 		com.itwill.shop.member.Member m1 = new com.itwill.shop.member.Member();
 		System.out.println(m1);
@@ -35,6 +35,7 @@ public class PackageMain {
 		System.out.println(os1);
 		
 		com.itwill.shop.ShopService ss1 = new com.itwill.shop.ShopService();
+		System.out.println(ss1);
 	}
 
 }
