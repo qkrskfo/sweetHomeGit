@@ -11,8 +11,8 @@ public class FinalFieldMain {
 
 		ff1.move(FinalField.NORTH);
 		ff1.move(FinalField.EAST);
-		ff1.move(FinalField.SOUTH);
 		ff1.move(FinalField.WEST);
+		ff1.move(FinalField.SOUTH);
 		
 	}
 
