@@ -4,6 +4,9 @@ public class FinalFieldMain {
 	public static void main(String[] args) {
 
 		FinalField ff1 = new FinalField();
+		FinalField ff2 = new FinalField();
+		FinalField ff3 = new FinalField();
+		FinalField ff4 = new FinalField();
 		
 //		The final field FinalField.INCENTIVE_RATE cannot be assigned
 		// ff1.INCENTIVE_RATE = 0.5;
