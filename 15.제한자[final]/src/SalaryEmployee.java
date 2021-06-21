@@ -2,6 +2,9 @@ public class SalaryEmployee extends Employee {
 
 	private int annualSalary; //연봉
 	
+	public SalaryEmployee() {
+		// TODO Auto-generated constructor stub
+	}
 	
 	
 	public SalaryEmployee(int no, String name, int annualSalary) {
@@ -15,9 +18,12 @@ public class SalaryEmployee extends Employee {
 		this.setPay(pay);
 	}
 	
+	/*
+	<< Cannot override the final method from Employee >>
 	public double calculateIncentive() {
 		return 0.0;
 	}
+	*/
 	
 	public void print() {
 		super.print();

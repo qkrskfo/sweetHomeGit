@@ -17,7 +17,7 @@ public abstract class Employee {
      *   - 재정의금지(회장님 방침)
      *   - 모든 사원은 알바생이고, 인센티브계산이 동일해야 한다.
      */
-    public double calculateIncentive() {
+    public final double calculateIncentive() {
     	double incentive = 0.0;
     	if(this.pay >= 1000000) {
     		incentive = this.pay * Employee.INCENTIVE_RATE;
