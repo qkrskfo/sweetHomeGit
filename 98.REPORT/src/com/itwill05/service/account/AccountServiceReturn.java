@@ -57,28 +57,42 @@ public class AccountServiceReturn {
 	 * 1.은행계좌들 총계좌수 반환메써드
 	 */
 	public int getTotAccountNumber() {
-		return 0;
+		int getTotAccountNumber = accounts.length;
+		return getTotAccountNumber;
 	}
 
 	/*
 	 * 2.은행계좌들 전체출력메쏘드 정의
 	 */
 	public void print() {
-
+		for (int i = 0; i < accounts.length; i++) {
+			accounts[i].print();
+		}
 	}
-
+	
+	
 	/*
 	 * 3.은행계좌들 총잔고를 반환하는 메쏘드
 	 */
 	public int getAccountTotBalance() {
-		return 0;
+		int tot = 0; 
+		for (int i = 0; i < accounts.length; i++) {
+			tot += accounts[i].getBalance();
+		}
+		return tot;
 	}
 
 	/*
 	 * 4.계좌번호를 인자로받아서 계좌객체주소 한개반환
 	 */
 	public Account findByNo(int no) {
-		return null;
+		Account tempAccount = null;
+		for (int i = 0; i < accounts.length; i++) {
+			if(accounts[i].getNo()==no) {
+				tempAccount = accounts[i];
+			}
+		}
+		return tempAccount;
 	}
 
 	/*
@@ -86,27 +100,52 @@ public class AccountServiceReturn {
 	 */
 	public Account[] findByBalance(int balance) {
 		Account[] findAccounts = null;
-		/*
-		 * A. 만족하는 객체의갯수구하기 - 예를들어 3개라면
-		 */
+		
+		/* A. 만족하는 객체의갯수구하기 - 예를들어 3개라면*/
+		
+		int leng = 0;
+		for (int i = 0; i < accounts.length; i++) {
+			if (accounts[i].getBalance() >= balance) {
+				leng++;
+			}
+		}
 		
 		/*
-		 * B. Account객체배열생성 
-		 * 	- findAccounts=new Account[3];
+		 * B. Account객체배열생성 - findAccounts=new Account[3];
 		 */
-		
+		findAccounts = new Account[leng];
 		/*
 		 * C. 만족하는Account객체들 Account배열에담기
 		 */
+		int findIdx = 0;
+		for (int i = 0; i < accounts.length; i++) {
+			if (accounts[i].getBalance() >= balance) {
+				findAccounts[findIdx++] = accounts[i];
+			}
+		}
 		return findAccounts;
 	}
+	
 	/*
 	 * 6.계좌이율인자로받아서 인자이상인 계좌들배열객체 참조변수반환
 	 */
 	public Account[] findByIyul(double iyul) {
 		Account[] findAccounts = null;
-
+		int leng = 0;
+		for (int i = 0; i < accounts.length; i++) {
+			if(accounts[i].getIyul()>=iyul) {
+				leng++;
+			}
+		}
 		
+		findAccounts = new Account[leng];
+		
+		int findIdx = 0;
+		for (int i = 0; i < accounts.length; i++) {
+			if(accounts[i].getIyul()>=iyul) {
+				findAccounts[findIdx++] = accounts[i];
+			}
+		}
 		
 		return findAccounts;
 	}
@@ -116,7 +155,21 @@ public class AccountServiceReturn {
 	 */
 	public Account[] findByName(String name) {
 		Account[] findAccounts = null;
-
+		int leng = 0;
+		for (int i = 0; i < accounts.length; i++) {
+			if(accounts[i].getOwner()==name) {
+				leng++;
+			}
+		}
+		
+		findAccounts = new Account[leng];
+		
+		int findIdx = 0;
+		for (int i = 0; i < accounts.length; i++) {
+			if(accounts[i].getOwner()==name) {
+				findAccounts[findIdx++] = accounts[i];
+			}
+		}
 		
 		return findAccounts;
 	}
@@ -144,13 +197,131 @@ public class AccountServiceReturn {
 	}
 
 	/*
-	 * 10,11 정렬  standard --> 1:번호,2:이름,3:잔고,4:이율 
-	 *             order    --> 1:오르차순,2:내림차순
+	 * 10,11 정렬기준  standard --> 1:번호,2:이름,3:잔고,4:이율 
+	 *       정렬방법  order    --> 1:오르차순,2:내림차순
+	 *             
+	 *       조합은 8개가 나오는데 1개의 메소드로 다 할 수 있게..
+	 *       if문 쓰면됨. 상수도 쓰래.. case 로 받아봐
 	 */
+	
+	private final int NO = 1;
+	private final int OWNER = 2;
+	private final int BALANCE = 3;
+	private final int IYUL = 4;
+	private final int ASCEND = 1;
+	private final int DESCEND = 2;
+	
 	public void sort(int standard, int order) {
-		
-	}
 
+		
+		switch (standard) {
+		case NO:
+			if (order == ASCEND) { // 번호 오름차순
+				for (int j = 0; j < accounts.length - 1; j++) {
+					for (int i = 0; i < accounts.length - 1; i++) {
+						if (accounts[i].getNo() >= accounts[i + 1].getNo()) {
+							Account tempBox = accounts[i];
+							accounts[i] = accounts[i + 1];
+							accounts[i + 1] = tempBox;
+						}
+					}
+				}
+			} else if (order == DESCEND) { // 번호 내림차순
+				for (int j = 0; j < accounts.length - 1; j++) {
+					for (int i = 0; i < accounts.length - 1; i++) {
+						if (accounts[i].getNo() <= accounts[i+1].getNo()) {
+							Account tempBox = accounts[i];
+							accounts[i] = accounts[i + 1];
+							accounts[i + 1] = tempBox;
+						}
+					}
+				}
+			}
+			break;
+			
+		case OWNER:
+			if (order == ASCEND) { // 이름 오름차순
+				for (int j = 0; j < accounts.length - 1; j++) {
+					for (int i = 0; i < accounts.length - 1; i++) {
+						String name1 = accounts[i].getOwner();
+						String name2 = accounts[i+1].getOwner();
+						int unicodeGap1 = name1.compareTo(name2);
+						int unicodeGap2 = name2.compareTo(name1);
+						if (unicodeGap1 >= unicodeGap2) {
+							Account tempBox = accounts[i];
+							accounts[i] = accounts[i + 1];
+							accounts[i + 1] = tempBox;
+						}
+					}
+				}
+			} else if(order==DESCEND) { // 이름 내림차순
+				for (int j = 0; j < accounts.length - 1; j++) {
+					for (int i = 0; i < accounts.length - 1; i++) {
+						String name1 = accounts[i].getOwner();
+						String name2 = accounts[i+1].getOwner();
+						int unicodeGap1 = name1.compareTo(name2);
+						int unicodeGap2 = name2.compareTo(name1);
+						if (unicodeGap1 <= unicodeGap2) {
+							Account tempBox = accounts[i];
+							accounts[i] = accounts[i + 1];
+							accounts[i + 1] = tempBox;
+						}
+					}
+				}
+			}
+			break;
+			
+		case BALANCE:
+			if (order == ASCEND) { // 잔고 오름차순
+				for (int j = 0; j < accounts.length - 1; j++) {
+					for (int i = 0; i < accounts.length - 1; i++) {
+						if (accounts[i].getBalance() >= accounts[i + 1].getBalance()) {
+							Account tempBox = accounts[i];
+							accounts[i] = accounts[i + 1];
+							accounts[i + 1] = tempBox;
+						}
+					}
+				}
+			} else if (order == DESCEND) { // 잔고 내림차순
+				for (int j = 0; j < accounts.length - 1; j++) {
+					for (int i = 0; i < accounts.length - 1; i++) {
+						if (accounts[i].getBalance() <= accounts[i + 1].getBalance()) {
+							Account tempBox = accounts[i];
+							accounts[i] = accounts[i + 1];
+							accounts[i + 1] = tempBox;
+						}
+					}
+				}
+			}
+			break;
+			
+		case IYUL:
+			if (order == ASCEND) { // 이율 오름차순
+				for (int j = 0; j < accounts.length - 1; j++) {
+					for (int i = 0; i < accounts.length - 1; i++) {
+						if (accounts[i].getIyul() >= accounts[i + 1].getIyul()) {
+							Account tempBox = accounts[i];
+							accounts[i] = accounts[i + 1];
+							accounts[i + 1] = tempBox;
+						}
+					}
+				}
+			} else if (order == DESCEND) { // 이율 내림차순
+				for (int j = 0; j < accounts.length - 1; j++) {
+					for (int i = 0; i < accounts.length - 1; i++) {
+						if (accounts[i].getIyul() <= accounts[i + 1].getIyul()) {
+							Account tempBox = accounts[i];
+							accounts[i] = accounts[i + 1];
+							accounts[i + 1] = tempBox;
+						}
+					}
+				}
+			}
+			
+			break;
+		}
+	}
+	
 	/*
 	 * 12.계좌객체를 인자로 받아서 이름,잔고,이율 수정(update)[OPTION]
 	 */
