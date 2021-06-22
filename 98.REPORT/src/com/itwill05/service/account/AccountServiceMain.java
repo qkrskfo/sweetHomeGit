@@ -38,10 +38,13 @@ public class AccountServiceMain {
 		accountService.sortByBalanceDescending();
 		
 		System.out.println("12.AccountService야 계좌객체줄께 (이름,잔고,이율) 수정(update)해줘[option]");
-		accountService.updateAccount(new Account(8888,"QIM",1000,0.3));
+		accountService.updateAccount(1111, "KIM", 100, 0.2);
+		Account updateAccount = new Account(8888, "QIM", 1000, 0.3); //DTO : Data Transfer Object
+		accountService.updateAccount(updateAccount);
+		// 내가한거 accountService.updateAccount(new Account(8888,"QIM",1000,0.3));
 		
 		System.out.println("13.AccountService야 번호,이름,잔고,이율 계좌 데이타줄께 이름,잔고,이율 수정(update)해줘[option]");
-		accountService.updateAccount(9999, "MiM", 1000, 0.3);
+		accountService.updateAccount(9999, "MIM", 1000, 0.3);
 		
 		
 	}
