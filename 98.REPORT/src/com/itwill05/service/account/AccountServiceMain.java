@@ -5,8 +5,8 @@ public class AccountServiceMain {
 	public static void main(String[] args) {
 		AccountService accountService=new AccountService();
 		System.out.println("0.AccountService 객체야 Account추가(배열사이즈증가) [option]");
-		// accountService.addAccount(new Account(9999, "Park", 7770, 6.1));
-		
+		accountService.addAccount(new Account(9000, "NEW1", 7770, 6.1));
+		accountService.addAccount(9000, "NEW2", 8880, 9.2);
 		System.out.println("1.AccountService야 은행계좌들 총계좌수출력해줘");
 		accountService.totAccountNumberPrint();
 		

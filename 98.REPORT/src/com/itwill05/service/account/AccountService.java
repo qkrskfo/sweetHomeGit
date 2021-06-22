@@ -43,7 +43,17 @@ public class AccountService {
 		 *   - 기존배열보다큰배열생성
 		 *   - 기존데이타 옮김
 		 */
-		/*
+		
+		Account[] tempAccounts = new Account[accounts.length+1];
+		// tempAccounts는 로컬객체
+		
+		for (int i = 0; i < accounts.length; i++) {
+			tempAccounts[i] = accounts[i];
+		}
+		tempAccounts[tempAccounts.length-1] = newAccount;
+		this.accounts = tempAccounts;
+		
+		/* 이건 내가한거.
 		Account[] temp = new Account[accounts.length+1];
 		for (int i = 0; i < accounts.length; i++) {
 			temp[i] = accounts[i];
@@ -72,7 +82,8 @@ public class AccountService {
 		 *   - 기존배열보다큰배열생성
 		 *   - 기존데이타 옮김
 		 */
-		
+		Account newAccount = new Account(no, owner, balance, iyul);
+		this.addAccount(newAccount);
 	
 	}
 	/*
