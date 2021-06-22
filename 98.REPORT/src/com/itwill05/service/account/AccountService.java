@@ -226,17 +226,21 @@ public class AccountService {
 	12.계좌객체를 인자로 받아서 이름,잔고,이율 수정(update)[OPTION]
 	*/
 	public void updateAccount(Account updateAccount) {
+		
 		for (int i = 0; i < accounts.length; i++) {
 			if(accounts[i].getNo()==updateAccount.getNo()) {
 				accounts[i] = updateAccount;
 				break;
 			}
 		}
+		
+		
 	}
 	/*
 	13.번호,이름,잔고,이율 인자로받아서 계좌객체수정(update)[OPTION]
 	*/
 	public void updateAccount(int no,String owner,int balance,double iyul) {
+		/* 내가한거
 		for (int i = 0; i < accounts.length; i++) {
 			if(accounts[i].getNo()==no) {
 				accounts[i].setOwner(owner);
@@ -245,5 +249,9 @@ public class AccountService {
 				break;
 			}
 		}
+		*/
+		
+		Account updateAccount = new Account(no, owner, balance, iyul);
+		this.updateAccount(updateAccount);
 	}
 }
