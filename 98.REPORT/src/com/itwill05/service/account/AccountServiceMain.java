@@ -41,6 +41,7 @@ public class AccountServiceMain {
 		accountService.updateAccount(1111, "KIM", 100, 0.2);
 		Account updateAccount = new Account(8888, "QIM", 1000, 0.3); //DTO : Data Transfer Object
 		accountService.updateAccount(updateAccount);
+		accountService.findByNoPrint(8888);
 		// 내가한거 accountService.updateAccount(new Account(8888,"QIM",1000,0.3));
 		
 		System.out.println("13.AccountService야 번호,이름,잔고,이율 계좌 데이타줄께 이름,잔고,이율 수정(update)해줘[option]");

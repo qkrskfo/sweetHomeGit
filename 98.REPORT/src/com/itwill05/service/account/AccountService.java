@@ -235,6 +235,14 @@ public class AccountService {
 		}
 		*/
 		
+		for (int i = 0; i < accounts.length; i++) {
+			if(accounts[i].getNo()==updateAccount.getNo()) {
+				accounts[i] = updateAccount;
+				break;
+			}
+		}
+		
+		
 	}
 	/*
 	13.번호,이름,잔고,이율 인자로받아서 계좌객체수정(update)[OPTION]
