@@ -7,7 +7,7 @@ public class Second {
 	/*
 	 * 이 메소드를 호출하는 경우에는 throws IOException 발생가능성이 있음을 알려주는 기능
 	 */
-	public void method2()  {
+	public void method2() throws IOException, RuntimeException {
 		System.out.println("\t\t Second.method2() 실행");
 		
 		
@@ -20,9 +20,9 @@ public class Second {
 		 */
 		
 		/*
-		 * String str = null;
-			int length = str.length();
-			System.out.println("length: "+length);
+		String str = null;
+		int length = str.length();
+		System.out.println("length: "+length);
 		 */
 		
 		/************* case2 (RunTimeException)******************/
@@ -49,8 +49,8 @@ public class Second {
 		}
 		*/
 		
-		Socket socket = new Socket("www.naver.com", 80);
-		
+		Socket socket = new Socket("www.navor.com", 80);
+		socket.getInputStream();
 		
 		
 		System.out.println("\t\t Second.method2() 반환");
