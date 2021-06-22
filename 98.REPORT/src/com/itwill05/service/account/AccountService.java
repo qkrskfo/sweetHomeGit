@@ -43,36 +43,37 @@ public class AccountService {
 		 *   - 기존배열보다큰배열생성
 		 *   - 기존데이타 옮김
 		 */
+		/*
+		Account[] temp = new Account[accounts.length+1];
+		for (int i = 0; i < accounts.length; i++) {
+			temp[i] = accounts[i];
+		}	
+
+		for (int i = 0; i < temp.length; i++) {
+			if(temp[i]==null) {
+				temp[i] = newAccount;
+				break;
+			}
+		}	
+		
+		Account.headerPrint();
+		for (int i = 0; i < temp.length; i++) {
+			temp[i].print();
+		}
+		*/
 	}
 	/*
 	 * 0.계좌데이타를 인자로받아서 Account[]에추가[OPTION]
 	*/
-	private Account[] accs;
+
 	public void addAccount(int no,String owner,int balance,double iyul) {
 		/*
 		 * 1.배열크기증가
 		 *   - 기존배열보다큰배열생성
 		 *   - 기존데이타 옮김
 		 */
-		accs = new Account[10];		
-		for (int i = 0; i < accounts.length; i++) {
-			accs[i] = accounts[i];
-		}	
 		
-		for (int i = 0; i < accs.length; i++) {
-			if(accs[i]==null) {
-				accs[i].setNo(no);
-				accs[i].setOwner(owner);
-				accs[i].setBalance(balance);
-				accs[i].setIyul(iyul);				
-			}
-		} 	
-		
-		Account.headerPrint();
-		for (int i = 0; i < accs.length; i++) {
-			accs[i].print();
-		}
-			
+	
 	}
 	/*
 	 1.은행계좌들 총계좌수출력메쏘드정의
@@ -155,12 +156,9 @@ public class AccountService {
 		 * 1.계좌번호로 계좌찾기
 		 * 2.입금
 		 */
-		Account.headerPrint();
 		for (int i = 0; i < accounts.length; i++) {
 			if(accounts[i].getNo()==no) {
-				accounts[i].print();
 				accounts[i].deposit(m);
-				accounts[i].print();
 			}
 		}
 	}
@@ -169,12 +167,9 @@ public class AccountService {
 	9.계좌번호,출금할돈 인자로 받아서 출금
 	 */ 
 	public void chulGum(int no,int m) {
-		Account.headerPrint();
 		for (int i = 0; i < accounts.length; i++) {
 			if(accounts[i].getNo()==no) {
-				accounts[i].print();
 				accounts[i].withDraw(m);
-				accounts[i].print();
 			}
 		}
 	}
@@ -199,10 +194,6 @@ public class AccountService {
 				}				
 			}
 		}
-		Account.headerPrint();
-		for (int i = 0; i < accounts.length; i++) {
-			accounts[i].print();
-		}
 	}
 	/*
 	 11.계좌를 잔고순으로 내림차순정렬
@@ -218,10 +209,6 @@ public class AccountService {
 				}
 			}
 		}
-		Account.headerPrint();
-		for (int i = 0; i < accounts.length; i++) {
-			accounts[i].print();
-		}
 	}
 	
 	/*
@@ -229,22 +216,21 @@ public class AccountService {
 	*/
 	public void updateAccount(Account updateAccount) {
 		for (int i = 0; i < accounts.length; i++) {
-			accounts[i] = updateAccount;
-			break;
+			if(accounts[i].getNo()==updateAccount.getNo()) {
+				accounts[i] = updateAccount;
+				break;
+			}
 		}
 	}
 	/*
 	13.번호,이름,잔고,이율 인자로받아서 계좌객체수정(update)[OPTION]
 	*/
 	public void updateAccount(int no,String owner,int balance,double iyul) {
-		Account.headerPrint();
 		for (int i = 0; i < accounts.length; i++) {
 			if(accounts[i].getNo()==no) {
-				accounts[i].print();
 				accounts[i].setOwner(owner);
 				accounts[i].setBalance(balance);
 				accounts[i].setIyul(iyul);
-				accounts[i].print();
 				break;
 			}
 		}

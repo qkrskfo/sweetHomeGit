@@ -5,7 +5,7 @@ public class AccountServiceMain {
 	public static void main(String[] args) {
 		AccountService accountService=new AccountService();
 		System.out.println("0.AccountService 객체야 Account추가(배열사이즈증가) [option]");
-		accountService.addAccount(0000, "Park", 7770, 6.1);
+		// accountService.addAccount(new Account(9999, "Park", 7770, 6.1));
 		
 		System.out.println("1.AccountService야 은행계좌들 총계좌수출력해줘");
 		accountService.totAccountNumberPrint();
@@ -38,7 +38,8 @@ public class AccountServiceMain {
 		accountService.sortByBalanceDescending();
 		
 		System.out.println("12.AccountService야 계좌객체줄께 (이름,잔고,이율) 수정(update)해줘[option]");
-
+		accountService.updateAccount(new Account(8888,"QIM",1000,0.3));
+		
 		System.out.println("13.AccountService야 번호,이름,잔고,이율 계좌 데이타줄께 이름,잔고,이율 수정(update)해줘[option]");
 		accountService.updateAccount(9999, "MiM", 1000, 0.3);
 		
