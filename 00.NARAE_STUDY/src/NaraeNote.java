@@ -162,9 +162,35 @@ true, false로 나옴
 0621
 추상메소드는 재정의를 강제함
 
+0623
+wrapper는 스트링과 비슷함
+래퍼 클래스(Wrapper class)
+프로그램에 따라 기본 타입의 데이터를 객체로 취급해야 하는 경우가 있습니다.
+예를 들어, 메소드의 인수로 객체 타입만이 요구되면, 기본 타입의 데이터를 그대로 사용할 수는 없습니다.
+이때에는 기본 타입의 데이터를 먼저 객체로 변환한 후 작업을 수행해야 합니다.
+
+이렇게 8개의 기본 타입에 해당하는 데이터를 객체로 포장해 주는 클래스를 래퍼 클래스(Wrapper class)라고 합니다.
+래퍼 클래스는 각각의 타입에 해당하는 데이터를 인수로 전달받아, 해당 값을 가지는 객체로 만들어 줍니다.
+이러한 래퍼 클래스는 모두 java.lang 패키지에 포함되어 제공됩니다.
+
+예제
+Integer num = new Integer(17); // 박싱
+int n = num.intValue();        // 언박싱
+System.out.println(n);
+
+Character ch = 'X'; // Character ch = new Character('X'); : 오토박싱
+char c = ch;        // char c = ch.charValue();           : 오토언박싱
+System.out.println(c);
 
 
 
+System.out.println("Object[]");
+		Object[] scoreArray = new Object[4];
+		scoreArray[0] = 89;
+		scoreArray[1] = 45;
+		scoreArray[2] = 78;
+		scoreArray[3] = 99;
+		// scoreArray[0] 이건 오브젝트 타입이야
 
 
 

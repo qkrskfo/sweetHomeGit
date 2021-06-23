@@ -358,28 +358,24 @@ public class AccountServiceReturn {
 	 */
 	public Account deleteByNo(int no) {
 		Account deleteAccount=null;
-		
-		int count = 0;
 		for (int i = 0; i < accounts.length; i++) {
-			if(accounts[i].getNo() == no) {
-				deleteAccount = accounts[i];
-				accounts[i] = null;
-			} else {
-				count++;
+			if(accounts[i].getNo()==no) { 
+				deleteAccount=accounts[i]; // 삭제 Account객체 주소값 저장
+				accounts[i]=null; // 삭제 Index 주소값에 null 저장 (Account객체 삭제)
+				break;
 			}
 		}
-		
-		Account[] tempAccount = null;
+		Account[] temp=new Account[accounts.length-1]; // 감소된 배열길이를 가진 배열객체 생성
+		int tempIndexNum=0;
 		for (int i = 0; i < accounts.length; i++) {
-			if(accounts[i] != null) {
-				tempAccount[count-1] = accounts[i];
-				count--;
+			if(accounts[i]!=null) {
+				temp[tempIndexNum]=accounts[i];
+				tempIndexNum++;
+				// if문 조건식 부합 시 옮겨 받는 인덱스가 1씩 증가하면서 데이터주소값 저장(반복)
 			}
 		}
-		
-		accounts = tempAccount;
-		
-		return deleteAccount;
+		accounts=temp;
+		return deleteAccount; // 삭제한 계좌 객체 반환
 	}
 	
 }

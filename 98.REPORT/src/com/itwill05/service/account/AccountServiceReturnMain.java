@@ -48,6 +48,8 @@ public class AccountServiceReturnMain {
 		System.out.println("12.AccountService야 계좌객체줄께 이름,잔고,이율 수정(update)해줘");
 		System.out.println("13.AccountService야 계좌데이타줄께 이름,잔고,이율 수정(update)해줘");
 		System.out.println("14.AccountServiceReturn객체야 계좌번호줄께 계좌삭제한후 삭제한계좌객체반환해줘");
+		accountServiceReturn.deleteByNo(1111);
+		accountServiceReturn.print(); // 계좌 삭제 후 전체출력 확인
 		
 	}
 
