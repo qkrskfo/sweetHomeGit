@@ -64,7 +64,12 @@ public class ArrayList2 {
 		System.out.println("# arrayList의 size: "+accountList.size());
 		
 		
-		
+		System.out.println("--------- 전체출력 ----------");
+		for (int i = 0; i < accountList.size(); i++) {
+			 // accountList.get(i); 오브젝트로 반환하기 때문에
+			Account tempAccount = (Account)accountList.get(i);
+			System.out.println(tempAccount);
+		}
 		
 	}
 }
