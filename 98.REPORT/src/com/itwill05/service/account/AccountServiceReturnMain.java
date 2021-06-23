@@ -38,11 +38,11 @@ public class AccountServiceReturnMain {
 		accountServiceReturn.chulGum(1111, 500);
 		
 		System.out.println("10.AccountServiceReturn객체야 계좌를 잔고순으로 오름차순정렬해줘");
-		accountServiceReturn.sort(3, 1);
+		accountServiceReturn.sort(accountServiceReturn.BALANCE, accountServiceReturn.ASCEND);
 		accountServiceReturn.print();
 		
 		System.out.println("11.AccountServiceReturn객체야 계좌를 잔고순으로 내림차순정렬해줘");
-		accountServiceReturn.sort(3, 2);
+		accountServiceReturn.sort(accountServiceReturn.BALANCE, accountServiceReturn.DESCEND);
 		accountServiceReturn.print();
 		
 		System.out.println("12.AccountService야 계좌객체줄께 이름,잔고,이율 수정(update)해줘");

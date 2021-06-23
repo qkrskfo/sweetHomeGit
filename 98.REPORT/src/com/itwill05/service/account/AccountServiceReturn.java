@@ -204,12 +204,12 @@ public class AccountServiceReturn {
 	 *       if문 쓰면됨. 상수도 쓰래.. case 로 받아봐
 	 */
 	
-	private final int NO = 1;
-	private final int OWNER = 2;
-	private final int BALANCE = 3;
-	private final int IYUL = 4;
-	private final int ASCEND = 1;
-	private final int DESCEND = 2;
+	final int NO = 1;
+	final int OWNER = 2;
+	final int BALANCE = 3;
+	final int IYUL = 4;
+	final int ASCEND = 1;
+	final int DESCEND = 2;
 	
 	public void sort(int standard, int order) {
 
