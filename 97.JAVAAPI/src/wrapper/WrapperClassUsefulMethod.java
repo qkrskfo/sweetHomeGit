@@ -82,9 +82,34 @@ public class WrapperClassUsefulMethod {
 		System.out.println("char[] --> String: "+str6);
 		
 		String strs = "Hello Java!! $$ %% ^^~!@)^(&][{)}663 김씨~";
-		
-		
-		
+		for (int i = 0; i < strs.length(); i++) {
+			char tempChar = strs.charAt(i);
+			int type = Character.getType(tempChar); // 어떤 타입의 문자인지 알아냄
+			System.out.println(tempChar+" type: "+type);
+			if(type == Character.UPPERCASE_LETTER) { // 상수로 갖고 있음. uppercase_letter : 대문자
+				System.out.println("UPPERCASE_LETTER:" + tempChar);
+			}
+			if(type == Character.LOWERCASE_LETTER) {
+				System.out.println("LOWERCASE_LETTER: "+tempChar);
+			}
+			if (type == Character.DECIMAL_DIGIT_NUMBER) { // 10진의 숫자 넘버인지
+				System.out.println("DECIMAL_DIGIT_NUMBER: "+tempChar);
+			}
+			if (type == Character.SPACE_SEPARATOR) { // 공백인지
+				System.out.println("SPACE_SEPARATOR: "+tempChar);
+			}
+			if (Character.isWhitespace(tempChar)) { // 유틸리티
+				// isSpace : The method isSpace(char) from the type Character is deprecated
+				// isWhitespace로 대체해서 사용하래
+				System.out.println("Character.isSpaceChar: "+tempChar);
+			}
+			if (Character.isAlphabetic(tempChar)) { // 유틸리티
+				System.out.println("Character.isAlphabetic: "+tempChar);
+			}
+			
+			
+			
+		}
 	}
 
 }
