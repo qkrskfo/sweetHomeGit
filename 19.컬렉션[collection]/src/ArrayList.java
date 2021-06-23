@@ -20,5 +20,11 @@ public class ArrayList {
 			Account tempAccout = (Account)anyTypeArray[i];
 			tempAccout.print();
 		}
+		
+		System.out.println("----------------------------");
+		
+		ArrayList accountList = new ArrayList();
+		
+		
 	}	
 }
