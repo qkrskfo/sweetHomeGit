@@ -43,6 +43,7 @@ public class ArrayList2 {
 		// 특정 인덱스에 있는걸 대치시키는 것.
 		accountList.set(3, new Account(3337, "BABO", 50000, 8.1));
 		
+		
 		System.out.println("--------- 3. get ----------");
 		// 특정 인덱스에 있는 걸 참조받고자 하는 것. 찾아준다.
 		accountList.get(1); // 1번꺼 줘봐~
@@ -53,7 +54,17 @@ public class ArrayList2 {
 		getAccount = (Account)accountList.get(accountList.size());
 		getAccount.print();
 		
+		
 		System.out.println("--------- 4. remove ----------");
-
+		// 몇번째 인덱스꺼를 지워줘.
+		accountList.remove(3);
+		Account removeAccount = (Account)accountList.remove(3);
+		removeAccount.print();
+		System.out.println(accountList);
+		System.out.println("# arrayList의 size: "+accountList.size());
+		
+		
+		
+		
 	}
 }

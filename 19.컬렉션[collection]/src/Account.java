@@ -66,7 +66,7 @@ public class Account {
 	//toString 재정의 : source -> 
 	@Override
 	public String toString() {
-		return "Account [no=" + no + "]";
+		return "("+no+" "+owner+ " "+balance+" "+iyul+")";
 	}
 
 	//getter method
