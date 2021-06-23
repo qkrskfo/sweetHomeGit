@@ -52,8 +52,6 @@ public class AccountServiceReturn {
 		}
 		newAccounts[accounts.length] = newAccount;
 		 */
-		
-		
 	}
 
 	/*

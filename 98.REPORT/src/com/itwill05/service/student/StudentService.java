@@ -27,7 +27,7 @@ public class StudentService {
 	 * 0.학생객체받아서 추가
 	 */
 	public void addStudent(Student student) {
-		
+		Student[] tempStudent = new Student[students.length+1];
 	}
 	/*
 	 * 1. 전체학생총점,평균,평점계산
