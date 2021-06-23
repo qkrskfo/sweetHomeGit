@@ -347,6 +347,8 @@ public class AccountServiceReturn {
 	public void updateAccount(int no, String owner, int balance, double iyul) {
 		this.updateAccount(new Account(no, owner, balance, iyul));
 	}
+	
+	
 	/*
 	 * 14.계좌번호 인자로받아서 삭제해줘[OPTION] 
 	 * 	A. 배열에서 Account객체삭제 
@@ -356,6 +358,26 @@ public class AccountServiceReturn {
 	 */
 	public Account deleteByNo(int no) {
 		Account deleteAccount=null;
+		
+		int count = 0;
+		for (int i = 0; i < accounts.length; i++) {
+			if(accounts[i].getNo() == no) {
+				deleteAccount = accounts[i];
+				accounts[i] = null;
+			} else {
+				count++;
+			}
+		}
+		
+		Account[] tempAccount = null;
+		for (int i = 0; i < accounts.length; i++) {
+			if(accounts[i] != null) {
+				tempAccount[count-1] = accounts[i];
+				count--;
+			}
+		}
+		
+		accounts = tempAccount;
 		
 		return deleteAccount;
 	}
