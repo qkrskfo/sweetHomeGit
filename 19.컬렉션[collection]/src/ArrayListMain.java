@@ -18,6 +18,7 @@ public class ArrayListMain {
 		anyTypeArray[2]=acc3;
 		anyTypeArray[3]=acc4;
 		anyTypeArray[4]=acc5;
+		
 		for (int i = 0; i < anyTypeArray.length; i++) {
 			Account tempAccount=(Account)anyTypeArray[i];
 			tempAccount.print();
@@ -25,36 +26,53 @@ public class ArrayListMain {
 		
 		System.out.println("-----------------------------------------");
 		ArrayList accountList=new ArrayList();
-		System.out.println("# size:"+accountList.size());
+		System.out.println("# arrayList의 size:"+accountList.size());
 		System.out.println("********** 1.add *************");
 		accountList.add(acc1);
 		accountList.add(acc2);
 		accountList.add(acc3);
 		accountList.add(acc4);
 		accountList.add(acc5);
-		System.out.println("# size:"+accountList.size());
+		System.out.println("# arrayList의 size: "+accountList.size());
 		System.out.println(">>"+accountList);
 		accountList.add(3,new Account(3334, "KIMM",9000, 0.9));
 		System.out.println(">>"+accountList);
-		System.out.println("# size:"+accountList.size());
+		System.out.println("# arrayList의 size: "+accountList.size());
+		
+		
 		System.out.println("*********** 2.set *************");
+		// 특정 인덱스에 있는걸 대치시키는 것.
 		accountList.set(3, new Account(3337, "PARK", 8888, 8.8));
 		System.out.println(accountList);
 		System.out.println("# size:"+accountList.size());
+		
+		
+		
 		System.out.println("*********** 3.get *************");
+		// 특정 인덱스에 있는 걸 참조받고자 하는 것. 찾아준다.
+		accountList.get(1); // 1번꺼 줘봐~
+		// Object 타입이면 반환을 object로 반환함
 		Account getAccount =(Account)accountList.get(1);
+		// 제네릭이라는걸로 진행할거야.
 		getAccount.print();
 		getAccount =(Account)accountList.get(accountList.size()-1);
 		getAccount.print();
+		
+		
+		
 		System.out.println("************ 4.remove *************");
+		// 몇번째 인덱스꺼를 지워줘.
+		accountList.remove(3);
 		Account removeAccount = (Account)accountList.remove(3);
 		removeAccount.print();
 		System.out.println(accountList);
-		System.out.println("# size:"+accountList.size());
+		System.out.println("# arrayList의 size: "+accountList.size());
 		
-		System.out.println("%%%%%%%%%%%%%%%%%%%%%%%업무실행%%%%%%%%%%%%%%%%%%%%%");
+		System.out.println("================business method (업무실행)=================");
 		System.out.println("****************1.계좌전체출력******************");
 		for(int i=0;i<accountList.size();i++) {
+			// accountList.get(i); 로 쓰면 오브젝트로 반환하기 때문에
+			// 아래껄로 수정.
 			Account tempAccount=(Account)accountList.get(i);
 			System.out.println(tempAccount);
 		}
