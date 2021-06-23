@@ -192,6 +192,7 @@ System.out.println("Object[]");
 		scoreArray[3] = 99;
 		// scoreArray[0] 이건 오브젝트 타입이야
 
+컬렉션 프레임워크!
 
 
 */
