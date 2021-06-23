@@ -25,7 +25,7 @@ public class StudentServiceUIMain {
 			System.out.println("----------------------------");
 			System.out.print("메뉴번호선택> ");
 			
-			int menuNo =scanner.nextInt();
+			int menuNo =scanner.nextInt(); // 여기서 항상 대기함
 			if(menuNo==0) {
 				//0. 전체학생출력
 				studentService.print();
@@ -51,8 +51,11 @@ public class StudentServiceUIMain {
 				System.out.print(" >>학점입력: ");
 				String gradeStr = scanner.next();
 				char grade = gradeStr.charAt(0);
+				// studentService.findByGrade를 구현해서 하래
 			}else if(menuNo==5) {
 				//5. 이름으로 검색
+				System.out.print(" >>이름입력: ");
+				String nameStr = scanner.next();
 			}else if(menuNo==6) {
 				//6. 학생총점으로 오름차순정렬
 			}else if(menuNo==7) {
