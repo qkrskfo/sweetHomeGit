@@ -91,10 +91,12 @@ public class Student {
 	}
 	/*
 	 * 석차증가
-	 */
+	
 	public void increaseRank() {
 		this.rank=this.rank+1;
 	}
+	 */
+	
 	public int getNo() {
 		return no;
 	}

@@ -17,10 +17,9 @@ public class StudentService {
 	 *  0.전체학생출력
 	 */
 	public void print() {
-		for (int i = 0; i < students.length; i++) {
-			students[i].print();
+
 		}
-	}
+
 	/*
 	 * 0.학생객체받아서 추가
 	 */

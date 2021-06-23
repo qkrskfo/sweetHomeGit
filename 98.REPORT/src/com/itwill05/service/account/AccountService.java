@@ -170,6 +170,7 @@ public class AccountService {
 		for (int i = 0; i < accounts.length; i++) {
 			if(accounts[i].getNo()==no) {
 				accounts[i].deposit(m);
+				break;
 			}
 		}
 	}

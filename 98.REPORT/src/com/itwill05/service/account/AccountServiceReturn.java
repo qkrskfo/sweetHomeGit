@@ -51,14 +51,18 @@ public class AccountServiceReturn {
 		}
 		newAccounts[accounts.length] = newAccount;
 		this.accounts = newAccounts;
+		
 	}
 
 	/*
 	 * 1.은행계좌들 총계좌수 반환메써드
 	 */
 	public int getTotAccountNumber() {
+		return accounts.length;
+		/* 내가한거. 위에는 선생님이 한거
 		int getTotAccountNumber = accounts.length;
 		return getTotAccountNumber;
+		*/
 	}
 
 	/*
@@ -86,13 +90,14 @@ public class AccountServiceReturn {
 	 * 4.계좌번호를 인자로받아서 계좌객체주소 한개반환
 	 */
 	public Account findByNo(int no) {
-		Account tempAccount = null;
+		Account findAccount = null;
 		for (int i = 0; i < accounts.length; i++) {
 			if(accounts[i].getNo()==no) {
-				tempAccount = accounts[i];
+				findAccount = accounts[i];
+				break; // 더이상 돌 필요 없잖앙!
 			}
 		}
-		return tempAccount;
+		return findAccount;
 	}
 
 	/*
@@ -154,34 +159,48 @@ public class AccountServiceReturn {
 	 * 7.계좌주이름 인자로받아서 이름과일치하는계좌들배열객체 참조변수반환
 	 */
 	public Account[] findByName(String name) {
+		
 		Account[] findAccounts = null;
+		
 		int leng = 0;
 		for (int i = 0; i < accounts.length; i++) {
-			if(accounts[i].getOwner()==name) {
+			if(accounts[i].getOwner().equals(name)) {
 				leng++;
 			}
 		}
 		
 		findAccounts = new Account[leng];
-		
+		/* 내가한거
 		int findIdx = 0;
 		for (int i = 0; i < accounts.length; i++) {
-			if(accounts[i].getOwner()==name) {
+			if(accounts[i].getOwner().equals(name)) {
 				findAccounts[findIdx++] = accounts[i];
 			}
 		}
+		*/
 		
+		// 이렇게도 초기화 가능해!!
+		for (int i = 0, index = 0; i < accounts.length; i++) {
+			if(accounts[i].getOwner().equals(name)) {
+				findAccounts[index] = accounts[i];
+				index++;
+			}
+		}
 		return findAccounts;
 	}
 
 	/*
-	 * 8.계좌번호,입금할돈 인자로 받아서 입금
+	 * 8.계좌번호,입금할돈 인자로 받아서 입금한 후 입금계
 	 */
 	public Account ipGum(int no, int m) {
 		/*
-		 * 1.계좌번호로 계좌찾기 2.입금
+		 * 1. 계좌번호로 계좌찾기
+		 * 2. 입금
+		 * 3. 입금계좌의 참조변수 반환
 		 */
-		Account findAccount = this.findByNo(no);
+		Account findAccount = this.findByNo(no); 
+		// 계좌번호로 계좌 찾는 메소드를 만들어놨으니까 이용해!
+		//  findByNo메소드가 반환을 하지 않으면 이 메소드는 쓸 수가 없어.
 		findAccount.deposit(m);
 		return findAccount;
 
