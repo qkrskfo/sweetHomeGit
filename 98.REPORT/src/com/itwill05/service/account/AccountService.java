@@ -52,26 +52,9 @@ public class AccountService {
 		}
 		tempAccounts[tempAccounts.length-1] = newAccount;
 		this.accounts = tempAccounts;
-		
-		/* 이건 내가한거.
-		Account[] temp = new Account[accounts.length+1];
-		for (int i = 0; i < accounts.length; i++) {
-			temp[i] = accounts[i];
-		}	
 
-		for (int i = 0; i < temp.length; i++) {
-			if(temp[i]==null) {
-				temp[i] = newAccount;
-				break;
-			}
-		}	
-		
-		Account.headerPrint();
-		for (int i = 0; i < temp.length; i++) {
-			temp[i].print();
-		}
-		*/
 	}
+	
 	/*
 	 * 0.계좌데이타를 인자로받아서 Account[]에추가[OPTION]
 	*/

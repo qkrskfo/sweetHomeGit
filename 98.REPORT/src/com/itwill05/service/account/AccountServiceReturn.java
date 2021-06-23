@@ -40,17 +40,19 @@ public class AccountServiceReturn {
 	 */
 	public void addAccount(int no, String owner, int balance, double iyul) {
 		Account newAccount = new Account(no, owner, balance, iyul);
+		this.addAccount(newAccount);
 		/*
 		 * 1.배열크기증가 
 		 * 	- 기존배열보다큰배열생성 
 		 * 	- 기존데이타 옮김
-		 */
+		
 		Account[] newAccounts = new Account[accounts.length + 1];
 		for (int i = 0; i < accounts.length; i++) {
 			newAccounts[i] = accounts[i];
 		}
 		newAccounts[accounts.length] = newAccount;
-		this.accounts = newAccounts;
+		 */
+		
 		
 	}
 
