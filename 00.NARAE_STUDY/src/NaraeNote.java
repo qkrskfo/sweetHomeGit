@@ -194,6 +194,43 @@ System.out.println("Object[]");
 
 컬렉션 프레임워크!
 
+객체들을 효율적으로 추가, 삭제, 검색할 수 있도록
+인터페이스를 구현한 클래스를 자바 유틸리티 패키지로 제공
+이를 총칭해서 컬렉션 프레임워크라고 함!
+
+라이브러리가 뭐에요?
+프레임이 뭐에요?
+사용방법을 정의한 인터페이스 - specification
+
+컬렉션 - List 계열, Set 계열로 나눠짐
+List, Set 인터페이스는 공통 규칙이 있어서 collection 인터페이스를 상속받음
+Map 인터페이스는 구조상의 차이로 인해 별도로 정의됨.
+List - Vector, ArrayList, LinkedList, Stack, Queue
+Set - HashSet, TreeSet
+Map - HashMap, TreeMap, Hashtable, Properties
+
+재사용 가능한 인터페이스와 클래스들의 집합 = 라이브러리
+
+
+
+List는 순서가 있으며 중복을 허용하는 특징의 데이터 구조
+ - 배열도 순서가 있잖아. 순서가 있으니까 정렬을 할 수 있는거고.
+ - 중복 허용 = 같은 객체가 두번 들어갈 수 있다는 것.
+ - 배열과 가장 유사함
+ - 인덱스가 존재함.
+
+ArrayList는 object 타입.
+
+
+Set은 순서가 없으며 중복을 허용하지 않는 특징의 데이터 구조
+ - 
+hashSet을 많이 씀
+
+ListCollection은 
+
+SetCollection은 집합. 보따리. 순서에 상관없고 중복이 허용되지 않음.
+
+
 
 */
 		
