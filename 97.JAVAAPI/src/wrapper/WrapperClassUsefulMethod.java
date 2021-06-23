@@ -81,6 +81,8 @@ public class WrapperClassUsefulMethod {
 		String str6 = new String(ca5);
 		System.out.println("char[] --> String: "+str6);
 		
+		String strs = "Hello Java!! $$ %% ^^~!@)^(&][{)}663 김씨~";
+		
 		
 		
 	}
