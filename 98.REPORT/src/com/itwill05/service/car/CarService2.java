@@ -1,14 +1,13 @@
 package com.itwill05.service.car;
 
-
-public class CarService {
+public class CarService2 {
 	
 	private Car[] carArray;
 	
-	public CarService() {
+	public CarService2() {
 		carArray=new Car[30]; // 디폴트로하면 30개
 	}
-	public CarService(int count) {
+	public CarService2(int count) {
 		carArray=new Car[count]; // 숫자를 넣으면 넣은만큼 생성되게 한 것.
 	}
 	/*
@@ -16,13 +15,15 @@ public class CarService {
 	     - 주차장이 만차이면 입차실패
 	     - 차량번호중복체크
 	*/
-	public boolean ipCha(Car car) {
-		boolean isSuccess = false;
+	public int ipCha(Car car) {
+		int count = 0;
+		//boolean isSuccess = false;
 		/*
 		 * 1.주차구역 확보(주차장 만차인지 체크)
 		 * 2.차량번호 중복체크
 		 */
 		
+		/*
 		Car[] tempCar = new Car[carArray.length];
 		for (int i = 0; i < carArray.length; i++) {
 			tempCar[i] = carArray[i];
@@ -33,8 +34,36 @@ public class CarService {
 		}
 		this.carArray = tempCar;
 		
-
-		return isSuccess;
+		int count = 0;
+		
+		Car[] tempCar = new Car[carArray.length];
+		for (int i = 0; i < carArray.length; i++) {
+			tempCar[i] = carArray[i];
+			if(tempCar[i]==null) {
+				if(carArray[i]!=null && !carArray[i].getNo().equals(car.getNo())) {
+					tempCar[i] = car;
+					break;
+				} else {
+					isSuccess = false;
+				}
+			}
+		}
+		this.carArray = tempCar;
+		*/
+		/*
+		for (int i = 0; i < carArray.length; i++) {
+			if(carArray[i] == null) {
+				if(carArray[i]!=null && !carArray[i].getNo().equals(car.getNo())) {
+					carArray[i] = car;
+					isSuccess = true;
+					break;
+				} else {
+					isSuccess = false;
+				}
+			}
+		}
+		*/
+		return count;
 	}
 	
 	/*
