@@ -16,46 +16,83 @@ public class CarService {
 	     - 주차장이 만차이면 입차실패
 	     - 차량번호중복체크
 	*/
-	
+
 	public int ipCha(Car car) {
 
-        int status = 0;
-        /*
-         * 1.주차구역 확보(주차장 만차인지 체크)
-         * 2.차량번호 중복체크
-         */
+		int status = 0;
+		/*
+		 * 1.주차구역 확보(주차장 만차인지 체크) 
+		 * 2.차량번호 중복체크 
+		 * 3. 입차
+		 */
 
-        for (int i = 0; i < carArray.length; i++) {
-            if(carArray[i]!=null) {
-                status = 1;
-            } else if(carArray[i]!=null && carArray[i].getNo()==car.getNo()) {
-                    status = 2;
-                    break;
-            } else {
-                    status = 3;
-                    break;
-            }
-        }
+		for (int i = 0; i < carArray.length; i++) {
+			if (carArray[i] != null) {
+				status = 1;
 
-        switch (status) {
-        case 1:
-            System.out.println("주차장이 만차입니다.");
-            break;
-        case 2:
-            System.out.println("차량번호가 중복되어 주차할 수 없습니다.");
-            break;
-        case 3:
-            for (int i = 0; i < carArray.length; i++) {
-                if(carArray[i]== null) {
-                    carArray[i] = car;
-                    break;
-                }
-            }
-        }
-
-        return status;
-
-    }
+				if (carArray[i].getNo() == car.getNo()) {
+					status = 2;
+					break;
+				}
+				
+			} else {
+				status = 3;
+				carArray[i] = car;
+				break;
+			}
+		}
+		return status;
+	}
+	
+//	public int ipCha(Car car) {
+//
+//        int status = 0;
+//        int duptime = -1;
+//        Car tempcar = new Car();
+//        /*
+//         * 1.주차구역 확보(주차장 만차인지 체크)
+//         * 2.차량번호 중복체크
+//         */
+//        // 효율에 대해서 따져보자~
+//        // 자리 있으면 그 놈 바로 집어넣으면 되는데 왜 끝까지 돌게해?
+//        // 차번호를 확인해서 같으면 중복이 이미 있어요! 바로 종료
+//        // 끝까지 돌았음에도 자리가 없다 => 종료
+//        // 다양한 변수 활용해서 자세한 정보 주기 tempcar 활용
+//        for (int i = 0; i < carArray.length; i++) {
+//        	tempcar = car;
+//        	
+//            if(carArray[i] == null) {
+//                status = 3;
+//                break;
+//            } else if(carArray[i].getNo()==car.getNo()) {
+//                status = 2;
+//                duptime = carArray[i].getInTime();
+//                break;
+//            } else {
+//                status = 1;
+//            }
+//        }
+//
+//        switch (status) {
+//        case 1:
+//            System.out.println("주차장이 만차입니다.");
+//            break;
+//        case 2:
+//            System.out.println("'"+tempcar.getNo()+"'의 차량이 이미 "+ duptime +"시에 입차하였기 때문에 주차할 수 없습니다.");
+//            break;
+//        case 3:
+//            for (int i = 0; i < carArray.length; i++) {
+//                if(carArray[i] == null) {
+//                	System.out.println("'"+tempcar.getNo()+"' 차량이 정상적으로 "+tempcar.getInTime() +"시에 입차 성공하였습니다.");
+//                    carArray[i] = car;
+//                    break;
+//                }
+//            }
+//        }
+//
+//        return status;
+//
+//    }
 	
 	
 	/*
@@ -99,7 +136,7 @@ public class CarService {
 	public Car findCarNo(String noStr) {
 		Car findCar = null;
 		for (int i = 0; i < carArray.length; i++) {
-			if(carArray[i].getNo().equals(noStr)) {
+			if(carArray[i]!=null && carArray[i].getNo().equals(noStr)) {
 				findCar = carArray[i];
 				break;
 			}
