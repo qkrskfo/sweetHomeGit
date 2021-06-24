@@ -30,7 +30,6 @@ public class Car {
 	
 	
 	public void calculateFee() {
-	
 		this.fee =(this.outTime-this.inTime)*1000; 
 	}
 	// - 타이틀출력

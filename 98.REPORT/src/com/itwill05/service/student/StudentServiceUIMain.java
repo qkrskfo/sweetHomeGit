@@ -30,12 +30,20 @@ public class StudentServiceUIMain {
 			if(menuNo==0) {
 				//0. 전체학생출력
 				studentService.print();
+				System.out.println();
+				System.out.println();
 			}else if(menuNo==1) {
 				//1. 전체학생총점,평균,평점계산
 				studentService.calculate();
 				studentService.print();
+				System.out.println();
+				System.out.println();
 			}else if(menuNo==2) {
 				//2. 전체학생 총점으로 석차계산
+				studentService.calculateRank();
+				studentService.print();
+				System.out.println();
+				System.out.println();
 			}else if(menuNo==3) {
 				//3. 번호로   검색
 				System.out.print(" >>번호입력: ");
@@ -47,20 +55,53 @@ public class StudentServiceUIMain {
 				}else {
 					System.out.println(no+ "번 학생없다..");
 				}
+				System.out.println();
+				System.out.println();
 			}else if(menuNo==4) {
 				//4. 학점으로 검색
 				System.out.print(" >>학점입력: ");
 				String gradeStr = scanner.next();
-				char grade = gradeStr.charAt(0);
-				// studentService.findByGrade를 구현해서 하래
+				char grade = gradeStr.charAt(0); // 스트링을 char로 바꾸려고 char의 첫번째 글자를 따오는 메소드
+				Student[] findGrade = studentService.findByGrade(grade);
+				if(findGrade!=null) {
+					Student.headerPrint();
+					for (int i = 0; i < findGrade.length; i++) {
+						findGrade[i].print();
+					}
+				} else {
+					System.out.println(grade+"학점 학생 없다..");
+				}
+				System.out.println();
+				System.out.println();
+				
 			}else if(menuNo==5) {
 				//5. 이름으로 검색
 				System.out.print(" >>이름입력: ");
 				String nameStr = scanner.next();
+				Student[] findName = studentService.findByName(nameStr);
+				if(findName!=null) {
+					Student.headerPrint();
+					for (int i = 0; i < findName.length; i++) {
+						findName[i].print();
+					} 
+				} else {
+					System.out.println("이름이 "+nameStr+"인 학생 없다..");
+				}
+				System.out.println();
+				System.out.println();
+					
 			}else if(menuNo==6) {
 				//6. 학생총점으로 오름차순정렬
+				studentService.sortTotalAscend();
+				studentService.print();
+				System.out.println();
+				System.out.println();
 			}else if(menuNo==7) {
 				//7. 학생이름으로 오름차순정렬
+				studentService.sortNameAscend();
+				studentService.print();
+				System.out.println();
+				System.out.println();
 			}else if(menuNo==8) {
 				//8. 학생추가
 				System.out.print(" >>학생정보입력(번호 이름 국어 영어 수학: ");
@@ -79,6 +120,8 @@ public class StudentServiceUIMain {
 			
 			studentService.addStudent(newStudent); // 아직 구현 안되어있데
 			
+			System.out.println();
+			System.out.println();
 			
 			}else if(menuNo==9) {
 				run=false;

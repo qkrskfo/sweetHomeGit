@@ -5,16 +5,30 @@ public class CarService {
 	private Car[] carArray;
 	
 	public CarService() {
-		carArray=new Car[30];
+		carArray=new Car[30]; // 디폴트로하면 30개
 	}
 	public CarService(int count) {
-		carArray=new Car[count];
+		carArray=new Car[count]; // 숫자를 넣으면 넣은만큼 생성되게 한 것.
 	}
 	/*
 	0. 차객체인자로받아서 입차후 성공실패여부반환
 	     - 주차장이 만차이면 입차실패
 	     - 차량번호중복체크
 	*/
+	public boolean ipCha(Car car) {
+		boolean isSuccess = false;
+		/*
+		 * 1.주차구역 확보(주차장 만차인지 체크)
+		 * 2.차량번호 중복체크
+		 */
+		for (int i = 0; i < carArray.length; i++) {
+			if(carArray[i] == null && carArray[i].getNo()!=car.getNo()) {
+				isSuccess = true;
+				break;
+			}
+		}
+		return isSuccess;
+	}
 	
 	/*
 	1. 전체차량출력

@@ -137,7 +137,7 @@ public class AccountService {
 	public void findByNamePrint(String name) {
 		Account.headerPrint();
 		for (int i = 0; i < accounts.length; i++) {
-			if(accounts[i].getOwner()==name) { 
+			if(accounts[i].getOwner().equals(name)) { 
 				accounts[i].print();
 			}
 		}
