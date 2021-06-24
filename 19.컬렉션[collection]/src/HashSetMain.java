@@ -1,4 +1,5 @@
 import java.util.HashSet;
+import java.util.Iterator;
 
 public class HashSetMain {
 
@@ -46,6 +47,23 @@ public class HashSetMain {
 		System.out.println("isRemove:"+isRemove);
 		System.out.println("# set Size : "+accountSet.size());
 		System.out.println(accountSet);
+		
+		System.out.println("iteration[전체출력]");
+		Iterator accountIter = accountSet.iterator();
+		// 기존 보따리에 있는 account를 끄집어낼 수 있도록 객체에 담아서 주는 참조변수
+		// set은 꺼낼수 없는 구조이기 때문에 반복할 수 있도록 iterator가 재배치해서 주는 것
+		System.out.println(accountIter);
+		//이터레이터로 뭘 할 수 있냐면
+		while(accountIter.hasNext()) {
+			// 0번째 1번째 하는 인덱스가 없으니까 해즈넥스트를 쓰는 것. 옆에 이써?
+			// 넥스트가 존재하면 true 없으면 false
+			// 옆에 있따면
+			Account tempAccount = (Account)accountIter.next(); // next가 없을때까지
+			tempAccount.print();
+		}
+		System.out.println(accountIter.hasNext()); // false 니까 더이상 뽑으면 x
+//		accountIter.next();  << java.util.NoSuchElementException >> 옆에 없는데 호출하면 익셉션 발생  
+		
 		
 	}
 

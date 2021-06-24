@@ -235,6 +235,9 @@ SetCollection은 집합. 보따리. 순서에 상관없고 중복이 허용되�
 map과 arrayList를 같이 쓴다...
 map 안에 map을 넣고 그 안에 arrayList를 넣고..
 
+이터레이션 iteration 반복
+Iterator를 호출
+ - 자기가 
 */
 		
 
