@@ -23,6 +23,54 @@ public class HashMapMain {
 		carMap.put("3333", new Car("삼삼삼", 15));
 		System.out.println("map size: "+carMap.size());
 		System.out.println(carMap);
+		
+		carMap.put("6666", new Car("6666", 21));
+		System.out.println("map size: "+carMap.size());
+		System.out.println(carMap);
+		
+		
+		System.out.println("---- 2. get ----");
+		Car getCar = (Car)carMap.get("3333");
+		getCar.print();
+		
+		
+		System.out.println("---- 3. remove ----");
+		Car removeCar = (Car)carMap.remove("3333");
+		removeCar.print();
+		System.out.println("map size: "+carMap.size());
+		System.out.println(carMap);
+		
+		System.out.println();
+		System.out.println("============ 업무 실행 ============");
+		System.out.println("1.전체 차량출력");
+//		carMap.keySet().iterator();
+	
+		System.out.println();
+		System.out.println("2.입차");
+		carMap.put("3243", new Car("3243", 6));
+		System.out.println("map size: "+carMap.size());
+		System.out.println(carMap);
+		
+		System.out.println();
+		System.out.println("3.차량번호 3243번  차한대 정보출력");
+		getCar = (Car)carMap.get("3243");
+		getCar.print();
+		
+		System.out.println();
+		System.out.println("4.입차시간 10시이후 차량여러대 찾아서 정보출력");
+		
+		System.out.println();
+		System.out.println("5.3243번차량 12시 출차");
+		getCar = (Car)carMap.get("3243");
+		getCar.setOutTime(12);
+		getCar.calculateFee();
+		getCar.print();
+		// 출차니까 나가야지
+		carMap.remove("3243");
+		System.out.println("map size: "+carMap.size());
+		System.out.println(carMap);
+		
+		
 	}
 
 }
