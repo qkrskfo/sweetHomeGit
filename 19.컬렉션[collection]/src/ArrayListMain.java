@@ -33,6 +33,7 @@ public class ArrayListMain {
 		accountList.add(acc3);
 		accountList.add(acc4);
 		accountList.add(acc5);
+		
 		System.out.println("# arrayList의 size: "+accountList.size());
 		System.out.println(">>"+accountList);
 		accountList.add(3, new Account(3334, "KIMM",9000, 0.9));
@@ -124,8 +125,9 @@ public class ArrayListMain {
 			Account tempAccount = (Account)accountList.get(i);
 			if(tempAccount.getOwner().equals("KING")) {
 				Account removeAcc = (Account)accountList.remove(i);
+				System.out.println("remove account:"+removeAcc);
+				// removeAcc.print();
 				i--;
-				removeAcc.print();
 			}
 		}
 		System.out.println("# remove size: "+accountList.size());
