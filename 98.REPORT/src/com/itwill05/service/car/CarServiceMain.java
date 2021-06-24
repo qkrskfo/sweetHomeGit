@@ -19,6 +19,7 @@ public class CarServiceMain {
 		}
 		
 		System.out.println("1.CarService객체야 전체차량출력해줘");
+		carService.print();
 		System.out.println("2.CarService객체야 전체주차구획수반환해줘");
 		// return타입 integer
 		System.out.println("3.CarService객체야 주차가능주차구획수반환해줘");

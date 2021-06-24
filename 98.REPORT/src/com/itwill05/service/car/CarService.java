@@ -1,5 +1,7 @@
 package com.itwill05.service.car;
 
+import java.util.Iterator;
+
 public class CarService {
 	
 	private Car[] carArray;
@@ -20,18 +22,29 @@ public class CarService {
 		/*
 		 * 1.주차구역 확보(주차장 만차인지 체크)
 		 * 2.차량번호 중복체크
-		 */
+		 
 		for (int i = 0; i < carArray.length; i++) {
-			if(carArray[i] == null && carArray[i].getNo()!=car.getNo()) {
-				isSuccess = true;
-				break;
+			if(carArray[i] == null) {
+				if(!carArray[i].getNo().equals(car.getNo())) {
+					isSuccess = true;
+					break;
+				}
 			}
 		}
-		return isSuccess;
+		*/
+		return false;
 	}
 	
 	/*
 	1. 전체차량출력
+	*/
+	public void print(){
+		Car.headerPrint();
+		for (int i = 0; i < carArray.length; i++) {
+			carArray[i].print();
+		}
+	}
+	/*
 	2. 주차구획수반환
 	3. 주차가능주차구획수반환
 	4. 차량번호(4567번) 인자받아서 차객체한대 참조변수반환
