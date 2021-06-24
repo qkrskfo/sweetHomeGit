@@ -15,8 +15,7 @@ public class CarService2 {
 	     - 주차장이 만차이면 입차실패
 	     - 차량번호중복체크
 	*/
-	public int ipCha(Car car) {
-		int count = 0;
+	public void ipCha(Car car) {
 		//boolean isSuccess = false;
 		/*
 		 * 1.주차구역 확보(주차장 만차인지 체크)
@@ -63,7 +62,7 @@ public class CarService2 {
 			}
 		}
 		*/
-		return count;
+
 	}
 	
 	/*

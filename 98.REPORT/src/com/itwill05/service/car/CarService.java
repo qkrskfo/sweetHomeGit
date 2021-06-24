@@ -1,6 +1,5 @@
 package com.itwill05.service.car;
 
-
 public class CarService {
 	
 	private Car[] carArray;
@@ -11,31 +10,53 @@ public class CarService {
 	public CarService(int count) {
 		carArray=new Car[count]; // 숫자를 넣으면 넣은만큼 생성되게 한 것.
 	}
+	
 	/*
 	0. 차객체인자로받아서 입차후 성공실패여부반환
 	     - 주차장이 만차이면 입차실패
 	     - 차량번호중복체크
 	*/
-	public boolean ipCha(Car car) {
-		boolean isSuccess = false;
-		/*
-		 * 1.주차구역 확보(주차장 만차인지 체크)
-		 * 2.차량번호 중복체크
-		 */
-		
-		Car[] tempCar = new Car[carArray.length];
-		for (int i = 0; i < carArray.length; i++) {
-			tempCar[i] = carArray[i];
-			if(tempCar[i]==null) {
-					tempCar[i] = car;
-					break;
-			}
-		}
-		this.carArray = tempCar;
-		
+	
+	public int ipCha(Car car) {
 
-		return isSuccess;
-	}
+        int status = 0;
+        /*
+         * 1.주차구역 확보(주차장 만차인지 체크)
+         * 2.차량번호 중복체크
+         */
+
+        for (int i = 0; i < carArray.length; i++) {
+            if(carArray[i]!=null) {
+                status = 1;
+            } else if(carArray[i]!=null && carArray[i].getNo()==car.getNo()) {
+                    status = 2;
+                    break;
+            } else {
+                    status = 3;
+                    break;
+            }
+        }
+
+        switch (status) {
+        case 1:
+            System.out.println("주차장이 만차입니다.");
+            break;
+        case 2:
+            System.out.println("차량번호가 중복되어 주차할 수 없습니다.");
+            break;
+        case 3:
+            for (int i = 0; i < carArray.length; i++) {
+                if(carArray[i]== null) {
+                    carArray[i] = car;
+                    break;
+                }
+            }
+        }
+
+        return status;
+
+    }
+	
 	
 	/*
 	1. 전체차량출력
@@ -48,6 +69,8 @@ public class CarService {
 			}
 		}
 	}
+	
+	
 	/*
 	2. 주차구획수반환
 	*/
@@ -95,7 +118,7 @@ public class CarService {
 		
 		int count = 0;
 		for (int i = 0; i < carArray.length; i++) {
-			if(carArray[i].getInTime()==ipChaTime) {
+			if(carArray[i]!=null && carArray[i].getInTime() > ipChaTime) {
 				count++;
 			}
 		}
@@ -104,14 +127,14 @@ public class CarService {
 		
 		int idx = 0;
 		for (int i = 0; i < carArray.length; i++) {
-			if(carArray[i].getInTime()==ipChaTime) {
+			if(carArray[i]!=null && carArray[i].getInTime() > ipChaTime) {
 				findIpChaTime[idx] = carArray[i];
 				idx++;
 			}
 		}
-		
 		return findIpChaTime;
 	}
+	
 	
 	
 	/*
@@ -132,7 +155,7 @@ public class CarService {
 	public Car chulCha(String noStr, int chulChaTime) {
 		Car carChulCha = null;
 		for (int i = 0; i < carArray.length; i++) {
-			if(carArray[i].getNo().equals(noStr)) {
+			if(carArray[i]!=null && carArray[i].getNo().equals(noStr)) {
 				carArray[i].setOutTime(chulChaTime);
 				carArray[i].calculateFee();
 				carChulCha = carArray[i];
