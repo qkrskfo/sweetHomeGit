@@ -6,8 +6,10 @@ public class ArrayListMain {
 	public static void main(String[] args) {
 		
 		System.out.println("------------Object[]----------------");
+		
 		Object[] anyTypeArray=new Object[5];
 		System.out.println(anyTypeArray);
+		
 		Account acc1=new Account(1111, "BING",33000,0.5);
 		Account acc2=new Account(2222, "KING",23000,0.1);
 		Account acc3=new Account(3333, "KING",89000,0.2);
@@ -26,20 +28,22 @@ public class ArrayListMain {
 		}
 		
 		System.out.println("-----------------------------------------");
+		
 		ArrayList accountList=new ArrayList();
 		// ArrayList에 노란줄있는거. 들어가보면 <E>로 되어있어.
 		// 아직 정해져있지 않은 변수같은것.
 		// public E get(int index) {}--> E로 받아줘.
 		System.out.println("# arrayList의 size:"+accountList.size());
+		
 		System.out.println("********** 1.add *************");
 		accountList.add(acc1);
 		accountList.add(acc2);
 		accountList.add(acc3);
 		accountList.add(acc4);
 		accountList.add(acc5);
-		
 		System.out.println("# arrayList의 size: "+accountList.size());
 		System.out.println(">>"+accountList);
+		
 		accountList.add(3, new Account(3334, "KIMM",9000, 0.9));
 		// add 메소드 - index 3번이니까 4번째에 내용 추가!
 		System.out.println(">>"+accountList);
@@ -79,8 +83,7 @@ public class ArrayListMain {
 		System.out.println("================business method (업무실행)=================");
 		System.out.println("****************1.계좌전체출력******************");
 		for(int i=0;i<accountList.size();i++) {
-			// accountList.get(i); 로 쓰면 오브젝트로 반환하기 때문에
-			// 아래껄로 수정.
+			// accountList.get(i); 로 쓰면 오브젝트로 반환하기 때문에 캐스팅.
 			Account tempAccount=(Account)accountList.get(i);
 			System.out.println(tempAccount); // tempAccount.print(); 이렇게 쓰는 것도 가능
 		}

@@ -31,6 +31,11 @@ public class Car {
 		this.fee = fee;
 	}
 
+	//toString 재정의 : source -> 
+		@Override
+		public String toString() {
+			return "("+no+", "+inTime+")";
+		}
 
 
 	//2. 멤버메쏘드[기능](차객체가 가지고있는 기능 )
@@ -59,7 +64,7 @@ public class Car {
 	/*
 	 *  헤더출력
 	 */
-	public void headerPrint() {
+	public static void headerPrint() {
 		System.out.println("-----------------------------------");
 		System.out.printf("%s %s %s %s%n","차량번호", "입차시간","출차시간","주차요금");
 		System.out.println("-----------------------------------");

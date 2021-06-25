@@ -25,13 +25,19 @@ public class HashMapMain {
 		carMap.put(new String("3333"), new Car("삼삼삼",23));
 		System.out.println("map size:"+carMap.size());
 		System.out.println(carMap);
+		
+		
 		System.out.println("----------2.get------------");
 		Car getCar = (Car)carMap.get("3333");
 		getCar.print();
+		
+		
 		System.out.println("----------3.remove------------");
 		Car removeCar=(Car)carMap.remove("3333");
 		removeCar.print();
 		System.out.println("map size:"+carMap.size());
+		
+		
 		
 		System.out.println("%%%%%%%%%%%%%%%%%%%%%%%업무실행%%%%%%%%%%%%%%%%%%%%%");
 		System.out.println("1.전체 차량출력????");
