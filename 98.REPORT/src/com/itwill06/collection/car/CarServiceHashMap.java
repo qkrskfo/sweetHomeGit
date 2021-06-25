@@ -25,7 +25,7 @@ public class CarServiceHashMap {
 	 */
 	public boolean ipCha(Car inCar) {
 		boolean isSuccess = false;
-		
+		// carmap 사이즈랑 count 크기 비교해서 하면 되자낭
 		return isSuccess;
 	}
 
@@ -33,7 +33,7 @@ public class CarServiceHashMap {
 	 * 1. 전체차량출력
 	 */
 	public void print() {
-		
+		// 이터레이터 쓰세요
 	}
 
 	/*
@@ -41,6 +41,7 @@ public class CarServiceHashMap {
 	 */
 	public Car findByNo(String no) {
 		Car findCar =null;
+		findCar = carMap.get(no);
 		return findCar;
 	}
 
@@ -49,7 +50,9 @@ public class CarServiceHashMap {
 	 */
 	public ArrayList<Car> findByInTime(int inTime) {
 		ArrayList<Car> findCars = new ArrayList<Car>();
-		
+		// 여러개니까 arrayList로 반환
+		// 키셋으로 받아서 돌리면서 검색되는 차량을 findCars에 반환
+		// 걸릴때마다 카만 넣어주면 됨
 		
 		return findCars;
 	}
@@ -59,7 +62,8 @@ public class CarServiceHashMap {
 	 */
 	public Car chulCha(String no, int outTime) {
 		Car removeCar= null;
-		
+		// 출력하지마세요
+		// 번호로 키값을 삭제하는 작업
 		return removeCar;
 	}
 	/*
