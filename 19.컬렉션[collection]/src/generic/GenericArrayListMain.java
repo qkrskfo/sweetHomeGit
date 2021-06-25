@@ -89,7 +89,7 @@ public class GenericArrayListMain {
 		}
 		
 		
-		System.out.println("--- String, Wrapper ---");
+		System.out.println("######### --- String, Wrapper --- ###########");
 		System.out.println("---- String ----");
 		
 		ArrayList<String> nameList = new ArrayList<String>();

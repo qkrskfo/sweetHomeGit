@@ -2,6 +2,7 @@ package generic;
 
 import java.util.HashSet;
 import java.util.Iterator;
+import java.util.Set;
 
 public class GenericHashSetMain {
 
@@ -47,6 +48,43 @@ public class GenericHashSetMain {
 			Account account = accountIterator.next();
 			account.print();
 		}
+		
+		System.out.println(" ---- String, Wrapper ---- ");
+		System.out.println(" <<<< String >>>>");
+		
+		Set<String> nameSet = new HashSet<String>(); 
+		// set은 중복x
+		// set은 인터페이스로 받아요!
+		nameSet.add(new String ("KIM"));
+		nameSet.add("JIM");
+		nameSet.add("SIM");
+		nameSet.add("DIM");
+		nameSet.add("PIM");
+
+		System.out.println("---- 1. add ----");
+		System.out.println("add 결과 --> "+nameSet);
+		
+		nameSet.add("KIM"); // 중복되는 KIM은 아예 출력되지 않음
+		System.out.println("add 결과 --> "+nameSet);
+		// set은 인덱스가 없어요~!
+		
+		System.out.println("---- 2. remove ----");
+		nameSet.remove("KIM");
+		System.out.println("remove 결과 --> "+nameSet);
+		
+		System.out.println("---- 3. Iteration 반복 ----");
+		Iterator<String> nameIter = nameSet.iterator();
+		while(nameIter.hasNext()) {
+			String name = nameIter.next();
+			System.out.println(name+" ");
+		}
+		
+		
+		
+		System.out.println();
+		System.out.println();
+		System.out.println(" <<<< Wrapper >>>>");
+		
 		
 		
 	}
