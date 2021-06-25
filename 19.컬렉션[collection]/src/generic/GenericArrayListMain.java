@@ -88,6 +88,106 @@ public class GenericArrayListMain {
 			tempAccount.print();
 		}
 		
+		
+		System.out.println("--- String, Wrapper ---");
+		System.out.println("---- String ----");
+		
+		ArrayList<String> nameList = new ArrayList<String>();
+		
+		System.out.println("---- 1. add ----");
+		nameList.add("JIM");
+		nameList.add(new String("PIM")); // 객체잖아 이렇게 넣는것도 가능
+		nameList.add("BIM");
+		nameList.add("MIM");
+		nameList.add("DIM");
+		nameList.add("HIM");
+		nameList.add("KIM");
+		nameList.add("KIM");
+		// ArrayList는 중복을 허용함
+		System.out.println("# nameList size: "+nameList.size());
+		System.out.println(nameList);
+		
+		nameList.add(3, "KKK");
+		// 3번인덱스에 (4번째겠지) KKK를 넣을게요
+		System.out.println("# nameList size: "+nameList.size());
+		System.out.println(nameList);
+		
+		System.out.println("---- 2. remove(int index) ----");
+//		nameList.remove(0); // 0번인덱스 지우자
+		String removeName = nameList.remove(3);
+		System.out.println("remove name: "+removeName);
+		System.out.println("# nameList size: "+nameList.size());
+		System.out.println(nameList);
+		
+		System.out.println("---- 2. remove(Object o) ----");
+		boolean isRemove = nameList.remove("HIM");
+		// equals 메소드를 호출해서 알아서 찾아서 지워줌
+		System.out.println(isRemove);
+		System.out.println("# nameList size: "+nameList.size());
+		System.out.println(nameList);
+		
+		// KIM 이 두개인데 이건 어떻게 될까??
+		// << boolean java.util.ArrayList.remove(Object o) >>
+		// Removes the first occurrence of the specified element from this list, if it is present
+		nameList.remove("KIM");
+		System.out.println("# nameList size: "+nameList.size());
+		System.out.println(nameList);
+		// 첫번째 나온걸 지운데
+		
+		
+		
+		System.out.println("---- Integer (Boxing) ----");
+		
+		ArrayList<Integer> scoreList = new ArrayList<Integer>();
+		scoreList.add(new Integer(90));
+		scoreList.add(45); // auto Boxing -> up casting 
+		// 박싱되서 상위로캐스팅되서 가능
+		scoreList.add(50);
+		scoreList.add(60);
+		scoreList.add(70);
+		scoreList.add(80);
+		scoreList.add(85);
+		scoreList.add(98);
+		scoreList.add(72);
+		scoreList.add(98);
+		
+		System.out.println("---- 1. add ----");
+		System.out.println(scoreList);
+		
+		
+		System.out.println("---- 2. get ----");
+		/*
+		int scoreBox = scoreList.get(3);
+		System.out.println("scoreList.get(3) --> "+scoreBox);
+		*/
+		Integer score1Integer = scoreList.get(1); // generic
+		int score1 = score1Integer.intValue(); // auto unboxing
+		System.out.println("scoreList.get(1) --> "+score1);
+		
+		int score2 = scoreList.get(3); // generic --> auto unboxing
+		System.out.println("socreList.get(3) -->"+score2);
+		
+		/*
+		이렇게 해줘도 됨 
+		System.out.println("scoreList.get(1)--> "+scoreList.get(1).intValue());
+		 */
+		
+		System.out.println("---- 3. set ----");
+		scoreList.set(3, 100); // 3번인덱스가 100점이였어~
+		System.out.println(scoreList);
+		
+		System.out.println("---- 4. remove (int index) ----");
+		scoreList.remove(3); // 3번 인덱스
+		System.out.println(scoreList);
+		
+		System.out.println("---- 4. remove (Object o) ----");
+		scoreList.remove(new Integer(90)); // 90점짜리를 지우려면 이렇게 불러야함.
+		System.out.println(scoreList);
+		
+		
+		
+		
+		
 	}
 
 }
