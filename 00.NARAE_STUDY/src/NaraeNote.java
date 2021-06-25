@@ -243,7 +243,8 @@ Iterator를 호출
  // 일반화하지 않은 no generic
  
  
- 
+ to string 재정의
+ generic > account.java에 있음 
  
  
  
