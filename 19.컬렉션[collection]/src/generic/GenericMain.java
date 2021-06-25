@@ -22,7 +22,14 @@ public class GenericMain {
 		 * 123은 boxing 된다. integer로. 그 다음에 상위로 캐스팅됨
 		 * noGenericClass.setMember(new Integer(123));
 		 * 
-		 * 이 작업을 편리하게 해주는게 generic 이래.. 무슨 작업일까 ㅋㅋㅋ
+		 * Object member 자리에 아무거나 다 들어가
+		 * 이 작업을 쉽게 하는게 generic 이래..
+		 */
+		noGenericClass.setMember(new Account());	
+		noGenericClass.setMember(new Car());	
+		/*
+		 Object member에는 최종적으로 Car만 들어가긴 하지만
+		 모든 자바 객체를 멤버로 셋팅할 수 있다는 것.
 		 */
 	}
 
