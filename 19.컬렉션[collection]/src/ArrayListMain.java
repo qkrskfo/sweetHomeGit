@@ -27,6 +27,9 @@ public class ArrayListMain {
 		
 		System.out.println("-----------------------------------------");
 		ArrayList accountList=new ArrayList();
+		// ArrayList에 노란줄있는거. 들어가보면 <E>로 되어있어.
+		// 아직 정해져있지 않은 변수같은것.
+		// public E get(int index) {}--> E로 받아줘.
 		System.out.println("# arrayList의 size:"+accountList.size());
 		System.out.println("********** 1.add *************");
 		accountList.add(acc1);
