@@ -63,7 +63,12 @@ public class GenericMain {
 		genericClass2.setMember(new Car("1234", 10, 0, 0));
 		Car getCar = genericClass2.getMember();
 		getCar.print();
-		
+
+		/*
+		GenericClass genericClass3 = new GenericClass();
+		genericClass3.getClass();
+		이렇게하면 Object가 들어감
+		*/
 		
 		
 		

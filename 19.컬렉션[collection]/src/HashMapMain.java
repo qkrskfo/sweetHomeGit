@@ -8,6 +8,7 @@ public class HashMapMain {
 
 		HashMap carMap=new HashMap();
 		System.out.println("map size:"+carMap.size());
+		
 		System.out.println("--------------1.put---------------");
 		Car c1=new Car("1111", 12);
 		carMap.put("1111", c1);
@@ -34,17 +35,38 @@ public class HashMapMain {
 		
 		System.out.println("%%%%%%%%%%%%%%%%%%%%%%%업무실행%%%%%%%%%%%%%%%%%%%%%");
 		System.out.println("1.전체 차량출력????");
+		Car.headerPrint();
+		// map은 이터레이터 메소드가 없음.
+		Iterator keyIter = carMap.keySet().iterator();
+		while (keyIter.hasNext()) { // next가 없을떄까지 뽑아요
+			String key = (String)keyIter.next();
+			Car tempCar = (Car)carMap.get(key); // 오브젝트로 받아..
+			tempCar.print();
+		}
 		
-//		carMap.keySet().iterator();
 	
 		System.out.println("2.입차");
 		carMap.put("3243", new Car("3243", 6));
 		System.out.println("map size:"+carMap.size());
 		System.out.println(carMap);
+		
 		System.out.println("3.차량번호 3243번  차한대 정보출력");
 		getCar=(Car)carMap.get("3243");
 		getCar.print();
-		System.out.println("4.입차시간 10시이후 차량여러대 찾아서 정보출력??????");
+		
+		System.out.println("4.입차시간 15시이후 차량여러대 찾아서 정보출력??????");
+		// key값이 아닌이상 검색할 수 밖에 없어.
+		Iterator keyIter2 = carMap.keySet().iterator();
+		// 이터레이션 하는거야. 이터레이션 하는 방법임 위에 문장이.
+		while(keyIter2.hasNext()) {
+			String key = (String)keyIter2.next();
+			Car tempCar = (Car)carMap.get(key);
+			if(tempCar.getInTime()>=15) {
+				tempCar.print();
+			}
+		}
+		
+		
 		System.out.println("5.3243번차량 12시 출차");
 		getCar=(Car)carMap.get("3243");
 		getCar.setOutTime(12);
@@ -54,6 +76,8 @@ public class HashMapMain {
 		carMap.remove("3243");
 		System.out.println("map size:"+carMap.size());
 		System.out.println(carMap);
+		
+		
 		System.out.println("####################iteration[전체출력]######################");
 		Set keySet = carMap.keySet();
 		System.out.println(keySet);
