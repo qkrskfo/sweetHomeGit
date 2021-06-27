@@ -26,6 +26,14 @@ public class CarServiceHashMap {
 	public boolean ipCha(Car inCar) {
 		boolean isSuccess = false;
 		// carmap 사이즈랑 count 크기 비교해서 하면 되자낭
+
+			if(carMap.size() < count) {
+				isSuccess = true;
+				carMap.put(inCar.getNo(), inCar);
+			} else {
+				isSuccess = false;
+			}
+			
 		return isSuccess;
 	}
 
@@ -34,6 +42,12 @@ public class CarServiceHashMap {
 	 */
 	public void print() {
 		// 이터레이터 쓰세요
+		Iterator keyIter = carMap.keySet().iterator();
+		while(keyIter.hasNext()) {
+			String key = (String)keyIter.next();
+			Car tempCar = (Car)carMap.get(key);
+			tempCar.print();
+		}
 	}
 
 	/*
@@ -54,6 +68,10 @@ public class CarServiceHashMap {
 		// 키셋으로 받아서 돌리면서 검색되는 차량을 findCars에 반환
 		// 걸릴때마다 카만 넣어주면 됨
 		
+		for (int i = 0; i < carMap.size(); i++) {
+			
+			System.out.println(findCars.get(i));
+		}
 		return findCars;
 	}
 
@@ -64,6 +82,10 @@ public class CarServiceHashMap {
 		Car removeCar= null;
 		// 출력하지마세요
 		// 번호로 키값을 삭제하는 작업
+		Car getCar = carMap.get(no);
+		getCar.setOutTime(outTime);
+		getCar.calculateFee();
+		removeCar = carMap.remove(no);
 		return removeCar;
 	}
 	/*
@@ -71,7 +93,7 @@ public class CarServiceHashMap {
 	 */
 	public int getParkingLotCount() {
 		return this.count;
-	}
+	} // count를 30으로 줬어도 Main에 선언한 객체?가 20이라 그런가
 	
 	/*
 	  3. 주차가능주차구획수반환 
