@@ -43,7 +43,16 @@ public class StudentServiceArrayList {
 	 * 2. 전체학생 총점으로 석차계산
 	 */
 	public void calculateRank() {
-	
+		for (Student students : studentList) {
+			students.setRank(1);
+		}
+		for (int j = 0; j < studentList.size(); j++) {
+			for (int i = 0; i < studentList.size(); i++) {
+				if(studentList.get(i).getTot() < studentList.get(j).getTot()) {
+					studentList.get(i).increaseRank();
+				}
+			}
+		}
 	}
 	
 	/*

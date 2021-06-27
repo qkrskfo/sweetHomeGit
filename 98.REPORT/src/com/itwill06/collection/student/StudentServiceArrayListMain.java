@@ -6,6 +6,9 @@ public class StudentServiceArrayListMain {
 	public static void main(String[] args) {
 		
 		StudentServiceArrayList studentServiceArrayList=new StudentServiceArrayList();
+		
+		studentServiceArrayList.addStudent(new Student(10, "PIM", 100, 99, 98));
+		
 		/*
 		 * 1. 전체학생총점,평균,평점계산
 		 */
