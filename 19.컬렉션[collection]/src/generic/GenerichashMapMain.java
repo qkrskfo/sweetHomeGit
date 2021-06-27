@@ -9,6 +9,7 @@ public class GenerichashMapMain {
 
 		HashMap<String, Car> carMap = new HashMap<String, Car>(); 
 		// Key 랑 Value의 약자
+		
 		System.out.println("#map size: "+carMap.size());
 		System.out.println("-------- 1. put --------");
 		carMap.put("1111", new Car("1111", 12));

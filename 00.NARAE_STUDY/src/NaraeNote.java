@@ -1,3 +1,4 @@
+
 public class NaraeNote {
 
 	public static void main(String[] args) {
@@ -258,6 +259,13 @@ Iterator를 호출
  다시 equals 메소드로 두 객체를 비교합니다.
  비교해서 true가 나오면 동일한 객체로 판단합니다. 
  
+ 
+ 
+enhanced for문 index없이도 찍을 수 있음.
+	 index가 필요없는 전체출력인 경우엔 이게 더 좋겠지!
+for (Account tempAccount : accountList) {
+	tempAccount.print();
+}
  
  
  

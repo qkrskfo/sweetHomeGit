@@ -7,6 +7,7 @@ public class HashMapMain {
 	public static void main(String[] args) {
 		// 밑에가 노란줄로 나오는건 generic type으로 안줘서 그렇데
 		HashMap carMap=new HashMap();
+		
 		System.out.println("map size:"+carMap.size());
 		
 		System.out.println("--------------1.put---------------");

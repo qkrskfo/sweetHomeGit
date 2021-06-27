@@ -17,6 +17,7 @@ public class GenericArrayListMain {
 		// 여기서 <E>는 타입을 받는다는 말.
 				
 		ArrayList<Account> accountList = new ArrayList<Account>();
+		
 		System.out.println("#size: "+accountList.size());
 		System.out.println("---- 1. add ----");
 		accountList.add(acc1);
