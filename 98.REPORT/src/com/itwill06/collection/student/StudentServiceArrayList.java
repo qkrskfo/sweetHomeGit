@@ -66,7 +66,11 @@ public class StudentServiceArrayList {
 	 */
 	public Student findByStudent(int no) {
 		Student findStudent=null;
-		
+		for (int i = 0; i < studentList.size(); i++) {
+			if(studentList.get(i).getNo()==no) {
+				findStudent = studentList.get(i);
+			}
+		}
 		return findStudent;
 	}
 	/*
@@ -75,13 +79,27 @@ public class StudentServiceArrayList {
 	public ArrayList<Student> findByGrade(char grade) {
 		ArrayList<Student> findStudents=new ArrayList<Student>();
 		
+		for (int i = 0; i < studentList.size(); i++) {
+			if(studentList.get(i).getGrade()=='A') {
+				findStudents.add(studentList.get(i));
+			}
+		}
+		
 		return findStudents;
 	}
+	
+	
 	/*
 	 * 6. 이름KIM 학생들 반환
 	 */
 	public ArrayList<Student> findByName(String name) {
 		ArrayList<Student> findStudents=new ArrayList<Student>();
+		
+		for (int i = 0; i < studentList.size(); i++) {
+			if(studentList.get(i).getName().equals(name)) {
+				findStudents.add(studentList.get(i));
+			}
+		}
 		
 		return findStudents;
 	}

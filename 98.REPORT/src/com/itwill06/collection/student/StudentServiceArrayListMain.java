@@ -27,14 +27,11 @@ public class StudentServiceArrayListMain {
 		 * 3. 전체학생반환
 		 */
 		System.out.println("3. 전체학생반환 ");
-		ArrayList<Student> studentList=
-				studentServiceArrayList.getStudentList();
+		ArrayList<Student> studentList = studentServiceArrayList.getStudentList();
 		Student.headerPrint();
 		for (Student student : studentList) {
 			student.print();
 		}
-		
-		
 		
 		/*
 		 * 4. 번호3번 학생한명 반환  
