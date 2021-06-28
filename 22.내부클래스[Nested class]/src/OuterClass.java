@@ -33,6 +33,7 @@ public class OuterClass {
 //			OuterClass.this.outer_member_field = 7878;
 			// 이렇게 접근하는거야!
 			outer_member_field = 7878; // 맨처음엔 이너클래스에서 찾고, 없으면 아우터클래스까지 찾아보고 알아서 들어감.
+			outer_member_method();
 		}
 	}
 }
