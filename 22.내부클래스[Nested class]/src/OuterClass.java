@@ -22,5 +22,17 @@ public class OuterClass {
 		public void inner_member_method() {
 			System.out.println("InnerClass.inner_member_method()");
 		}
+		
+		/*
+		 * 내부클래스의 사용이유
+		 *  - 내부클래스(객체)에서 외부클래스(객체)의 멤버필드, 멤버메쏘드 접근을 손쉽게하기위해서
+		 */
+		
+		public void inner_outer_member_access() {
+//			InnerClass.this.inner_member_field = 9090;
+//			OuterClass.this.outer_member_field = 7878;
+			// 이렇게 접근하는거야!
+			outer_member_field = 7878; // 맨처음엔 이너클래스에서 찾고, 없으면 아우터클래스까지 찾아보고 알아서 들어감.
+		}
 	}
 }
