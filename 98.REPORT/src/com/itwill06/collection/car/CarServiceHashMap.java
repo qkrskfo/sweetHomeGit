@@ -69,8 +69,10 @@ public class CarServiceHashMap {
 		// 걸릴때마다 카만 넣어주면 됨
 		
 		for (int i = 0; i < carMap.size(); i++) {
-			
-			System.out.println(findCars.get(i));
+			Car tempCar = carMap.get(i);
+			if(tempCar.getInTime()>=inTime) {
+				System.out.println(tempCar);
+			}
 		}
 		return findCars;
 	}
