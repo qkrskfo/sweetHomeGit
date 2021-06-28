@@ -22,7 +22,14 @@ public class Exam01 {
 	public ArrayList<Car> findByInTime(int inTime){
 		ArrayList<Car> findCars = new ArrayList<Car>();
 		
-		
+		Iterator<String> carNoIterator= carMap.keySet().iterator();
+		while(carNoIterator.hasNext()) {
+			String carNo = carNoIterator.next();
+			Car tempCar = carMap.get(carNo);
+			if(tempCar.getInTime() >= inTime) {
+				findCars.add(tempCar);
+			}
+		}
 		
 		return findCars;
 	}
