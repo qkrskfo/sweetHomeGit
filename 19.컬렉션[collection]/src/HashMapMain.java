@@ -91,7 +91,7 @@ public class HashMapMain {
 		Iterator keyIterator = keySet.iterator();
 		while (keyIterator.hasNext()) {
 			String key = (String) keyIterator.next();
-			System.out.println("ket-->"+key);
+			System.out.println("key-->"+key);
 			Car tempCar=(Car)carMap.get(key);
 			tempCar.print();
 		}
