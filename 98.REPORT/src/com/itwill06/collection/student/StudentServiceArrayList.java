@@ -80,7 +80,7 @@ public class StudentServiceArrayList {
 		ArrayList<Student> findStudents=new ArrayList<Student>();
 		
 		for (int i = 0; i < studentList.size(); i++) {
-			if(studentList.get(i).getGrade()=='A') {
+			if(studentList.get(i).getGrade()==grade) {
 				findStudents.add(studentList.get(i));
 			}
 		}
