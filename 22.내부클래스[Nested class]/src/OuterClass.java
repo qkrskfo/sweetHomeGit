@@ -12,4 +12,11 @@ public class OuterClass {
 	public void outer_member_method() {
 		System.out.println("OuterClass.outer_member_method()");
 	}
+	
+	/*
+	 * 인스턴스멤버 클래스
+	 */
+	public class InnerClass {
+		// 클래스라는 키워드가 붙으면 클래스가 생성이됨.
+	}
 }

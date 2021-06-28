@@ -85,6 +85,36 @@ public class GenericHashSetMain {
 		System.out.println();
 		System.out.println(" <<<< Wrapper >>>>");
 		
+		Set<Integer> lottoSet = new HashSet<Integer>();
+		lottoSet.add(new Integer(34)); // 자동으로 박싱이되서 들어가는 것
+		lottoSet.add(12);
+		lottoSet.add(2);
+		lottoSet.add(41);
+		lottoSet.add(11);
+		System.out.println("===== 1. add =====");
+		System.out.println("#size:"+lottoSet.size()); // 주머니, 보따리 같은 구조
+		System.out.println(lottoSet);
+		isAdd = lottoSet.add(34);
+		isAdd = lottoSet.add(34);
+		isAdd = lottoSet.add(34);
+		isAdd = lottoSet.add(34);
+		isAdd = lottoSet.add(34);
+		isAdd = lottoSet.add(34);
+		System.out.println("isAdd: "+isAdd);
+		
+		System.out.println(" ==== 2. remove ====");
+		// set은 인덱스가 존재하지 않음
+		isRemove = lottoSet.remove(new Integer(34));
+		System.out.println("isRemove:"+isRemove);
+		System.out.println("#size:"+lottoSet.size()); // 주머니, 보따리 같은 구조
+		System.out.println(lottoSet);
+		
+		Set<Integer> lotto = new HashSet<Integer>();
+		
+		while (lotto.size() < 6) {
+			lotto.add((int)(Math.random()*45)+1);
+		}
+		System.out.println(">>lotto: "+lotto);
 		
 		
 	}
