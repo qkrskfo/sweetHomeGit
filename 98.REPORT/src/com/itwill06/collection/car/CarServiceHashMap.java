@@ -68,10 +68,12 @@ public class CarServiceHashMap {
 		// 키셋으로 받아서 돌리면서 검색되는 차량을 findCars에 반환
 		// 걸릴때마다 카만 넣어주면 됨
 		
-		for (int i = 0; i < carMap.size(); i++) {
-			Car tempCar = carMap.get(i);
-			if(tempCar.getInTime()>=inTime) {
-				System.out.println(tempCar);
+		Iterator<String> carNoIterator = carMap.keySet().iterator();
+		while(carNoIterator.hasNext()) {
+			String carNo = carNoIterator.next();
+			Car tempCar = carMap.get(carNo);
+			if(tempCar.getInTime() >= inTime) {
+				findCars.add(tempCar);
 			}
 		}
 		return findCars;
