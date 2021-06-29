@@ -45,6 +45,17 @@ public class OuterClass2 {
 		
 	}
 	
+	/*
+	private AClass aClass;
+	private BClass bClass;
+	private CInterface cInterface;
+	
+	위와같이  멤버변수로 만들면
+	밑에 outer_member_method3() 에서
+	AClass aClass = new AClass() 가 아니라
+	aClass = new AClass() 또는
+	this.aClass = new AClass() 라고 작성 가능
+	*/
 	public void outer_member_method3() {
 		/**** 익명의 local 내부클래스(anonymous local inner class) 작성 ***/
 		/*
@@ -67,7 +78,7 @@ public class OuterClass2 {
 			// 재정의 안하면 호출 불가
 			@Override
 			public void methodA() {
-				System.out.println("AClass를 상속받는 이름없는 클래스에서 AClass.methodA() 재정의");
+				System.out.println("AClass를 상속받는 이름없는 클래스1에서 AClass.methodA() 재정의");
 			}
 
 		};
@@ -76,7 +87,7 @@ public class OuterClass2 {
 		BClass bClass = new BClass() {
 			@Override
 			public void methodB() {
-				System.out.println("BClass를  상속받는 이름없는 클래스에서 BClass.methodB() 재정의");
+				System.out.println("BClass를  상속받는 이름없는 클래스1에서 BClass.methodB() 재정의");
 			}
 			/*
 			 public void method1() {}
@@ -87,7 +98,7 @@ public class OuterClass2 {
 		CInterface cInterface = new CInterface() {
 			@Override
 			public void methodC() {
-				System.out.println("CInterface를 구현(상속)하는 이름없는 클래스에서 CInterface.methodC() 재정의");	
+				System.out.println("CInterface를 구현(상속)하는 이름없는 클래스1에서 CInterface.methodC() 재정의");	
 			}
 		};
 		
@@ -98,6 +109,40 @@ public class OuterClass2 {
 		 aClass.method1(); 
 		 bClass.method1(); 호출 불가
 		 */
+	}
+	
+	
+	public void outer_member_method4() {
+		// 특정 클래스를 상속받아서 재정의하고 그 메소드 호출
+		/*
+		aClass.methodA();
+		bClass.methodB();
+		cInterface.methodC();
+		*/
+		AClass aClass = new AClass() {
+			@Override
+			public void methodA() {
+				System.out.println("AClass를 상속받는 이름없는 클래스2에서 AClass.methodA() 재정의");
+			}
+		};
+		
+		BClass bClass = new BClass() {
+			@Override
+			public void methodB() {
+				System.out.println("BClass를 상속받는 이름없는 클래스2에서 BClass.methodB() 재정의");
+			}
+		};
+		
+		CInterface cInterface = new CInterface() {
+			@Override
+			public void methodC() {
+				System.out.println("CInterface를 구현(상속)하는 이름없는 클래스2에서 CInterface.methodC() 재정의");	
+			}
+		};
+		
+		System.out.println("------ java api ------");
+		
+		
 	}
 	
 	

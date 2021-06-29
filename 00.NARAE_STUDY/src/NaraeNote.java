@@ -266,8 +266,24 @@ enhanced for문 index없이도 찍을 수 있음.
 for (Account tempAccount : accountList) {
 	tempAccount.print();
 }
+
+
+
+ 0628
+스트링은 재정의 안됨
+final이야
  
+ 제일 
+ 중요한건 스레드의 동기화
  
+ 예를 들어 이미지를 랜더링할 때 그릴 시간을 줄 떄
+ 쓰레드를 슬립시킨다
+ 
+ thread의 run에는 runtime exception이 생략되어있다...
+ 
+ Nested class
+ Inner class 
+ 중첩클래스, 클래스 안에 클래스
  
 */
 		
