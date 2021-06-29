@@ -13,6 +13,22 @@ public class OuterClass {
 		System.out.println("OuterClass.outer_member_method()");
 	}
 	
+	/*** 외부클래스에서 내부클래스 사용 ***/
+	public void outer_inner_class_use() {
+		/*
+		 * 1. InnerClass 객체생성
+		 */
+		InnerClass innerClassObject = new InnerClass();
+		// OuterClass.InnerClass innerClassObject = this.new InnerClass(); 
+		// 안에선 생략가능. 밖에선 써줘야해. 
+		
+		/*
+		 * 2. InnerClass 객체멤버 사용
+		 */
+		innerClassObject.inner_member_field = 9999;
+		innerClassObject.inner_member_method();
+	}
+	
 	/*
 	 * 인스턴스멤버 클래스[Nested class, Inner class, 내부클래스]
 	 */
@@ -35,5 +51,5 @@ public class OuterClass {
 			outer_member_field = 7878; // 맨처음엔 이너클래스에서 찾고, 없으면 아우터클래스까지 찾아보고 알아서 들어감.
 			outer_member_method();
 		}
-	}
-}
+	} // inner class end
+} // outer class end
