@@ -141,8 +141,21 @@ public class OuterClass2 {
 		};
 		
 		System.out.println("------ java api ------");
-		
-		
+		Object o = new Object() {
+			@Override
+			public String toString() {
+				return "난 Object의 이름없는 자식클래스의 재정의메소드A";
+			}
+		};
+		System.out.println(o.toString());
+		System.out.println(
+			new Object() {
+				@Override
+				public String toString() {
+					return "난 Object의 이름없는 자식클래스의 재정의메소드B";
+				}
+			}.toString()
+		);
 	}
 	
 	
