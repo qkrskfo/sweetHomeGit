@@ -16,6 +16,8 @@
  *        		}
  *        }
  * 
+ *  인터페이스는 implements로 하면 됨
+ * 
  */
 
 class OverridingParent{
