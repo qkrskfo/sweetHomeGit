@@ -35,6 +35,13 @@ public class OuterClass2 {
 		 * 4. 재정의 메소드 호출
 		 */
 		
+		AClass aClass = new AClassChild2();
+		BClass bClass = new BClassChild2();
+		CInterface cIntercafe = new CInterfaceImpl2();
+		
+		aClass.methodA();
+		bClass.methodB();
+		cIntercafe.methodC();
 		
 	}
 	/******************내부클래스****************/
