@@ -72,10 +72,17 @@ public class OuterClass2 {
 			public void methodB() {
 				System.out.println("BClass를  상속받는 이름없는 클래스에서 BClass.methodB() 재정의");
 			}
+			/*
+			 public void method1() {}
+			 */
 		};
 		
 		aClass.methodA();
 		bClass.methodB();
+		/*
+		 aClass.method1(); 
+		 bClass.method1(); 호출 불가
+		 */
 	}
 	
 	
