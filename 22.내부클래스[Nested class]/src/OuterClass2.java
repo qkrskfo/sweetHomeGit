@@ -47,7 +47,13 @@ public class OuterClass2 {
 	
 	public void outer_member_method3() {
 		/**** 익명의 local 내부클래스(anonymous local inner class) 작성 ***/
-		 /*
+		/*
+		 * 재정의할 때 이 방법을 많이씀
+		 * 여러 클래스에서 사용할 땐 따로 만들고
+		 * 한 클래스에서 사용할 땐 이렇게 하는게 굿!!!
+		 */
+
+		/*
 		 * 1. AClass, BClass, CInterface를 상속받은 이름없는 자식 클래스를 
 		 *    OuterClass2 내부(outer_member_method3())에 작성
 		 * 2. AClass[methodA], BClass[methodB], CInterface[methodC]의 메소드를 재정의
@@ -77,8 +83,17 @@ public class OuterClass2 {
 			 */
 		};
 		
+		// 인터페이스는 객체를 생성받을 수 없어.
+		CInterface cInterface = new CInterface() {
+			@Override
+			public void methodC() {
+				System.out.println("CInterface를 구현(상속)하는 이름없는 클래스에서 CInterface.methodC() 재정의");	
+			}
+		};
+		
 		aClass.methodA();
 		bClass.methodB();
+		cInterface.methodC();
 		/*
 		 aClass.method1(); 
 		 bClass.method1(); 호출 불가
