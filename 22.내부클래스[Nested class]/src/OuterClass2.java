@@ -44,6 +44,41 @@ public class OuterClass2 {
 		cIntercafe.methodC();
 		
 	}
+	
+	public void outer_member_method3() {
+		/**** 익명의 local 내부클래스(anonymous local inner class) 작성 ***/
+		 /*
+		 * 1. AClass, BClass, CInterface를 상속받은 이름없는 자식 클래스를 
+		 *    OuterClass2 내부(outer_member_method3())에 작성
+		 * 2. AClass[methodA], BClass[methodB], CInterface[methodC]의 메소드를 재정의
+		 * 3. AClass, BClass, CInterface를 상속받은 자식클래스 객체 생성
+		 * 4. 재정의 메소드 호출
+		 */
+		
+		AClass aClass = new AClass() {
+			// 익명이니까 aclass달러 라고 만들어진다고 함 OuterClass2$1.class
+			// AClass를 상속받는 이름없는 클래스의 정의 & 그 객체의 생성
+			// 재정의 안하면 호출 불가
+			@Override
+			public void methodA() {
+				System.out.println("AClass를 상속받는 이름없는 클래스에서 AClass.methodA() 재정의");
+			}
+
+		};
+		
+		//BClass는 추상클래스야
+		BClass bClass = new BClass() {
+			@Override
+			public void methodB() {
+				System.out.println("BClass를  상속받는 이름없는 클래스에서 BClass.methodB() 재정의");
+			}
+		};
+		
+		aClass.methodA();
+		bClass.methodB();
+	}
+	
+	
 	/******************내부클래스****************/
 	public class AClassChild2 extends AClass {
 		@Override
