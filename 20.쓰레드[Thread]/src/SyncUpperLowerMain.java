@@ -2,12 +2,12 @@
 public class SyncUpperLowerMain {
 
 	public static void main(String[] args) {
-
-			SyncUpperThread ut = new SyncUpperThread();
-			SyncLowerThread lt = new SyncLowerThread();
-			
-			ut.start();
-			lt.start();
+		Object monitorObject = new Object();
+		SyncUpperThread ut = new SyncUpperThread(monitorObject);
+		SyncLowerThread lt = new SyncLowerThread(monitorObject);
+			 
+		ut.start();
+		lt.start();
 			
 	}
 
