@@ -14,7 +14,7 @@ public class SyncLowerThread extends Thread {
 			
 			// 객체가 들어가야함
 			// 동기화객체가 동일해야 동기화가 됨.
-			synchronized (monitorObject) {
+			synchronized (monitorObject) { // (Object.class) 가 들어갈수도 있음
 				System.out.println("a");
 				System.out.println("b");
 				System.out.println("c");
