@@ -12,7 +12,7 @@ public class BufferedReaderPrintWriterCopyMain {
 	public static void main(String[] args) throws Exception{
 
 		BufferedReader br = new BufferedReader(new FileReader("Crime and Punishment.txt"));
-		PrintWriter pw = new PrintWriter(new FileWriter("Crime and Punishment_LINENO.txt"));
+		PrintWriter pw = new PrintWriter(new FileWriter("Crime and Punishment_Print_LINENO.txt"));
 		
 		/*
 		public String readLine() throws IOException
