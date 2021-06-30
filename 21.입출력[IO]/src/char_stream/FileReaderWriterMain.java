@@ -1,5 +1,6 @@
 package char_stream;
 
+import java.io.FileReader;
 import java.io.FileWriter;
 
 public class FileReaderWriterMain {
@@ -24,6 +25,14 @@ public class FileReaderWriterMain {
 		fw.flush();
 		fw.close();
 		System.out.println("=== FileWriter.write() ===");
+		
+		
+		FileReader fr = new FileReader("fileWriter.txt");
+		int readChar = fr.read();
+		System.out.println("1. readChar:"+readChar);
+		readChar = fr.read();
+		System.out.println("2. readChar:"+readChar);
+		
 	}
 
 }
