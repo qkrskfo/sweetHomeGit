@@ -1,4 +1,4 @@
-package com.itwill04.array;
+package com.itwill04.array.academy;
 
 public class AcademyGangsa extends AcademyMember {
 	public String subject;//과목 

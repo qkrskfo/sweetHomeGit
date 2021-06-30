@@ -1,4 +1,4 @@
-package com.itwill03.포함;
+package com.itwill03.포함.book;
 
 public class BookMember {
 	/*

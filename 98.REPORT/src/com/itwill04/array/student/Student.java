@@ -1,4 +1,4 @@
-package com.itwill04.array;
+package com.itwill04.array.student;
 
 /*
  * 성적처리를 위한 필요한 학생객체를 만들기 위한 클래스

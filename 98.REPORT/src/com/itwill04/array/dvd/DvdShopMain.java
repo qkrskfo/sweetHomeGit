@@ -1,4 +1,4 @@
-package com.itwill04.array;
+package com.itwill04.array.dvd;
 
 public class DvdShopMain {
 

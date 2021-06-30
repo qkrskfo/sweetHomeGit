@@ -1,4 +1,4 @@
-package com.itwill04.array;
+package com.itwill04.array.car;
 /*
  * 주차관리프로그램
  */
