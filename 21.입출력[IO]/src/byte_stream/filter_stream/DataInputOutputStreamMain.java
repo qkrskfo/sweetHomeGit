@@ -11,8 +11,11 @@ public class DataInputOutputStreamMain {
 		 *  자바의 기본데이터를 출력 스트림에 쉽게 쓸 수 있도록 하는 필터 클래스
 		 */
 		
-//		DataOutputStream dos = new DataOutputStream(new FileOutputStream("dataOut.dat"));
-		FileOutputStream fos = new FileOutputStream("dataOut.dat");
+		FileOutputStream fos = new FileOutputStream("dataOut.dat"); 
+			// 이렇게 하니까 dataOut.dat 이라는 파일이 생기넹
+		DataOutputStream dos = new DataOutputStream(new FileOutputStream("dataOut.dat")); // 얘는 필터스트림
+		
+		
 		int intData = 2147483647;
 		/*
 		 * 01111111|11111111|11111111|11111111
@@ -28,11 +31,22 @@ public class DataInputOutputStreamMain {
 		 *             (1)      (2)     (3)
 		 */
 		
+		/*
 		fos.write(intData>>24); // 24비트를 민다
 		fos.write(intData>>16); // 16비트를 민다
 		fos.write(intData>>8); // 8비트를 민다
 		fos.write(intData);
+		*/
 		
+		dos.writeInt(intData); // fos.write에서 수동으로 밀었던게 여기는 자동으로 되는?
+		dos.writeByte(127);
+		dos.writeBoolean(true);
+		dos.writeDouble(3.141592);
+		dos.writeChar('가');
+		dos.writeUTF("오늘은 자바입출력을 공부합니다.");
+		dos.close();
+		
+		System.out.println("DataOutputStream.wirteXXX()--> dataOut.dat에 써주는 것");
 		
 	}
 
