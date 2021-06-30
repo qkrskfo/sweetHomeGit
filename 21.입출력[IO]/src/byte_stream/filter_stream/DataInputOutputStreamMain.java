@@ -1,6 +1,8 @@
 package byte_stream.filter_stream;
 
+import java.io.DataInputStream;
 import java.io.DataOutputStream;
+import java.io.FileInputStream;
 import java.io.FileOutputStream;
 
 public class DataInputOutputStreamMain {
@@ -48,6 +50,18 @@ public class DataInputOutputStreamMain {
 		
 		System.out.println("DataOutputStream.wirteXXX()--> dataOut.dat에 써주는 것");
 		
+		System.out.println("------------------");
+		System.out.println("DataInputStream.readXXX() <-- dataOut.dat");
+		DataInputStream dis = new DataInputStream(new FileInputStream("dataOut.dat"));
+		// write한 순서대로 읽지 않으면 안읽어지고 깨짐.
+		int readInt = dis.readInt();
+		System.out.println("int:"+readInt);
+		System.out.println("byte:"+dis.readByte());
+		System.out.println("boolean:"+dis.readBoolean());
+		System.out.println("double:"+dis.readDouble());
+		System.out.println("char:"+dis.readChar());
+		System.out.println("String:"+dis.readUTF());
+		dis.close();
 	}
 
 }
