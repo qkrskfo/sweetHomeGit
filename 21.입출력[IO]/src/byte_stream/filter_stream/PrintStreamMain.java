@@ -54,7 +54,9 @@ public class PrintStreamMain {
 		ps.write(50);
 		ps.write(51);
 		ps.write(52);
-		ps.write(53);
+		ps.write(53); 
+		
+		// '김', '박' 등을 write에 쓰면 깨짐. 
 		
 		System.out.println("--- PrintStream.print() --> print.txt ---");
 	}
