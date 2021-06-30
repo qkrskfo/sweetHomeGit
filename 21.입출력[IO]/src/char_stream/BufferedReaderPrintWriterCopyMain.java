@@ -5,13 +5,14 @@ import java.io.BufferedWriter;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.PrintWriter;
 
 public class BufferedReaderPrintWriterCopyMain {
 
 	public static void main(String[] args) throws Exception{
 
 		BufferedReader br = new BufferedReader(new FileReader("Crime and Punishment.txt"));
-		BufferedWriter bw = new BufferedWriter(new FileWriter("Crime and Punishment_LINENO.txt"));
+		PrintWriter pw = new PrintWriter(new FileWriter("Crime and Punishment_LINENO.txt"));
 		
 		/*
 		public String readLine() throws IOException
@@ -40,13 +41,12 @@ public class BufferedReaderPrintWriterCopyMain {
 				continue; // 공백제거
 			}
 			lineNo++;
-			bw.write(lineNo+":"+readLine);
-			bw.newLine(); //알아서 newLine을 넣어줌
+			pw.println(lineNo+":"+readLine);
 		}
 		br.close();
-		bw.flush();
-		bw.close();
-		System.out.println( " --- BufferedReaderWriter Copy --- ");
+		pw.flush();
+		pw.close();
+		System.out.println( " --- BufferedReader PrintWriter Copy --- ");
 				
 		
 	}
