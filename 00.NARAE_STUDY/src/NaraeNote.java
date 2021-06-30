@@ -285,6 +285,10 @@ final이야
  Inner class 
  중첩클래스, 클래스 안에 클래스
  
+ 
+ 0630
+ 이미지파일을 reader, writer 로 복사하면 안되지
+ 
 */
 		
 
