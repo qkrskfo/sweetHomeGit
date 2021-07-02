@@ -17,7 +17,7 @@ public class CarService {
 	     - 차량번호중복체크
 	*/
 
-	public int ipCha(Car car) {
+	public boolean ipCha(Car car) {
 
 		int status = 0;
 		/*
@@ -26,6 +26,7 @@ public class CarService {
 		 * 3. 입차
 		 */
 
+		/* 내가한거 (나는 리턴타입이 int)
 		for (int i = 0; i < carArray.length; i++) {
 			if (carArray[i] != null) {
 				status = 1;
@@ -42,7 +43,38 @@ public class CarService {
 			}
 		}
 		return status;
+		*/
+	
+		//선생님꺼 (리턴타입이 boolean임)
+		boolean isSuccess = false;
+		int count = this.parkingArea();
+		/*
+		for (int i = 0; i < carArray.length; i++) {
+			if(carArray[i] == null) {
+				count++;
+			}
+		}*/
+		
+		boolean isDuplicate = false;
+		for (Car tempCar : carArray) {
+			if(tempCar!=null && tempCar.getNo().equals(car.getNo())) {
+				isDuplicate = true;
+				break;
+			}
+		}
+		if(!(count < 0 || isDuplicate)) {
+			isSuccess = true;
+			for (int i = 0; i < carArray.length; i++) {
+				if(carArray[i]==null) {
+					carArray[i] = car;
+					break;
+				}
+			}
+		}
+		
+		return isSuccess;
 	}
+	
 	
 //	public int ipCha(Car car) {
 //
@@ -107,14 +139,16 @@ public class CarService {
 		}
 	}
 	
-	
 	/*
 	2. 주차구획수반환
 	*/
 	public int totalArea() {
+		/*내가한거. 밑에껀ㅅ ㅓㄴ생님이 하신거
 		int total = 0;
 		total = carArray.length;
 		return total;
+		*/
+		return carArray.length;
 	}
 	
 	/*

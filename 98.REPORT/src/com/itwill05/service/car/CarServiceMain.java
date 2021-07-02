@@ -13,7 +13,9 @@ public class CarServiceMain {
 		carService.ipCha(new Car("7891", 9));
 		carService.ipCha(new Car("4567", 10));
 		
+		/* 내가한거
 		int status = carService.ipCha(new Car("2344", 10));
+		
 		
 		switch(status) {
 		case 1:
@@ -24,6 +26,14 @@ public class CarServiceMain {
 			break;
 		default :
 			System.out.println("차량 입차가 완료되었습니다.");
+		}
+		*/
+		
+		// 선생님이한거
+		boolean isSuccess = carService.ipCha(new Car("7777", 10));
+		isSuccess = carService.ipCha(new Car("2344", 10));
+		if(!isSuccess) {
+			System.out.println("주차장이 만차이거나 번호가 중복되었습니다.");
 		}
 		
 		System.out.println("1.CarService객체야 전체차량출력해줘");

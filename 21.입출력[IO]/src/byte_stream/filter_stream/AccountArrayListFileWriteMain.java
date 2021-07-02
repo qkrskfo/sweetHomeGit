@@ -1,10 +1,12 @@
 package byte_stream.filter_stream;
 
+import java.io.DataOutputStream;
+import java.io.FileOutputStream;
 import java.util.Arrays;
 import java.util.List;
 
 public class AccountArrayListFileWriteMain {
-	public static void main(String[] args) {
+	public static void main(String[] args) throws Exception {
 		/*
 		 * List<Account>  --> 파일로저장(accountList.dat)[Quiz]
 		 */
@@ -20,6 +22,16 @@ public class AccountArrayListFileWriteMain {
 				new Account(9999, "QIM", 99000, 3.3));
 		
 
+		DataOutputStream dos = new DataOutputStream(new FileOutputStream("accountList.dat"));
+		
+		for(Account account : accountList) {
+			 dos.writeInt(account.getNo());
+			 dos.writeUTF(account.getOwner());
+			 dos.writeInt(account.getBalance());
+			 dos.writeDouble(account.getInterest());
+		}
+		dos.close();
+		System.out.println(">>> List의 Account 객체들 --> accountList.dat ");
 	}
-
+		
 }
