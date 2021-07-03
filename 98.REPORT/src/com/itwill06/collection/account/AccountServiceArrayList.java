@@ -1,6 +1,7 @@
 package com.itwill06.collection.account;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Iterator;
 
 /*
@@ -201,13 +202,15 @@ public class AccountServiceArrayList {
 	 10.계좌를 잔고순으로 오름차순정렬[x] 쌤이랑 같이 할거야 utility 클래스가 있데
 	*/
 	public void sortByBalanceAsc() {
-		
+		Collections.sort(accountList);
 	}
+	
+	
 	/*
 	 11.계좌를 잔고순으로 내림차순정렬[x] 쌤이랑 같이 할거야
 	 */
 	public void sortByBalanceDesc() {
-		
+		Collections.reverse(accountList);
 	}
 	
 	/*
