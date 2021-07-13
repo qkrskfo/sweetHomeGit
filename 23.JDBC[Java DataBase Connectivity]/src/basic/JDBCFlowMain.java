@@ -2,6 +2,7 @@ package basic;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.ResultSet;
 import java.sql.Statement;
 
 public class JDBCFlowMain {
@@ -44,7 +45,20 @@ public class JDBCFlowMain {
 		 * 5. ResultSet 얻기
 		 */
 		
-		stmt.executeQuery();
+		 ResultSet rs = stmt.executeQuery(selectSql);
+		 // java.sql에 있는 인터페이스 ResultSet을 선택해야함.
+		 System.out.println("4. SQL문 전송: "+selectSql);
+		 System.out.println("5. ResultSet(결과집합) 얻기: "+rs);
+		 
+		 System.out.println("-----------------------------------");
+		 
+		 // rs.next()는 iterator.hasnext() 처럼 rs에서 커서를 움직여주는것.
+		 while(rs.next()) {
+			 int deptno = rs.getInt("deptno"); // 컬럼이름
+			 String dname = rs.getString("dname");
+			 String loc = rs.getString("loc");
+			 System.out.println(deptno+"\t"+dname+"\t"+loc);
+		 }
 	}
 
 }
