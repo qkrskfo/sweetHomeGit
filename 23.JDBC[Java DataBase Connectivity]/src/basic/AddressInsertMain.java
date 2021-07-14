@@ -35,7 +35,9 @@ public class AddressInsertMain {
 		int insertRowCount = stmt.executeUpdate(insertSql);
 		System.out.println(">> "+insertRowCount+"행이 insert된다");
 		
-		
+		// sql developer로 하면 commit, rollback 등을 해줘야 트랜잭션이 끝나지만
+		// java에서 하면 바로 커밋이 됨. 여러개의 문장을 한개의 트랜잭션으로 묶으려면
+		// 오토 트랜잭션? 오토 커밋? 을 꺼줘야되나봐
 		
 
 	}
