@@ -24,8 +24,28 @@ public class AddressSelectByNoMain {
 		
 		ResultSet rs = stmt.executeQuery(selectSql);
 		// 인터페이스임! 주황색 글씨!
+		
+		/* Retrieving Result
+		 * 		before first BOF
+		 * 		after last   EOF
+		 */
 	
-
+		if(rs.next()) {
+			int no = rs.getInt("NO");
+			String id = rs.getString("id");
+			String name = rs.getString("name");
+			String phone = rs.getString("phone");
+			String address = rs.getString("address");
+			System.out.println(no + "\t" + id + "\t" + name + "\t" + phone + "\t" + address);
+		}
+		
+		/*
+		 * DB number -> int, double
+		 * varchar2 -> String
+		 * date -> Date
+		 * XXX var = rs.getXXX("컬럼이름")
+		 */
+		
 	}
 
 }
