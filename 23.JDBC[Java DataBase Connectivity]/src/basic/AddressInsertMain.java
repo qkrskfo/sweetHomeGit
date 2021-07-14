@@ -39,7 +39,9 @@ public class AddressInsertMain {
 		// java에서 하면 바로 커밋이 됨. 여러개의 문장을 한개의 트랜잭션으로 묶으려면
 		// 오토 트랜잭션? 오토 커밋? 을 꺼줘야되나봐
 		
-
+	
+		stmt.close();
+		con.close();
 	}
 
 }

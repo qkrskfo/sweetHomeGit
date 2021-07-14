@@ -25,7 +25,9 @@ public class AddressDeleteMain {
 		int deleteRowCount = stmt.executeUpdate(deleteSql);
 		System.out.println(">> "+deleteRowCount+"행 delete");
 		
-		
+
+		stmt.close();
+		con.close();
 	}
 
 }

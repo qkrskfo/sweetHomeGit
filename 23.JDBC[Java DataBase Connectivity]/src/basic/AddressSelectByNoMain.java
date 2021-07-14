@@ -69,6 +69,10 @@ public class AddressSelectByNoMain {
 		 * XXX var = rs.getXXX("컬럼이름")
 		 */
 		
+		rs.close();
+		stmt.close();
+		con.close();
+		
 	}
 
 }

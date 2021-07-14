@@ -25,6 +25,9 @@ public class AddressUpdateByNoMain {
 		int updateRowCount = stmt.executeUpdate(updateSql);
 		System.out.println(">> "+updateRowCount+"행 update");
 
+
+		stmt.close();
+		con.close();
 	}
 
 }
