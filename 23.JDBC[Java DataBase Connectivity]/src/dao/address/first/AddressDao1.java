@@ -30,5 +30,9 @@ public class AddressDao1 {
 		
 	}
 	
+	public void selectAll() throws Exception {
+		
+	}
+	
 	
 }
