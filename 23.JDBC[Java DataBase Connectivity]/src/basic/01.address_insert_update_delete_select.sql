@@ -1,17 +1,17 @@
 --insert
-insert into address values(address_no_seq.nextval,'guard','±è°æÈ£','123-4568','°æ±âµµ ¼º³²½Ã');
-insert into address values(address_no_seq.nextval,'abcdf','¹Ú°æÈ£','123-4568','°æ±âµµ ±¸¸®½Ã');
-insert into address values(address_no_seq.nextval,'starts','ÃÖ°æÈ£','123-4568','°æ±âµµ Æ÷Ãµ½Ã');
-insert into address values(address_no_seq.nextval,'beauty','±¸°æÈ£','123-4568','°æ±âµµ ÀÌÃµ½Ã');
-insert into address values(address_no_seq.nextval,'bishop','Á¤°æÈ£','123-4568','°æ±âµµ ±ºÆ÷½Ã');
-insert into address values(address_no_seq.nextval,'xyzzx','ÀÌ°æÈ£','123-4568','°æ±âµµ ¾È¾ç½Ã');
-insert into address values(address_no_seq.nextval,'yyyyy','ÁÖ°æÈ£','123-4568','°æ±âµµ ¾È»ê½Ã');
-insert into address values(address_no_seq.nextval,'super','¾ç°æÈ£','123-4568','°æ±âµµ ÀÎÃµ½Ã');
-insert into address values(address_no_seq.nextval,'strong','ÀÎ°æÈ£','123-4568','°æ±âµµ ½ÃÈï½Ã');
+insert into address values(address_no_seq.nextval,'guard','ê¹€ê²½í˜¸','123-4568','ê²½ê¸°ë„ ì„±ë‚¨ì‹œ');
+insert into address values(address_no_seq.nextval,'abcdf','ë°•ê²½í˜¸','123-4568','ê²½ê¸°ë„ êµ¬ë¦¬ì‹œ');
+insert into address values(address_no_seq.nextval,'starts','ìµœê²½í˜¸','123-4568','ê²½ê¸°ë„ í¬ì²œì‹œ');
+insert into address values(address_no_seq.nextval,'beauty','êµ¬ê²½í˜¸','123-4568','ê²½ê¸°ë„ ì´ì²œì‹œ');
+insert into address values(address_no_seq.nextval,'bishop','ì •ê²½í˜¸','123-4568','ê²½ê¸°ë„ êµ°í¬ì‹œ');
+insert into address values(address_no_seq.nextval,'xyzzx','ì´ê²½í˜¸','123-4568','ê²½ê¸°ë„ ì•ˆì–‘ì‹œ');
+insert into address values(address_no_seq.nextval,'yyyyy','ì£¼ê²½í˜¸','123-4568','ê²½ê¸°ë„ ì•ˆì‚°ì‹œ');
+insert into address values(address_no_seq.nextval,'super','ì–‘ê²½í˜¸','123-4568','ê²½ê¸°ë„ ì¸ì²œì‹œ');
+insert into address values(address_no_seq.nextval,'strong','ì¸ê²½í˜¸','123-4568','ê²½ê¸°ë„ ì‹œí¥ì‹œ');
 commit;
 
 --update(pk update)
-update address set id='xxx',name='±è°æÈ£',phone='899-9999',address='¼­¿ï½Ã °­³²±¸' where no = 1;
+update address set id='xxx',name='ê¹€ê²½í˜¸',phone='899-9999',address='ì„œìš¸ì‹œ ê°•ë‚¨êµ¬' where no = 1;
 commit;
 
 --delete (pk delete)
