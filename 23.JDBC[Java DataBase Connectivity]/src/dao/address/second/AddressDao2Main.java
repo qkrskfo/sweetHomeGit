@@ -20,6 +20,10 @@ public class AddressDao2Main {
 		// index는 외부에서 핸들링하지 않음
 		addressDao2.insert("ccc", "김수미", "234-7690", "부산시 강서구");
 		// addressdao2에 싱글쿼테이션, 더블쿼테이션을 다 써야하나봄.
+		
+		System.out.println(">> update");
+		addressDao2.updateByNo(8, "eight", "팔팔팔", "888-8888", "수원시 팔달구");
+		// 선택적 수정이 안되고 각 항목 모두 수정되야 함..
 	}
 
 }

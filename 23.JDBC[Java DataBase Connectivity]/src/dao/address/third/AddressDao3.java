@@ -1,4 +1,4 @@
-package dao.address.second;
+package dao.address.third;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -6,8 +6,10 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 
 
-public class AddressDao2 {
 
+
+
+public class AddressDao3 {
 	public void insert(String id, String name, String phone, String address) throws Exception {
 		/**************DB 접속 정보*************/
 		String driverClass= "oracle.jdbc.OracleDriver";
@@ -136,6 +138,4 @@ public class AddressDao2 {
 		stmt.close();
 		con.close();
 	}
-	
-	
 }
