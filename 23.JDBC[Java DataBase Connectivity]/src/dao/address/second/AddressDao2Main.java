@@ -15,6 +15,7 @@ public class AddressDao2Main {
 		System.out.println(">> selectAll");
 		addressDao2.selectAll();
 		
+
 		System.out.println(">> insert");
 		addressDao2.insert("zzz", "김수로", "888-9090", "서울시 양천구");
 		// index는 외부에서 핸들링하지 않음
@@ -24,6 +25,7 @@ public class AddressDao2Main {
 		System.out.println(">> update");
 		addressDao2.updateByNo(8, "eight", "팔팔팔", "888-8888", "수원시 팔달구");
 		// 선택적 수정이 안되고 각 항목 모두 수정되야 함..
+		
 	}
 
 }

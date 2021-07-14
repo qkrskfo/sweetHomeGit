@@ -7,9 +7,32 @@ import java.sql.Statement;
 
 
 
-
-
 public class AddressDao3 {
+	public void insert(Address address) throws Exception {
+		/**************DB 접속 정보*************/
+		String driverClass= "oracle.jdbc.OracleDriver";
+		String url = "jdbc:oracle:thin:@182.237.126.19:1521:xe";
+		String user = "javadeveloper2";
+		String password = "javadeveloper2";
+		/**************************************/
+		
+		String insertSql = "insert into address values(address_no_seq.nextval,'" + 
+				address.getId() + "','" + 
+				address.getName() + "','" + 
+				address.getPhone() + "','" + 
+				address.getAddress() + "')";
+
+		Class.forName(driverClass);
+		Connection con = DriverManager.getConnection(url, user, password);
+		Statement stmt = con.createStatement();
+		
+		int insertRowCount = stmt.executeUpdate(insertSql);
+		System.out.println(">> "+insertRowCount+"행이 insert된다");
+			
+		stmt.close();
+		con.close();
+	}
+	
 	public void insert(String id, String name, String phone, String address) throws Exception {
 		/**************DB 접속 정보*************/
 		String driverClass= "oracle.jdbc.OracleDriver";
@@ -31,6 +54,7 @@ public class AddressDao3 {
 		con.close();
 	}
 	
+	
 	public void deleteByNo(int num) throws Exception {
 		
 		/**************DB 접속 정보*************/
@@ -51,6 +75,31 @@ public class AddressDao3 {
 
 		stmt.close();
 		con.close();
+	}
+	
+	public void updateByNo(Address updateAddress) throws Exception {
+		
+		/**************DB 접속 정보*************/
+		String driverClass= "oracle.jdbc.OracleDriver";
+		String url = "jdbc:oracle:thin:@182.237.126.19:1521:xe";
+		String user = "javadeveloper2";
+		String password = "javadeveloper2";
+		/***************************************/
+
+		String updateSql = "update address set id='"+updateAddress.getId()+"',name='"+updateAddress.getName()+"',phone='"+updateAddress.getPhone()+"',address='"+updateAddress.getAddress()+"'";
+		
+		
+		Class.forName(driverClass);
+		Connection con = DriverManager.getConnection(url, user, password);
+		Statement stmt = con.createStatement();
+		
+		int updateRowCount = stmt.executeUpdate(updateSql);
+		System.out.println(">> "+updateRowCount+"행 update");
+		System.out.println("update sql: "+updateSql); // -> 팔팔팔 잘 됐는지 확인
+
+		stmt.close();
+		con.close();
+		
 	}
 	
 	public void updateByNo(int num, String id, String name, String phone, String address) throws Exception {
