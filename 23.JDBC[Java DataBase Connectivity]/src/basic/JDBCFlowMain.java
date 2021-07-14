@@ -18,7 +18,9 @@ public class JDBCFlowMain {
 		// 세미콜론 넣으면 안돼요 여기선~!
 		
 		/*
-		 * 1. Driver Class loading 
+		 * 1. Driver Class loading 되면
+		 *   - Driver 클래스 객체 생성하고,
+		 *   - DriverManager객체에 등록됨
 		 */		
 		Class.forName(driverClass);
 		System.out.println("1. Driver Class loading ");
@@ -59,6 +61,18 @@ public class JDBCFlowMain {
 			 String loc = rs.getString("loc");
 			 System.out.println(deptno+"\t"+dname+"\t"+loc);
 		 }
+		 
+		 
+		 /*
+		  * 6. resource 해지
+		  */
+		 
+		 rs.close();
+		 stmt.close();
+		 con.close();
+		 System.out.println("6. resource 해지 close() ");
+		 
+		 
 	}
 
 }
