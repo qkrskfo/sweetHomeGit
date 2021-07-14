@@ -16,9 +16,7 @@ public class AddressDao3 {
 		String password = "javadeveloper2";
 		/**************************************/
 		
-		String insertSql = "insert into address values(address_no_seq.nextval,'" + 
-				address.getId() + "','" + 
-				address.getName() + "','" + 
+		String insertSql = "insert into address values(address_no_seq.nextval,'" +	address.getId() + "','" + address.getName() + "','" + 
 				address.getPhone() + "','" + 
 				address.getAddress() + "')";
 
@@ -86,7 +84,7 @@ public class AddressDao3 {
 		String password = "javadeveloper2";
 		/***************************************/
 
-		String updateSql = "update address set id='"+updateAddress.getId()+"',name='"+updateAddress.getName()+"',phone='"+updateAddress.getPhone()+"',address='"+updateAddress.getAddress()+"'";
+		String updateSql = "update address set id='"+updateAddress.getId()+"',name='"+updateAddress.getName()+"',phone='"+updateAddress.getPhone()+"',address='"+updateAddress.getAddress()+ "' where no='" + updateAddress.getNum() + "'";
 		
 		
 		Class.forName(driverClass);
