@@ -18,7 +18,8 @@ public class AddressDao2Main {
 		System.out.println(">> insert");
 		addressDao2.insert("zzz", "김수로", "888-9090", "서울시 양천구");
 		// index는 외부에서 핸들링하지 않음
-		
+		addressDao2.insert("ccc", "김수미", "234-7690", "부산시 강서구");
+		// addressdao2에 싱글쿼테이션, 더블쿼테이션을 다 써야하나봄.
 	}
 
 }

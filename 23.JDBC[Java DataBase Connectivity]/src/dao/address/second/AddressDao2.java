@@ -16,7 +16,7 @@ public class AddressDao2 {
 		String password = "javadeveloper2";
 		/**************************************/
 		
-		String insertSql = "insert into address values(address_no_seq.nextval,'guard','김경호','123-4568','경기도 성남시')";
+		String insertSql = "insert into address values(address_no_seq.nextval,'" + id + "','" + name + "','" + phone + "','" + address + "')";
 
 		Class.forName(driverClass);
 		Connection con = DriverManager.getConnection(url, user, password);
