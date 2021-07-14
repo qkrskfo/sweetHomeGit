@@ -15,7 +15,7 @@ public class AddressUpdateByNoMain {
 		String password = "javadeveloper2";
 		/***************************/
 
-		String updateSql = "update address set id='xxx',name='김경호',phone='899-9999',address='서울시 강남구' where no = 1";
+		String updateSql = "update address set id='xxx',name='김경호',phone='899-9999',address='서울시 강남구' where no = 6";
 		
 		
 		Class.forName(driverClass);
