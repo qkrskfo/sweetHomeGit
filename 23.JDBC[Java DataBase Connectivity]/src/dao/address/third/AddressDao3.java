@@ -101,6 +101,12 @@ public class AddressDao3 {
 		con.close();
 		
 	}
+	/*
+	public void updateByNoId(int no, String id) {}
+	public void updateByNoName(int no, String name) {}
+	public void updateByNoAddress(int no, String address) {}
+	public void updateByNoPhone(int no, String phone) {}
+	*/
 	
 	public void updateByNo(int num, String id, String name, String phone, String address) throws Exception {
 		
