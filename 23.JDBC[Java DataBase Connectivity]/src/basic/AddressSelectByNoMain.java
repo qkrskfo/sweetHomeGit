@@ -22,6 +22,18 @@ public class AddressSelectByNoMain {
 		Connection con = DriverManager.getConnection(url, user, password);
 		Statement stmt = con.createStatement();
 		
+		/*
+		ResultSet executeQuery(String sql)  throws SQLException;
+			Executes the given SQL statement, which returns a single ResultSet object.
+		
+			Parameters:
+				sql - an SQL statement to be sent to the database, typically a static SQL SELECT statement
+			Returns:
+				a ResultSet object that contains the data produced by the given query; never null
+		 */
+		
+		
+		
 		ResultSet rs = stmt.executeQuery(selectSql);
 		// 인터페이스임! 주황색 글씨!
 		
@@ -30,6 +42,17 @@ public class AddressSelectByNoMain {
 		 * 		after last   EOF
 		 */
 	
+		/*
+		 << ResultSet >>
+		 boolean next() throws SQLException;
+			- Moves the cursor forward one row from its current position. 
+			- A ResultSet cursor is initially positioned before the first row; 
+			  the first call to the method next makes the first row the current row; 
+			  the second call makes the second row the current row, and so on.
+			- When a call to the next method returns false, the cursor is positioned after the last row
+		 */
+		
+		
 		if(rs.next()) {
 			int no = rs.getInt("NO");
 			String id = rs.getString("id");
