@@ -1,25 +1,14 @@
-package dao.address.first;
+package dao.address.second;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
 
-/*
-Dao(Data Access Object)
- - Address들의 데이터를 저장하고있는 Address테이블에
-   CRUD(Create, Read, Update, Delete) 작업을 할수있는
-   단위 메쏘드를 가지고있는 클래스
 
- - AddressService객체 의 요청(메쏘드호출)을 받아서 
-   Data Access(File, DB)에 관련된 단위기능(CRUD)을
-   수행하는 객체
- */
+public class AddressDao2 {
 
-
-public class AddressDao1 {
-
-	public void insert() throws Exception {
+	public void insert(String id, String name, String phone, String address) throws Exception {
 		/**************DB 접속 정보*************/
 		String driverClass= "oracle.jdbc.OracleDriver";
 		String url = "jdbc:oracle:thin:@182.237.126.19:1521:xe";
@@ -40,7 +29,7 @@ public class AddressDao1 {
 		con.close();
 	}
 	
-	public void deleteByNo() throws Exception {
+	public void deleteByNo(int num) throws Exception {
 		
 		/**************DB 접속 정보*************/
 		String driverClass= "oracle.jdbc.OracleDriver";
@@ -49,7 +38,7 @@ public class AddressDao1 {
 		String password = "javadeveloper2";
 		/**************************************/
 
-		String deleteSql = "delete from address where no=7";
+		String deleteSql = "delete from address where no="+num;
 		
 		Class.forName(driverClass);
 		Connection con = DriverManager.getConnection(url, user, password);
@@ -71,7 +60,7 @@ public class AddressDao1 {
 		String password = "javadeveloper2";
 		/***************************************/
 
-		String updateSql = "update address set id='xxx',name='김경호',phone='899-9999',address='서울시 강남구' where no = 6";
+		String updateSql = "update address set id='xxx',name='김경호',phone='899-9999',address='서울시 강남구' where no =";
 		
 		Class.forName(driverClass);
 		Connection con = DriverManager.getConnection(url, user, password);
@@ -84,7 +73,7 @@ public class AddressDao1 {
 		con.close();
 	}
 	
-	public void selectByNo() throws Exception {
+	public void selectByNo(int num) throws Exception {
 		
 		/**************DB 접속 정보*************/
 		String driverClass= "oracle.jdbc.OracleDriver";
@@ -93,7 +82,7 @@ public class AddressDao1 {
 		String password = "javadeveloper2";
 		/**************************************/
 
-		String selectSql = "select no,id,name,phone,address from address where no = 6";
+		String selectSql = "select no,id,name,phone,address from address where no ="+num;
 		
 		
 		Class.forName(driverClass);

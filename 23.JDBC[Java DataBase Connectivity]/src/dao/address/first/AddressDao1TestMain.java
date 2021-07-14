@@ -19,7 +19,6 @@ public class AddressDao1TestMain {
 		System.out.println("5. select all");
 		addressDao1.selectAll();
 		
-		
 	}
 
 }
