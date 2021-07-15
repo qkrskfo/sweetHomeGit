@@ -155,7 +155,7 @@ public class PreparedStatementMain {
 			double sal = rs1.getDouble("sal");
 			Date hireDate = rs1.getDate("hiredate");
 			String hireDateStr = new SimpleDateFormat("yyyy/MM/dd").format(hireDate);
-			System.out.println(empno + "\t" + name + "\t" + jobStr + "\t\t" + sal);
+			System.out.println(empno + "\t" + name + "\t" + jobStr + "\t\t" + sal+ "\t" + hireDateStr);
 			
 		}
 		
@@ -176,7 +176,7 @@ public class PreparedStatementMain {
 			double sal = rs2.getDouble("sal");
 			Date hireDate = rs2.getDate("hiredate");
 			String hireDateStr = new SimpleDateFormat("yyyy/MM/dd").format(hireDate);
-			System.out.println(empno+"\t"+name+"\t"+jobStr+"\t\t"+sal);
+			System.out.println(empno+"\t"+name+"\t"+jobStr+"\t\t"+sal+ "\t" + hireDateStr);
 			
 		}
 		
