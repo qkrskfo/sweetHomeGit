@@ -119,6 +119,7 @@ public class DateCalendarMain {
 		
 		
 		/******* Calendar 객체 메쏘드 ********/
+		System.out.println("-- Calendar 객체 메쏘드 --");
 		
 		Calendar calendar3 = Calendar.getInstance();
 		calendar3.clear();
@@ -138,11 +139,36 @@ public class DateCalendarMain {
 		System.out.println(calendar3.equals(calendar5));
 		System.out.println(calendar5.compareTo(calendar3));
 		
+		System.out.println("원래날짜 : "+calendar3.get(Calendar.YEAR)+"년 "+(calendar3.get(Calendar.MONTH)+1)+"월 "+calendar3.get(Calendar.DAY_OF_MONTH)+"일");
+		calendar3.add(Calendar.DATE, 5); // 며칠후(양수로)
+		System.out.println("5일 후 : "+calendar3.get(Calendar.YEAR)+"년 "+(calendar3.get(Calendar.MONTH)+1)+"월 "+calendar3.get(Calendar.DAY_OF_MONTH)+"일");
+		
+		calendar3.add(Calendar.DATE, -10); // 며칠전(음수로)
+		System.out.println("10일 전 : "+calendar3.get(Calendar.YEAR)+"년 "+(calendar3.get(Calendar.MONTH)+1)+"월 "+calendar3.get(Calendar.DAY_OF_MONTH)+"일");
+		
+		calendar3.add(Calendar.MONTH, 6); // 6개월 후
+		System.out.println("6개월 후(month) : "+calendar3.get(Calendar.YEAR)+"년 "+(calendar3.get(Calendar.MONTH)+1)+"월 "+calendar3.get(Calendar.DAY_OF_MONTH)+"일");
+		
+		calendar3.add(Calendar.MONDAY, 6); // 6개월 후?? monday랑 month랑 무슨 차이임? 몰라 values가 같네;;
+		System.out.println("6개월 후(monday) : "+calendar3.get(Calendar.YEAR)+"년 "+(calendar3.get(Calendar.MONTH)+1)+"월 "+calendar3.get(Calendar.DAY_OF_MONTH)+"일");
+		
+		calendar3.add(Calendar.YEAR, 1); // 1년후
+		System.out.println("1년 후 : "+calendar3.get(Calendar.YEAR)+"년 "+(calendar3.get(Calendar.MONTH)+1)+"월 "+calendar3.get(Calendar.DAY_OF_MONTH)+"일");
 		
 		
 		/******* Date 객체 메쏘드 ********/
+		System.out.println("-- Date 객체 메쏘드 --");
+		Date date3 = new SimpleDateFormat("yyyy-MM-dd").parse("2021-07-07");
+		Date date4 = new SimpleDateFormat("yyyy-MM-dd").parse("2021-07-07");
+		Date date5 = new SimpleDateFormat("yyyy-MM-dd").parse("2021-08-08");
 		
+		System.out.println("eqauls: "+date3.equals(date4));
+		System.out.println("compareTo: "+date3.compareTo(date4));
+		System.out.println("compareTo: "+date3.compareTo(date5)); // 현재보다 가까운 날짜에 음수가 나옴. Calendar는 가까운 날짜에 양수가 나왔었어! 
+		System.out.println("compareTo: "+date5.compareTo(date3));
 		
+		// date 객체는 add가 없어서 Calendar와 같이 써야 함.
+
 		
 		
 		
