@@ -6,6 +6,22 @@ public class AddressDao3Main {
 		
 		AddressDao3 addressDao3 = new AddressDao3();
 		
+		
+		
+		System.out.println(">> delete");
+		addressDao3.deleteByNo(4);
+		
+		
+		
+		/***** select *****/	
+		System.out.println(">> selectByNo");
+		addressDao3.selectByNo(9);
+		
+		System.out.println(">> selectAll");
+		addressDao3.selectAll();
+		
+		
+		
 
 		/*****case 1 *****/		
 		System.out.println(">> insert");
@@ -31,14 +47,8 @@ public class AddressDao3Main {
 		// 선택적 수정이 안되고 각 항목 모두 수정되야 함..
 		
 		
-		System.out.println(">> delete");
-		addressDao3.deleteByNo(4);
 		
-		System.out.println(">> selectByNo");
-		addressDao3.selectByNo(9);
 		
-		System.out.println(">> selectAll");
-		addressDao3.selectAll();
 		
 		
 		

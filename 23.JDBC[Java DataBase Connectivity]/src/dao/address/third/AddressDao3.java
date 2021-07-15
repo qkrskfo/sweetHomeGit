@@ -23,7 +23,7 @@ public class AddressDao3 {
 		Class.forName(driverClass);
 		Connection con = DriverManager.getConnection(url, user, password);
 		Statement stmt = con.createStatement();
-		
+		000000000
 		int insertRowCount = stmt.executeUpdate(insertSql);
 		System.out.println(">> "+insertRowCount+"행이 insert된다");
 			
@@ -147,7 +147,8 @@ public class AddressDao3 {
 		
 		ResultSet rs = stmt.executeQuery(selectSql);
 		
-		if(rs.next()) {
+		// if였는데 강사님이 while로 고치셨네..
+		while(rs.next()) {
 			int no = rs.getInt("NO");
 			String id = rs.getString("id");
 			String name = rs.getString("name");
