@@ -18,11 +18,10 @@ public class ObjectMain {
 		toString 메소드
 		 
 		public String toString()
-		Returns a string representation of the object. 
-		
-		 It is recommended that all subclasses override this method.
+		 - Returns a string representation of the object. 
+		 - It is recommended that all subclasses override this method.
 		 
-		 Returns: a string representation of the object.
+		Returns: a string representation of the object.
 		*/
 
 		String str1 = o1.toString();
