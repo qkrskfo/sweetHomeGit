@@ -40,6 +40,7 @@ public class PhoneBookDao {
 		String password = "javadeveloper2";
 		/**************************************/
 		
+		// 문자를 싱글쿼테이션으로 감싼다!!!!!★
 		String updateSql = "update phonebook set name='" + phonebook.getName() + "',phone='" + phonebook.getPhone() + "' where no='" + phonebook.getNo() + "'";
 		// update 테이블명 set 컬럼명1='(string)값', 컬럼명2=(int)값 where 컬럼명3 = (int)값;
 		// 테이블의 컬럼명3 조건에 해당하는 컬럼명1과 2의 값을 update
