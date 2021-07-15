@@ -57,7 +57,7 @@ public class PreparedStatementMain {
 		System.out.println("--- insert(PreparedStatement) ---");
 		
 		String insertSql1 = "insert into emp values(?, ?, ?, ?, ?, ?, ?, ?)";
-		/* 게속 실행하면 에러나니까 잠깐 주석처리~
+/*
 		PreparedStatement pstmt1 = con.prepareStatement(insertSql1);
 		pstmt1.setInt(1, 7000);
 		pstmt1.setString(2, "JIM");
@@ -79,12 +79,12 @@ public class PreparedStatementMain {
 		
 		int insertRowCount = pstmt1.executeUpdate();
 		System.out.println(insertRowCount+"행 insert");
+
 		*/
 		
 		
-		
 		String insertSql2 = "insert into emp values(?, ?, ?, ?, sysdate, ?, ?, ?)";
-		/* 게속 실행하면 에러나니까 잠깐 주석처리~
+		
 		PreparedStatement pstmt2 = con.prepareStatement(insertSql2);
 		pstmt2.setInt(1, 7001);
 		pstmt2.setString(2, "ALICE");
@@ -97,7 +97,7 @@ public class PreparedStatementMain {
 		
 		int insertRowCount2 = pstmt2.executeUpdate();
 		System.out.println(insertRowCount2 +"행 insert");
-		*/
+		
 		
 		
 		
