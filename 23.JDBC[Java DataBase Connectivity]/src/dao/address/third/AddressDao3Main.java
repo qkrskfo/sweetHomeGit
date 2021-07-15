@@ -1,5 +1,7 @@
 package dao.address.third;
 
+import java.util.ArrayList;
+
 public class AddressDao3Main {
 
 	public static void main(String[] args) throws Exception {
@@ -17,8 +19,20 @@ public class AddressDao3Main {
 		System.out.println(">> selectByNo");
 		addressDao3.selectByNo(9);
 		
+		System.out.println(">> selectByNo");
+		Address findAddress = addressDao3.selectByNo(3);
+		System.out.println(findAddress);
+			
+		
 		System.out.println(">> selectAll");
 		addressDao3.selectAll();
+		
+		System.out.println(">> selectAll");
+		ArrayList<Address> addressList = addressDao3.selectAll();
+		for (Address address : addressList) {
+			System.out.println(addressList);
+		}
+		
 		
 		
 		

@@ -73,6 +73,13 @@ public class Address {
 		this.address = address;
 	}
 	
+	// source - generate toString
+	@Override
+	public String toString() {
+		return "Address [num=" + num + ", id=" + id + ", name=" + name + ", phone=" + phone + ", address=" + address
+				+ "]";
+	}
+	
 	
 	
 }
