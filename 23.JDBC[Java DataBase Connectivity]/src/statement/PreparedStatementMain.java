@@ -139,7 +139,7 @@ public class PreparedStatementMain {
 		
 		
 		int startSal = 1000;
-		int endSal = 2000;
+		int endSal = 5000;
 		String job = "CLERK";
 		
 		
@@ -147,6 +147,18 @@ public class PreparedStatementMain {
 		String selectSql1 = "select * from emp where sal >="+startSal+" and sal <="+endSal+"and job = '"+job+"' ";
 		Statement stmt = con.createStatement();
 		ResultSet rs1 = stmt.executeQuery(selectSql1);
+		
+		while(rs1.next()) {
+			int empno = rs1.getInt("empno");
+			String name = rs1.getString("ename");
+			String jobStr = rs1.getString("job");
+			double sal = rs1.getDouble("sal");
+			Date hireDate = rs1.getDate("hiredate");
+			String hireDateStr = new SimpleDateFormat("yyyy/MM/dd").format(hireDate);
+			System.out.println(empno + "\t" + name + "\t" + jobStr + "\t\t" + sal);
+			
+		}
+		
 		
 		// 이걸 preparedStatement로 작성하면 물음표만 있으면 돼~!
 		System.out.println("--- select(preparedStatement) ---");
@@ -157,7 +169,16 @@ public class PreparedStatementMain {
 		pstmt.setString(3, job); // 다 미리 준비해놓은 변수로!
 		ResultSet rs2 = pstmt.executeQuery(); // 얘는 파라메터에 아무것도 넣지 않음 
 		
-		
+		while(rs2.next()) {
+			int empno = rs2.getInt("empno");
+			String name = rs2.getString("ename");
+			String jobStr = rs2.getString("job");
+			double sal = rs2.getDouble("sal");
+			Date hireDate = rs2.getDate("hiredate");
+			String hireDateStr = new SimpleDateFormat("yyyy/MM/dd").format(hireDate);
+			System.out.println(empno+"\t"+name+"\t"+jobStr+"\t\t"+sal);
+			
+		}
 		
 	}
 
