@@ -4,6 +4,8 @@ import java.sql.Connection;
 import java.sql.Date;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.Statement;
 import java.sql.Types;
 import java.text.SimpleDateFormat;
 
@@ -139,11 +141,21 @@ public class PreparedStatementMain {
 		int startSal = 1000;
 		int endSal = 2000;
 		String job = "CLERK";
+		
+		
 		System.out.println("--- select(Statement) ---");
 		String selectSql1 = "select * from emp where sal >="+startSal+" and sal <="+endSal+"and job = '"+job+"' ";
+		Statement stmt = con.createStatement();
+		ResultSet rs1 = stmt.executeQuery(selectSql1);
 		
-		
-		
+		// 이걸 preparedStatement로 작성하면 물음표만 있으면 돼~!
+		System.out.println("--- select(preparedStatement) ---");
+		String selectSql2 = "select * from emp where sal >=? and sal <=? and job =?";
+		PreparedStatement pstmt = con.prepareStatement(selectSql2);
+		pstmt.setInt(1, startSal);
+		pstmt.setInt(2, endSal);
+		pstmt.setString(3, job); // 다 미리 준비해놓은 변수로!
+		ResultSet rs2 = pstmt.executeQuery(); // 얘는 파라메터에 아무것도 넣지 않음 
 		
 		
 		
