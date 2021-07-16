@@ -317,7 +317,9 @@ final이야
 	나중에 정보를 꺼낼 때 잉 파일 이상한데? 한데 ㅋㅋㅋ
 	
  
- 
+ 0716
+ DAO ADDRESS에서
+ 파라메타가 없더라도 PreparedStatement를 쓰도록!
  
  
  

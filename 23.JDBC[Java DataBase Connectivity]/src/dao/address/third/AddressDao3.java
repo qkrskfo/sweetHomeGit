@@ -88,7 +88,7 @@ public Address selectByNo(int num) throws Exception {
 	
 	
 	
-	public void insert(Address address) throws Exception {
+	public int insert(Address address) throws Exception {
 		/**************DB 접속 정보*************/
 		String driverClass= "oracle.jdbc.OracleDriver";
 		String url = "jdbc:oracle:thin:@182.237.126.19:1521:xe";
@@ -109,9 +109,10 @@ public Address selectByNo(int num) throws Exception {
 			
 		stmt.close();
 		con.close();
+		return insertRowCount;
 	}
 	
-	public void insert(String id, String name, String phone, String address) throws Exception {
+	public int insert(String id, String name, String phone, String address) throws Exception {
 		/**************DB 접속 정보*************/
 		String driverClass= "oracle.jdbc.OracleDriver";
 		String url = "jdbc:oracle:thin:@182.237.126.19:1521:xe";
@@ -130,10 +131,11 @@ public Address selectByNo(int num) throws Exception {
 			
 		stmt.close();
 		con.close();
+		return insertRowCount;
 	}
 	
 	
-	public void deleteByNo(int num) throws Exception {
+	public int deleteByNo(int num) throws Exception {
 		
 		/**************DB 접속 정보*************/
 		String driverClass= "oracle.jdbc.OracleDriver";
@@ -153,9 +155,10 @@ public Address selectByNo(int num) throws Exception {
 
 		stmt.close();
 		con.close();
+		return deleteRowCount;
 	}
 	
-	public void updateByNo(Address updateAddress) throws Exception {
+	public int updateByNo(Address updateAddress) throws Exception {
 		
 		/**************DB 접속 정보*************/
 		String driverClass= "oracle.jdbc.OracleDriver";
@@ -177,6 +180,7 @@ public Address selectByNo(int num) throws Exception {
 
 		stmt.close();
 		con.close();
+		return updateRowCount;
 		
 	}
 	/*
@@ -186,7 +190,7 @@ public Address selectByNo(int num) throws Exception {
 	public void updateByNoPhone(int no, String phone) {}
 	*/
 	
-	public void updateByNo(int num, String id, String name, String phone, String address) throws Exception {
+	public int updateByNo(int num, String id, String name, String phone, String address) throws Exception {
 		
 		/**************DB 접속 정보*************/
 		String driverClass= "oracle.jdbc.OracleDriver";
@@ -207,6 +211,7 @@ public Address selectByNo(int num) throws Exception {
 
 		stmt.close();
 		con.close();
+		return updateRowCount;
 	}
 	
 	
