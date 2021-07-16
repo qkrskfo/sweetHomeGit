@@ -4,6 +4,8 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class ResultSetMain {
 
@@ -40,10 +42,55 @@ public class ResultSetMain {
 		
 		while(rs.next()) {
 			int no = rs.getInt("NO"); // 괄호안에는 컬럼이름 쓰는거야.
-			System.out.println(no);
+			String name = rs.getString("name"); // 알리아스 줬으면 알리아스로 뽑아야함
+			String short_desc = rs.getString("short_desc");
+			double price = rs.getDouble("price");
+			Date ipgo_date = rs.getDate("ipgo_date"); // Date는 util로 뽑아!
+			
+			System.out.println(no + "\t" + name + "\t" + short_desc + "\t" + price + "\t" + new SimpleDateFormat("yyyy년 MM월 dd일").format(ipgo_date));
 		}
-
-	
+		rs.close();
+		
+		 
+				
+		System.out.println("-- ResultSet.get타입(컬럼index) --");
+		rs = pstmt.executeQuery();
+		while(rs.next()) {
+			int no = rs.getInt(1); 
+			String name = rs.getString(2);
+			String short_desc = rs.getString(3);
+			double price = rs.getDouble(4);
+			Date ipgo_date = rs.getDate(5); // selectSql의 select 뒤에 있는 컬럼명들 순서대로! selectSql에 select no from 으로 no밖에 없으면 인덱스는 1밖에 없음
+			
+			
+			System.out.println(no + "\t" + name + "\t" + short_desc + "\t" + price + "\t" + new SimpleDateFormat("yyyy년 MM월 dd일").format(ipgo_date));
+		}
+		rs.close();
+		
+		
+		
+		
+		
+		System.out.println("-- ResultSet.getString(컬럼이름) --");
+		
+		rs = pstmt.executeQuery();
+		
+		while(rs.next()) {
+			String no = rs.getString("NO"); // 괄호안에는 컬럼이름 쓰는거야.
+			String name = rs.getString("name"); // 알리아스 줬으면 알리아스로 뽑아야함
+			String short_desc = rs.getString("short_desc");
+			String price = rs.getString("price");
+			String ipgo_date = rs.getString("ipgo_date"); 
+			
+			System.out.println(no + "\t" + name + "\t" + short_desc + "\t" + price + "\t" + ipgo_date);
+		}
+		rs.close();
+		
+		
+		
+		System.out.println("-- ResultSet.getObject(컬럼이름) --");
+		
+		
 	}
 
 }

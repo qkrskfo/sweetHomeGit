@@ -343,7 +343,12 @@ Connection con = DriverManager.getConnection(url, user, password);
 
 DAO 안에 sql도 따로 모아놓는 작업....을 해야한데.
  
+
+rs의 커서 위치는?
+before first 가
+ EOF
  
+after last에 가있데..
  
  
  
