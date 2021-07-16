@@ -1,3 +1,5 @@
+import java.sql.Connection;
+import java.sql.DriverManager;
 
 public class NaraeNote {
 
@@ -320,6 +322,24 @@ final이야
  0716
  DAO ADDRESS에서
  파라메타가 없더라도 PreparedStatement를 쓰도록!
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DB 접속 정보
+String driverClass= "oracle.jdbc.OracleDriver";
+String url = "jdbc:oracle:thin:@182.237.126.19:1521:xe";
+String user = "javadeveloper2";
+String password = "javadeveloper2";
+
+		
+Class.forName(driverClass);
+Connection con = DriverManager.getConnection(url, user, password);
+		
+--> 이걸 계속쓰니까 클래스로 만든데! (JDBC - dao - fourth)
  
  
  
