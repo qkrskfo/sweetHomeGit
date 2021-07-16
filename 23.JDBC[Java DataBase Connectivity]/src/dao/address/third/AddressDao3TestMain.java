@@ -2,7 +2,7 @@ package dao.address.third;
 
 import java.util.ArrayList;
 
-public class AddressDao3Main {
+public class AddressDao3TestMain {
 
 	public static void main(String[] args) throws Exception {
 		
