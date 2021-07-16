@@ -7,6 +7,8 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
 
+import dao.common.DataSource;
+
 
 // 모든 DAO객체는 dataSource를 멤버변수로 갖고 있어.
 public class AddressDao {

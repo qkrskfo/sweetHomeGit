@@ -1,4 +1,4 @@
-package dao.address.fourth;
+package dao.common;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
