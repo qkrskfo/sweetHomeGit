@@ -340,7 +340,8 @@ Class.forName(driverClass);
 Connection con = DriverManager.getConnection(url, user, password);
 		
 --> 이걸 계속쓰니까 클래스로 만든데! (JDBC - dao - fourth)
- 
+
+DAO 안에 sql도 따로 모아놓는 작업....을 해야한데.
  
  
  
