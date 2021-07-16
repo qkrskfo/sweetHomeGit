@@ -90,6 +90,30 @@ public class ResultSetMain {
 		
 		System.out.println("-- ResultSet.getObject(컬럼이름) --");
 		
+		rs = pstmt.executeQuery();
+		
+		while(rs.next()) {
+			Object no = rs.getObject("NO"); // 괄호안에는 컬럼이름 쓰는거야.
+			Object name = rs.getObject("name"); // 알리아스 줬으면 알리아스로 뽑아야함
+			Object short_desc = rs.getObject("short_desc");
+			Object price = rs.getObject("price");
+			Object ipgo_date = rs.getObject("ipgo_date"); 
+			// Object no, Object price 에 들어가는건 wrapper임. 숫자는 BigDecimal 형태로 들어옴
+			/*
+			 * 기본데이타형으로는 int,boolean,double 등이 제공됩니다.
+			 * 이런 기본데이타형을 객체로 사용할 수 있는 방법으로 Wrapper 클래스가 제공됩니다.
+			 */
+			// 나머지 원래 스트링이었던 애들에는 string이 들어감
+			System.out.println(no + "\t" + name + "\t" + short_desc + "\t" + price + "\t" + ipgo_date);
+		}
+		rs.close();
+	
+		
+		
+		
+		
+		
+		
 		
 	}
 
