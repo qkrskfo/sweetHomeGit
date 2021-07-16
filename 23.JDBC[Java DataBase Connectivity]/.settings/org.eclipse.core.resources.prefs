@@ -6,3 +6,4 @@ encoding//src/dao/99.Dao[Data\ Access\ Object].txt=UTF-8
 encoding//src/dao/99.Service[Service\ Object].txt=UTF-8
 encoding//src/dao/member/member.ddl=MS949
 encoding//src/dao/member/member_insert_update_delete_select.sql=UTF-8
+encoding//src/dao/member/member_table_create_drop.sql=UTF-8

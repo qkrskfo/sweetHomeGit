@@ -1,5 +1,7 @@
 package dao.member;
 
+import java.util.ArrayList;
+
 import dao.common.DataSource;
 
 /*
@@ -22,24 +24,31 @@ public class MemberDao {
 		dataSource = new DataSource();
 	}
 	
-	public int insert() throws Exception {
+	
+	// 여기에는 반드시 DTO객체가 와야겠지!
+	public int insert(Member member) throws Exception {
 		return 0;
 	}
 	
-	public int deleteById() throws Exception {
+	// delete에도 Member객체를 써도됨. 아이디만 쓰면 되는거니깐.
+	public int deleteById(String m_id) throws Exception {
 		return 0;
 	}
 	
-	public int updateById() throws Exception {
+	public int updateById(Member member) throws Exception {
 		return 0;
 	}
 	
-	public void selectById() throws Exception {
+	public Member selectById(String m_id) throws Exception {
+		Member findMember = null;
 		
+		return findMember;
 	}
 	
-	public void selectAll() throws Exception {
+	public ArrayList<Member> selectAll() throws Exception {
+		ArrayList<Member> memberList = new ArrayList<Member>();
 		
+		return memberList;
 	}
 	
 }
