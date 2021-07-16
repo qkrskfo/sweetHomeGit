@@ -19,3 +19,4 @@ select * from member;
 -- commit 하지 않으면 아무것도 변경사항이 저장되지 않음
 commit;
 
+desc member;
