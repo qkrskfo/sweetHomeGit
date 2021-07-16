@@ -1,6 +1,6 @@
 
-	0. 테이블설계(create drop) 					-->member_create_drop.sql 파일생성
-	1. sql문작성(insert,update,delete,select)	-->member_insert_update_delete_select.sql 파일생성
+	0. 테이블설계(create drop) 					--> member_create_drop.sql 파일생성 (member.erd로 만든 member.ddl테이블)
+	1. sql문작성(insert,update,delete,select)	--> member_insert_update_delete_select.sql 파일생성
 	2. Dto클래스작성
 	3. Dao클래스작성
 	 	- 테이블에 insert,delete,update,selectByPk,selectAll 단위메쏘드만들기

@@ -4,3 +4,4 @@ encoding//src/basic/01.address_insert_update_delete_select.sql=UTF-8
 encoding//src/dao/99.DTO,VO[Value\ Object].txt=UTF-8
 encoding//src/dao/99.Dao[Data\ Access\ Object].txt=UTF-8
 encoding//src/dao/99.Service[Service\ Object].txt=UTF-8
+encoding//src/dao/member/member.ddl=MS949
