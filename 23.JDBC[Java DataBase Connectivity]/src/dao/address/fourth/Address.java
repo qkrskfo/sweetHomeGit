@@ -6,6 +6,8 @@ VO(Value Object), DTO(Data Transfer Object)
   	- 한 개의 주소객체 데이타를 가지고있다.(VO, Value Object)
   	- 한 개의 주소객체 데이타 이동(파라메타, 리턴데이터) 시키기 위한 객체 (DTO)
   	- 특정 테이블과 동일한 속성을 멤버변수로 가지는 객체
+  	
+  	DAO는 Data Access Object 임
  */
 
 public class Address {
