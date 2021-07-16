@@ -84,13 +84,13 @@ public class AddressDao {
 		Connection con = dataSource.getConnection();
 		PreparedStatement pstmt = con.prepareStatement(insertSql);
 		
-		int insertRowCount = pstmt.executeUpdate();
-		
 		pstmt.setString(1, address.getId());
 		pstmt.setString(2, address.getName());
 		pstmt.setString(3, address.getPhone());
 		pstmt.setString(4, address.getAddress());
-			
+		
+		int insertRowCount = pstmt.executeUpdate(); // 바인딩이 된 다음에 업데이트를 해야해		
+		
 		pstmt.close();
 		dataSource.releaseConnection(con); // 이렇게 닫아!
 		return insertRowCount;
