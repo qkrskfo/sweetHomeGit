@@ -1,8 +1,11 @@
 package dao.guest;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.util.ArrayList;
 
 import dao.common.DataSource;
+import dao.member.Member;
 
 public class GuestDao {
 	private DataSource dataSource;
@@ -12,27 +15,41 @@ public class GuestDao {
 	}
 
 	public int insertGuest(Guest guest) throws Exception {
-		// TODO Auto-generated method stub
+		String insertSql = "";
+		Connection con = dataSource.getConnection();
+		PreparedStatement pstmt = con.prepareStatement(insertSql);
+		
 		return 0;
 	}
 
-	public Guest selectByNo(int no) {
-		// TODO Auto-generated method stub
-		return null;
+	public Guest selectByNo(int no) throws Exception {
+		String selectSql = "";
+		Connection con = dataSource.getConnection();
+		PreparedStatement pstmt = con.prepareStatement(selectSql);
+		
+		// RO MAPPING : 관계형 DB 객체를 매핑한다고?
+		Guest findGuest = null;
+		
+		return findGuest;
 	}
 
 	public ArrayList<Guest> selectAll() throws Exception {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
 	public int updateGuest(Guest guest) throws Exception {
-		// TODO Auto-generated method stub
+		String updateSql = "";
+		Connection con = dataSource.getConnection();
+		PreparedStatement pstmt = con.prepareStatement(updateSql);
+		
 		return 0;
 	}
 
 	public int deleteGuest(int no) throws Exception {
-		// TODO Auto-generated method stub
+		String deleteSql = "";
+		Connection con = dataSource.getConnection();
+		PreparedStatement pstmt = con.prepareStatement(deleteSql);
+		
 		return 0;
 	}
 
