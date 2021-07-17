@@ -1,15 +1,20 @@
-package com.itwill07.dao.member;
+package othersReport;
+
+//백상열님꺼 - 날짜 넣는거 보려고
 
 import java.util.Date;
 
-
 /*
-VO(Value Object), DTO(Data Transfer Object)
-  	- 한개의 주소 객체 데이터를 가지고 있다. (VO)
-  	- 한개의 주소객체 데이터 이동(파라메타, 리턴데이터)시키기 위한 객체 (DTO)
-  	- member테이블과 동일한 속성을 멤버변수로 가지는 객체 
- */
- 
+이름         널?       유형            
+---------- -------- ------------- 
+M_ID       NOT NULL VARCHAR2(20)  
+M_PASSWORD          VARCHAR2(20)  
+M_NAME              VARCHAR2(50)  
+M_ADDRESS           VARCHAR2(100) 
+M_AGE               NUMBER(3)     
+M_MARRIED           CHAR(1)       
+M_REGDATE           DATE          
+*/
 
 public class Member {
 	
@@ -19,14 +24,14 @@ public class Member {
 	private String m_address;
 	private int m_age;
 	private String m_married;
-	private Date m_regidate;
+	private Date m_regdate;
 	
-	// 기본생성자
 	public Member() {
-		// TODO Auto-generated constructor stub
+		
 	}
 
-	public Member(String m_id, String m_password, String m_name, String m_address, int m_age, String m_married, Date m_regidate) {
+	public Member(String m_id, String m_password, String m_name, String m_address, int m_age, String m_married,
+			Date m_regdate) {
 		super();
 		this.m_id = m_id;
 		this.m_password = m_password;
@@ -34,7 +39,7 @@ public class Member {
 		this.m_address = m_address;
 		this.m_age = m_age;
 		this.m_married = m_married;
-		this.m_regidate = m_regidate;
+		this.m_regdate = m_regdate;
 	}
 
 	public String getM_id() {
@@ -85,23 +90,19 @@ public class Member {
 		this.m_married = m_married;
 	}
 
-	public Date getM_regidate() {
-		return m_regidate;
+	public Date getM_regdate() {
+		return m_regdate;
 	}
 
-	public void setM_regidate(Date m_regidate) {
-		this.m_regidate = m_regidate;
+	public void setM_regdate(Date m_regdate) {
+		this.m_regdate = m_regdate;
 	}
 
 	@Override
 	public String toString() {
 		return "Member [m_id=" + m_id + ", m_password=" + m_password + ", m_name=" + m_name + ", m_address=" + m_address
-				+ ", m_age=" + m_age + ", m_married=" + m_married + ", m_regidate=" + m_regidate + "]";
+				+ ", m_age=" + m_age + ", m_married=" + m_married + ", m_regdate=" + m_regdate + "]";
 	}
 	
 	
-	
-	
-	
-
 }
