@@ -5,8 +5,9 @@ insert into GUEST values(guest_no_seq.nextval , '김경호3', sysdate, 'guard3@n
 insert into GUEST values(guest_no_seq.nextval , '김경호4', sysdate, 'guard4@naver.com', 'http://', '방명록 사용법4', '방명록처럼 사용하시면 됩니다4');
 --delete
 delete from guest where guest_no = 1;
+delete from guest where guest_no = 2;
 --update
-update guest set guest_name='name수정',
+update guest set guest_name='name수정',                
                  guest_email='email수정',
                  guest_homepage='homepage수정',
                  guest_title='title수정',
@@ -19,5 +20,5 @@ select * from guest where guest_no = 3;
 select * from guest;
 
 commit;
-
+rollback;
 DESC guest;
