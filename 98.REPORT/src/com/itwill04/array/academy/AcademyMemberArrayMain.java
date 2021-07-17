@@ -66,6 +66,9 @@ public class AcademyMemberArrayMain {
 		}
 		
 		
+	
+		
+		
 		System.out.println("4.AcademyMember 중에서 자바 반  인 AcademyStudent 들 출력");		
 		for (int i = 0; i < members.length; i++) {			
 			if(members[i] instanceof AcademyStudent) {
@@ -76,12 +79,24 @@ public class AcademyMemberArrayMain {
 			}
 		}
 		// 다른 사람들은 이렇게 했네
+		// if문이 깊어지지 않기 위해 조건에 &&을 이용하여 넣기
 		for (int i = 0; i < members.length; i++) {
 			if (members[i] instanceof AcademyStudent && ((AcademyStudent)members[i]).getBan().equals("자바")) {
 				members[i].print();
 			}
 		}
 		
+		/*
+		   1. AcademyMember[]타입의 members[i]가 AcademyStudent의 객체인지 판단
+		   2. true라면 AcademyStudent타입 tempBan의 임시객체를 members[i]객체를 AcademyStudent로 다운캐스팅
+		     * 다운캐스팅이 되는 이유 : members[i]는 AcademyMember[]타입(부모)객체에 AcademyStudent&AcademyStaff&AcademyGangsa 자동프로모션(업캐스팅)되었기 때문에 다운캐스팅이 가능하다.
+		     * 다운캐스팅을 하는 이유 : members[i]는 자식타입이 부모타입으로 자동형변환(자동프로모션)이 됬으므로 부모타입의 기능(멤버)만 사용이가능하기때문에
+		     *                          AcademyStudent "자바"반인 객체를 출력하려면 AcademyStudent의 기능(멤버)가 필요하다.
+		   3. 다운캐스팅 후 tempBan객체는 AcademyStudent의 객체이므로 기능(멤버) getBan메소드를 사용하여 문자열비교 하고 출력
+		   출력 시 잘못한 점 : for구문 실행블록 안에 if구문 실행되기전 AcademyStudent tempBan = (AcademyStudent)members[i];를 작성하여
+		                       ClassCastException에러발생 if구문이 발생되기전 다운캐스팅을 하면 members[i]의 AcademyStaff&AcademyGangsa의 자식클래스도 자식클래스로 다운캐스팅을 하게되니까.
+		                             
+		 */
 
 		
 		
