@@ -64,6 +64,8 @@ public class AcademyMemberArrayMain {
 				members[i].print();
 			}
 		}
+		
+		
 		System.out.println("4.AcademyMember 중에서 자바 반  인 AcademyStudent 들 출력");		
 		for (int i = 0; i < members.length; i++) {			
 			if(members[i] instanceof AcademyStudent) {
@@ -73,6 +75,15 @@ public class AcademyMemberArrayMain {
 				}				
 			}
 		}
+		// 다른 사람들은 이렇게 했네
+		for (int i = 0; i < members.length; i++) {
+			if (members[i] instanceof AcademyStudent && ((AcademyStudent)members[i]).getBan().equals("자바")) {
+				members[i].print();
+			}
+		}
+		
+
+		
 		
 		System.out.println("4.AcademyMember 중에서 영업 부서인 AcademyStaff   들 출력");		
 		for (int i = 0; i < members.length; i++) {
