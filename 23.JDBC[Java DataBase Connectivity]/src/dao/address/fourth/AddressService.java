@@ -17,23 +17,26 @@ public class AddressService {
 	}
 	
 	public Address selectByNo(int num) throws Exception {
-		return null;
+		Address address = addressDao.selectByNo(num);
+		return address;
 	}
 	
 	public ArrayList<Address> selectAll() throws Exception {
-		return null;
+		ArrayList<Address> addressList = addressDao.selectAll();
+		return addressList;
 	}
 	
 	public int insert(Address address) throws Exception {
-		return 0;
+		int insertRowCount = addressDao.insert(address);
+		return insertRowCount;
 	}
 	
 	public int deleteByNo(int num) throws Exception {
-		return 0;
+		return addressDao.deleteByNo(num);
 	}
 	
 	public int updateByNo(Address updateAddress) throws Exception {
-		return 0;
+		return addressDao.updateByNo(updateAddress);
 	}
 	
 	
