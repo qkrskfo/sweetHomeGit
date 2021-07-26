@@ -1,5 +1,6 @@
 package dao.address.fourth;
 
+import java.util.ArrayList;
 
 /*
 Service 객체
@@ -10,5 +11,30 @@ Service 객체
 */
 
 public class AddressService {
-
+	private AddressDao addressDao;
+	public AddressService() {
+		addressDao = new AddressDao();
+	}
+	
+	public Address selectByNo(int num) throws Exception {
+		return null;
+	}
+	
+	public ArrayList<Address> selectAll() throws Exception {
+		return null;
+	}
+	
+	public int insert(Address address) throws Exception {
+		return 0;
+	}
+	
+	public int deleteByNo(int num) throws Exception {
+		return 0;
+	}
+	
+	public int updateByNo(Address updateAddress) throws Exception {
+		return 0;
+	}
+	
+	
 }
