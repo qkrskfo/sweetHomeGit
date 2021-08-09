@@ -48,7 +48,7 @@ CREATE TABLE cart(
 
 
 CREATE TABLE orders(
-		o_no                          		INTEGER(10)		 NULL ,
+		o_no                          		NUMBER(10)		 NULL ,
 		o_date                        		DATE		 DEFAULT sysdate		 NULL ,
 		o_price                       		NUMBER(10)		 DEFAULT 0		 NULL ,
 		m_id                          		VARCHAR2(10)		 NULL 
@@ -58,7 +58,7 @@ CREATE TABLE orders(
 CREATE TABLE order_item(
 		oi_no                         		NUMBER(10)		 NULL ,
 		oi_qty                        		NUMBER(10)		 NULL ,
-		o_no                          		INTEGER(10)		 NULL ,
+		o_no                          		NUMBER(10)		 NULL ,
 		p_no                          		NUMBER(10)		 NULL 
 );
 
