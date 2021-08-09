@@ -1,1 +1,3 @@
---member 1명 삭제(member_detail정보) cascade delete
+--member 1명삭제시 member_detail 정보도삭제[cascade delete]
+--member 1명삭제시 board데이타정보도 삭제[cascade delete]
+--orders(주문) 1개삭제시 order_item(여러개삭제)[cascade delete]
