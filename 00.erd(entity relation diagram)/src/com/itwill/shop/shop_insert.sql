@@ -18,4 +18,14 @@ insert into board(board_no, board_title, board_content, m_id) values(4, 'title4'
 insert into board(board_no, board_title, board_content, m_id) values(5, 'title5', 'content5', 'bbb');
 insert into board(board_no, board_title, board_content, m_id) values(6, 'title6', 'content6', 'ccc');
 
+-- product 제품
+insert into product(p_no, p_name, p_price, p_desc) values (101, '아이패드1', 1000, '아이패드1 좋아요!');
+insert into product(p_no, p_name, p_price, p_desc) values (102, '갤럭시20', 5000, '갤럭시20 좋아요!');
+insert into product(p_no, p_name, p_price, p_desc) values (103, 'LG그램', 20000, 'LG그램 좋아요!');
+insert into product(p_no, p_name, p_price, p_desc) values (104, '삼성노트북', 30000, '삼성노트북 좋아요!');
+insert into product(p_no, p_name, p_price, p_desc) values (105, '현주컴퓨터', 10000, '현주컴퓨터 좋아요!');
+insert into product(p_no, p_name, p_price, p_desc) values (106, '레노버노트북', 1000, '레노버노트북 좋아요!');
+insert into product(p_no, p_name, p_price, p_desc) values (107, '한성컴퓨터', 1000, '한성컴퓨터 좋아요!');
+insert into product(p_no, p_name, p_price, p_desc) values (108, '맥북', 50000, '맥북 좋아요!');
+
 commit;
