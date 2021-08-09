@@ -28,4 +28,17 @@ insert into product(p_no, p_name, p_price, p_desc) values (106, '레노버노트
 insert into product(p_no, p_name, p_price, p_desc) values (107, '한성컴퓨터', 1000, '한성컴퓨터 좋아요!');
 insert into product(p_no, p_name, p_price, p_desc) values (108, '맥북', 50000, '맥북 좋아요!');
 
+-- 로그인한 aaa유저 cart 담기(sql이 insert가 될수도 있고, 수량이 update가 될 수도 있음)
+insert into cart(cart_item_no, cart_item_qty, m_id, p_no) values(7001, 1, 'aaa', 101);
+insert into cart(cart_item_no, cart_item_qty, m_id, p_no) values(7002, 2, 'aaa', 102);
+insert into cart(cart_item_no, cart_item_qty, m_id, p_no) values(7003, 3, 'aaa', 103);
+
+-- 로그인한  bbb유저 cart 담기
+insert into cart(cart_item_no, cart_item_qty, m_id, p_no) values(7004, 1, 'bbb', 103);
+insert into cart(cart_item_no, cart_item_qty, m_id, p_no) values(7005, 2, 'bbb', 104);
+
+-- 로그인한  ccc유저 cart 담기
+insert into cart(cart_item_no, cart_item_qty, m_id, p_no) values(7006, 2, 'ccc', 105);
+
+
 commit;

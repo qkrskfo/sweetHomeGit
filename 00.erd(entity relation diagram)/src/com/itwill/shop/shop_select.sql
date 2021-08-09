@@ -36,3 +36,16 @@ select * from board where m_id='ccc';
 select * from member m join board b on m.m_id=b.m_id where m.m_id='aaa';
 select * from member m join board b on m.m_id=b.m_id where m.m_id='bbb';
 select * from member m join board b on m.m_id=b.m_id where m.m_id='ccc';
+
+-- 로그인한 aaa 유저의 cart item리스트
+select * from cart where m_id='aaa';
+--select * from cart c where m_id='aaa';
+
+-- 로그인한 aaa 유저의 cart item(제품정보포함)리스트
+select * from cart c inner join product p on c.p_no = p.p_no where m_id='aaa';
+-- 로그인한 ccc 유저의 cart item(제품정보포함)리스트
+select * from cart c inner join product p on c.p_no = p.p_no where m_id='ccc';
+
+-- 로그인한 aaa 유저의 cart item(제품정보포함) 한개보기
+select * from cart c inner join product p on c.p_no = p.p_no where c.cart_item_no=7001;
+
