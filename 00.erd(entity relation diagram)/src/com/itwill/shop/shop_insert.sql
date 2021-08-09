@@ -26,7 +26,7 @@ insert into product(p_no, p_name, p_price, p_desc) values (104, '삼성노트북
 insert into product(p_no, p_name, p_price, p_desc) values (105, '현주컴퓨터', 10000, '현주컴퓨터 좋아요!');
 insert into product(p_no, p_name, p_price, p_desc) values (106, '레노버노트북', 1000, '레노버노트북 좋아요!');
 insert into product(p_no, p_name, p_price, p_desc) values (107, '한성컴퓨터', 1000, '한성컴퓨터 좋아요!');
-insert into product(p_no, p_name, p_price, p_desc) values (108, '맥북', 50000, '맥북 좋아요!');
+insert into product(p_no, p_name, p_price, p_desc) values (108, '맥북', 500000, '맥북 좋아요!');
 
 -- 로그인한 aaa유저 cart 담기(sql이 insert가 될수도 있고, 수량이 update가 될 수도 있음)
 insert into cart(cart_item_no, cart_item_qty, m_id, p_no) values(7001, 1, 'aaa', 101);
@@ -39,6 +39,41 @@ insert into cart(cart_item_no, cart_item_qty, m_id, p_no) values(7005, 2, 'bbb',
 
 -- 로그인한  ccc유저 cart 담기
 insert into cart(cart_item_no, cart_item_qty, m_id, p_no) values(7006, 2, 'ccc', 105);
+
+
+-- 로그인한 aaa 유저 주문
+/*
+8001 -> 101번 1개, 102번 2개, 103번 3개, 주문총금액 71,000원
+8002 -> 108번 1개 주문 총금액 500,000원
+8003 -> 106번 2개, 107번 1개 주문총금액 3,000원
+*/
+
+insert into orders(o_no, o_date, o_price, m_id) values(8001, sysdate-3, 71000, 'aaa');
+insert into order_item(oi_no, oi_qty, o_no, p_no) values(9001, 1, 8001, 101);
+insert into order_item(oi_no, oi_qty, o_no, p_no) values(9002, 2, 8001, 102);
+insert into order_item(oi_no, oi_qty, o_no, p_no) values(9003, 3, 8001, 103);
+
+insert into orders(o_no, o_date, o_price, m_id) values(8002, sysdate-2, 500000, 'aaa');
+insert into order_item(oi_no, oi_qty, o_no, p_no) values(9004, 1, 8002, 108);
+
+insert into orders(o_no, o_date, o_price, m_id) values(8003, sysdate-1, 3000, 'aaa');
+insert into order_item(oi_no, oi_qty, o_no, p_no) values(9005, 2, 8003, 106);
+insert into order_item(oi_no, oi_qty, o_no, p_no) values(9006, 1, 8003, 107);
+
+-- 로그인한 bbb 유저 주문
+/*
+8004 -> 103번 1개, 104번 2개  주문총금액 80,000원
+8005 -> 106번 2개 주문 총금액 2,000원
+*/
+
+insert into orders(o_no, o_date, o_price, m_id) values(8004, sysdate-1, 80000, 'bbb');
+insert into order_item(oi_no, oi_qty, o_no, p_no) values(9007, 1, 8004, 103);
+insert into order_item(oi_no, oi_qty, o_no, p_no) values(9008, 2, 8004, 104);
+
+insert into orders(o_no, o_date, o_price, m_id) values(8005, sysdate-1, 2000, 'bbb');
+insert into order_item(oi_no, oi_qty, o_no, p_no) values(9009, 2, 8005, 106);
+
+
 
 
 commit;

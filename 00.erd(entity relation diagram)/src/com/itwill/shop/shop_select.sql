@@ -49,3 +49,28 @@ select * from cart c inner join product p on c.p_no = p.p_no where m_id='ccc';
 -- 로그인한 aaa 유저의 cart item(제품정보포함) 한개보기
 select * from cart c inner join product p on c.p_no = p.p_no where c.cart_item_no=7001;
 
+-- 로그인한 aaa유저의 최근1주간(오늘) 주문목록
+select * from orders where m_id='aaa' and to_char(o_date,'YYYY/MM/DD') > to_char(sysdate-7, 'YYYY/MM/DD');
+select * from orders where m_id='aaa' and to_char(o_date,'YYYY/MM/DD') = to_char(sysdate, 'YYYY/MM/DD');
+
+--로그인한 aaa 유저의 주문리스트 출력(주문1건에 주문아이템 여러개)
+select * from orders o join order_item oi on o.o_no=oi.o_no where o.m_id='aaa';
+
+--로그인한 aaa 유저의 주문1건 출력(주문1건에 주문아이템 여러개)
+select * from orders o join order_item oi on o.o_no=oi.o_no where o.m_id='aaa' and o.o_no=8001;
+
+--로그인한 aaa 유저의 주문(orders)한건 출력(주문1건에 주문아이템(order_item) 여러개 + 제품정보(product))
+select * from orders o join order_item oi on o.o_no=oi.o_no join product p on oi.p_no = p.p_no
+where o.m_id='aaa' and o.o_no=8001;
+
+
+
+
+
+
+
+
+
+
+
+
