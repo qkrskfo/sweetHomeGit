@@ -1,3 +1,4 @@
+DROP TABLE cart CASCADE CONSTRAINTS;
 DROP TABLE product CASCADE CONSTRAINTS;
 DROP TABLE board CASCADE CONSTRAINTS;
 DROP TABLE member_detail CASCADE CONSTRAINTS;
@@ -36,6 +37,14 @@ CREATE TABLE product(
 );
 
 
+CREATE TABLE cart(
+		cart_item_no                  		NUMBER(10)		 NULL ,
+		cart_item_qty                 		NUMBER(10)		 DEFAULT 1		 NULL ,
+		m_id                          		VARCHAR2(10)		 NULL ,
+		p_no                          		NUMBER(10)		 NULL 
+);
+
+
 
 ALTER TABLE member ADD CONSTRAINT IDX_member_PK PRIMARY KEY (m_id);
 
@@ -46,4 +55,8 @@ ALTER TABLE board ADD CONSTRAINT IDX_board_PK PRIMARY KEY (board_no);
 ALTER TABLE board ADD CONSTRAINT IDX_board_FK0 FOREIGN KEY (m_id) REFERENCES member (m_id);
 
 ALTER TABLE product ADD CONSTRAINT IDX_product_PK PRIMARY KEY (p_no);
+
+ALTER TABLE cart ADD CONSTRAINT IDX_cart_PK PRIMARY KEY (cart_item_no);
+ALTER TABLE cart ADD CONSTRAINT IDX_cart_FK0 FOREIGN KEY (m_id) REFERENCES member (m_id);
+ALTER TABLE cart ADD CONSTRAINT IDX_cart_FK1 FOREIGN KEY (p_no) REFERENCES product (p_no);
 
