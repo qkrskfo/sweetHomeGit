@@ -27,3 +27,12 @@ on m.m_id = md.m_id where m.m_id='ddd';
 -- outer join
 select * from member m left outer join member_detail md
 on m.m_id = md.m_id where m.m_id='ddd';
+
+-- 로그인한 사람(1)이 쓴 게시글 보기(0,n)
+select * from board where m_id='aaa';
+select * from board where m_id='bbb';
+select * from board where m_id='ccc';
+
+select * from member m join board b on m.m_id=b.m_id where m.m_id='aaa';
+select * from member m join board b on m.m_id=b.m_id where m.m_id='bbb';
+select * from member m join board b on m.m_id=b.m_id where m.m_id='ccc';
