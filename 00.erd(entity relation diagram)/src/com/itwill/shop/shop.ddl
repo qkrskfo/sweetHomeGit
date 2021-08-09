@@ -31,7 +31,7 @@ CREATE TABLE board(
 CREATE TABLE product(
 		p_no                          		NUMBER(10)		 NULL ,
 		p_name                        		VARCHAR2(10)		 NULL ,
-		COLUMN_3                      		NUMBER(10)		 DEFAULT 0		 NULL ,
+		p_price                       		NUMBER(10)		 DEFAULT 0		 NULL ,
 		p_desc                        		VARCHAR2(256)		 NULL 
 );
 
