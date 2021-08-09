@@ -13,7 +13,7 @@ CREATE TABLE member(
 
 CREATE TABLE member_detail(
 		m_id                          		VARCHAR2(10)		 NULL ,
-		md_carno                      		NUMBER(10)		 NULL ,
+		md_carno                      		VARCHAR2(20)		 NULL ,
 		md_child                      		NUMBER(10)		 NULL 
 );
 
