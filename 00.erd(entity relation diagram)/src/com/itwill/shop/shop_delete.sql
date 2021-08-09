@@ -1,0 +1,1 @@
+--member 1명 삭제(member_detail정보) cascade delete
