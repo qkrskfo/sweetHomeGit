@@ -5,3 +5,5 @@ encoding//src/com/itwill/shop/shop_delete.sql=UTF-8
 encoding//src/com/itwill/shop/shop_insert.sql=UTF-8
 encoding//src/com/itwill/shop/shop_select.sql=UTF-8
 encoding//src/com/itwill/shop/shop_update.sql=UTF-8
+encoding//src/com/itwill/shop2/shop_insert.sql=UTF-8
+encoding//src/com/itwill/shop2/shop_select_update_delete.sql=UTF-8
