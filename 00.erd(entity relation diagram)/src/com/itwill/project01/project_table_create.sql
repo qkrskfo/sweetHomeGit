@@ -131,3 +131,4 @@ ALTER TABLE board_q_answer ADD CONSTRAINT IDX_board_q_answer_PK PRIMARY KEY (q_a
 ALTER TABLE board_q_answer ADD CONSTRAINT IDX_board_q_answer_FK0 FOREIGN KEY (q_no) REFERENCES board_p_inquiry (q_no);
 ALTER TABLE board_q_answer ADD CONSTRAINT IDX_board_q_answer_FK1 FOREIGN KEY (m_id) REFERENCES member (m_id);
 
+commit;

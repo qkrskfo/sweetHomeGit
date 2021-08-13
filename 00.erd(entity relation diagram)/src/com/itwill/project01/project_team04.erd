@@ -509,8 +509,8 @@
                         <constraint>
                           <height>-1</height>
                           <width>-1</width>
-                          <x>74</x>
-                          <y>522</y>
+                          <x>76</x>
+                          <y>540</y>
                         </constraint>
                         <sourceConnections>
                           <net.java.amateras.db.visual.model.ForeignKeyModel>
@@ -607,7 +607,7 @@
                                     <supportSize>true</supportSize>
                                     <type>12</type>
                                   </columnType>
-                                  <size>5000</size>
+                                  <size>500</size>
                                   <notNull>false</notNull>
                                   <primaryKey>false</primaryKey>
                                   <description></description>
@@ -686,7 +686,12 @@
                           <net.java.amateras.db.visual.model.ColumnModel>
                             <columnName>q_title</columnName>
                             <logicalName>q_title</logicalName>
-                            <columnType class="net.java.amateras.db.dialect.ColumnType" reference="../../../targetConnections/net.java.amateras.db.visual.model.ForeignKeyModel/source/columns/net.java.amateras.db.visual.model.ColumnModel[2]/columnType"/>
+                            <columnType class="net.java.amateras.db.dialect.ColumnType">
+                              <name>VARCHAR2</name>
+                              <logicalName>String</logicalName>
+                              <supportSize>true</supportSize>
+                              <type>12</type>
+                            </columnType>
                             <size>30</size>
                             <notNull>false</notNull>
                             <primaryKey>false</primaryKey>
@@ -698,7 +703,7 @@
                             <columnName>q_details</columnName>
                             <logicalName>q_details</logicalName>
                             <columnType class="net.java.amateras.db.dialect.ColumnType" reference="../../../targetConnections/net.java.amateras.db.visual.model.ForeignKeyModel/source/columns/net.java.amateras.db.visual.model.ColumnModel[2]/columnType"/>
-                            <size>5000</size>
+                            <size>500</size>
                             <notNull>false</notNull>
                             <primaryKey>false</primaryKey>
                             <description></description>
@@ -719,7 +724,7 @@
                             <primaryKey>false</primaryKey>
                             <description></description>
                             <autoIncrement>false</autoIncrement>
-                            <defaultValue>F</defaultValue>
+                            <defaultValue></defaultValue>
                           </net.java.amateras.db.visual.model.ColumnModel>
                           <net.java.amateras.db.visual.model.ColumnModel>
                             <columnName>q_regi_date</columnName>
@@ -896,8 +901,8 @@
               <net.java.amateras.db.visual.model.ColumnModel>
                 <columnName>r_content</columnName>
                 <logicalName>r_content</logicalName>
-                <columnType class="net.java.amateras.db.dialect.ColumnType" reference="../../../sourceConnections/net.java.amateras.db.visual.model.ForeignKeyModel[2]/target/targetConnections/net.java.amateras.db.visual.model.ForeignKeyModel/source/sourceConnections/net.java.amateras.db.visual.model.ForeignKeyModel/target/columns/net.java.amateras.db.visual.model.ColumnModel[4]/columnType"/>
-                <size>5000</size>
+                <columnType class="net.java.amateras.db.dialect.ColumnType" reference="../../../sourceConnections/net.java.amateras.db.visual.model.ForeignKeyModel[2]/target/targetConnections/net.java.amateras.db.visual.model.ForeignKeyModel[3]/source/targetConnections/net.java.amateras.db.visual.model.ForeignKeyModel/source/columns/net.java.amateras.db.visual.model.ColumnModel[2]/columnType"/>
+                <size>500</size>
                 <notNull>false</notNull>
                 <primaryKey>false</primaryKey>
                 <description></description>
