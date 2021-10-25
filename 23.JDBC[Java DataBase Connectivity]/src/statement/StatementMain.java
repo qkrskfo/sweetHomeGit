@@ -40,9 +40,10 @@ public class StatementMain {
 		            zero means there is no limit
 		 */
 		System.out.println("----------------stmt.setMaxRows(3);------------------");
-		stmt.setMaxRows(3);
+		stmt.setMaxRows(3); // 3행까지만 뽑아봐
 		System.out.println("----------------stmt.executeQuery();------------------");
 		ResultSet rs = stmt.executeQuery(selectSql);
+		// rs의 cursor(커서)
 		while (rs.next()) {
 			System.out.println(rs.getInt("empno") + "\t" + rs.getString("ename") + "\t" + rs.getString("job") + "\t\t"
 					+ rs.getDouble("sal") + "\t\t" + rs.getDate("hiredate"));
@@ -64,6 +65,19 @@ public class StatementMain {
 		System.out.println(rowCount + " 행 update");
 		rowCount = stmt.executeUpdate(deleteSql);
 		System.out.println(rowCount + " 행 delete");
+		
+		/*
+		String anySql="";
+		boolean isSelect = true;
+		if(isSelect) {
+			anySql = selectSql;// SELECT
+		}else {
+			anySql = updateSql; //DML
+		}
+		
+		stmt.execute(anySql);
+		*/
+		
 		System.out.println("----------------stmt.execute();------------------");
 		String anySql = selectSql;
 		/*
@@ -97,9 +111,10 @@ public class StatementMain {
 		stmt.close();
 		con.close();
 		/*
+		내가 전송할 문장이 select인지 update인지 모를 땐 execute를 실행하면되지만, 추천하진 않음!
+		stmt.execute();
 		stmt.executeQuery();
 		stmt.executeUpdate();
-		stmt.execute();
 		*/
 	}
 

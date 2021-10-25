@@ -54,9 +54,12 @@ public class PreparedStatementMain {
 		pstmt1.setString(3, "SALESMAN");
 		pstmt1.setInt(4, 7369);
 		//pstmt1.setDate(5, new  java.sql.Date(System.currentTimeMillis()));
+		pstmt1.setDate(5, new Date(System.currentTimeMillis())); //현재시간 들어감
+ 		//pstmt1.setDate(5, new SimpleDateFormat("YYYY-MM-DD").parse("2003-09-07"); 
+		// 이렇게 넣을 수도 있음. 그러나 util 데이터임. sql데이터가 되어야하는데..
 		
-		//java.util.Date-->java.sql.Date
-		java.util.Date utilDate = new SimpleDateFormat("yyyy/MM/dd").parse("2003/09/06");
+		// java.util.Date --> java.sql.Date 변경
+		java.util.Date utilDate = new SimpleDateFormat("yyyy/MM/dd").parse("2003/09/06");// 포매터 대문자 소문자 구분 잘해!!
 		long milliSec = utilDate.getTime();
 		pstmt1.setDate(5, new java.sql.Date(milliSec));
 		
@@ -73,6 +76,7 @@ public class PreparedStatementMain {
 		pstmt2.setString(2, "ALICE");
 		pstmt2.setString(3, "CLERK");
 		pstmt2.setInt(4, 7369);
+		// 5번이 sysdate라고 5번을 빼면 안됨. 6번이 5번으로 밀려옴
 		pstmt2.setDouble(5, 5000.34);
 		pstmt2.setInt(6, 400);
 		pstmt2.setInt(7, 30);
@@ -86,6 +90,7 @@ public class PreparedStatementMain {
 		pstmt3.setString(2, "SMOKY");
 		pstmt3.setString(3, "MANAGER");
 		pstmt3.setInt(4, 7369);
+		// 5번이 date function 이라고 5번을 빼면 안됨. 앞쪽이 포매터 뒤쪽이 실제데이터 -> 5번, 6번으로 들어가는 것
 		pstmt3.setString(5, "1998/03/07");
 		pstmt3.setString(6, "YYYY/MM/DD");
 		pstmt3.setDouble(7, 9998.99);
@@ -99,12 +104,12 @@ public class PreparedStatementMain {
 		PreparedStatement pstmt4 = con.prepareStatement(insertSql4);
 		pstmt4.setInt(1, 7003);
 		pstmt4.setString(2, null);
-		pstmt4.setNull(3, Types.VARCHAR);
-		pstmt4.setNull(4, Types.INTEGER);
+		pstmt4.setNull(3, Types.VARCHAR); // string의 null
+		pstmt4.setNull(4, Types.INTEGER); // integer의 null
 		pstmt4.setNull(5, Types.DATE);
 		pstmt4.setNull(6, Types.DOUBLE);
 		pstmt4.setNull(7, Types.INTEGER);
-		pstmt4.setNull(8, Types.INTEGER);
+		pstmt4.setNull(8, Types.INTEGER); // null 을 허용하지 않는 곳엔 들어가지 않음.
 		int insertRowCount4 = pstmt4.executeUpdate();
 		System.out.println(insertRowCount4 + "행 insert");
 		*/
@@ -128,14 +133,15 @@ public class PreparedStatementMain {
 			System.out.println(empno + "\t" + ename + "\t" + jobStr + "\t" + sal + "\t" + hireDateStr);
 
 		}
-
+		
+		// 이걸 preparedStatement로 작성하면 물음표만 있으면 돼~!
 		System.out.println("-----------------------select(PreparedStatement)--------------------");
 		String selectSql2 = "select * from emp where sal>=? and sal<=?  and job=?";
 		PreparedStatement pstmt = con.prepareStatement(selectSql2);
 		pstmt.setInt(1, startSal);
 		pstmt.setInt(2, endSal);
-		pstmt.setString(3, job);
-		ResultSet rs2 = pstmt.executeQuery();
+		pstmt.setString(3, job); // 다 미리 준비해놓은 변수로!
+		ResultSet rs2 = pstmt.executeQuery(); // 얘는 파라메터에 아무것도 넣지 않음 
 		while (rs2.next()) {
 			int empno = rs2.getInt("empno");
 			String ename = rs2.getString("ename");

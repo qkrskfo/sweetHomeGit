@@ -11,8 +11,8 @@ public class AddressSelectAllMain {
 		/*********************************************/
 		String driverClass = "oracle.jdbc.OracleDriver";
 		String url = "jdbc:oracle:thin:@182.237.126.19:1521:xe";
-		String user = "javadeveloper0";
-		String password = "javadeveloper0";
+		String user = "javadeveloper32";
+		String password = "javadeveloper32";
 		/*******************************************/
 		String selectSql = "select no,id,name,phone,address from address";//semicolon있으면 애로사항발생~~~~
 		Class.forName(driverClass);
@@ -28,6 +28,10 @@ public class AddressSelectAllMain {
 				a ResultSet object that contains the data produced by the given query; never null
 		 */
 		ResultSet rs = stmt.executeQuery(selectSql);
+			/* Retrieving Result
+			 * 		before first BOF
+			 * 		after last   EOF
+			 */
 		/*
 		 << ResultSet >>
 		 boolean next() throws SQLException;

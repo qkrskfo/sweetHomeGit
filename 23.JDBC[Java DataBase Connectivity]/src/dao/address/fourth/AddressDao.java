@@ -16,20 +16,24 @@ import java.util.ArrayList;
 
 import dao.common.DataSource;
 
+//모든 DAO객체는 dataSource를 멤버변수로 갖고 있어
 public class AddressDao {
 	private DataSource dataSource;
+	// addressdao가 datasource의 참조를 가지고 있으면 밑에 connection에서 쓸 수 있음 //1★
 
-	public AddressDao() {
+	public AddressDao() { //2★
 		this.dataSource = new DataSource();
 	}
 
 	public Address selectByNo(int no) throws Exception {
-		Address findAddres = null;
+		Address findAddres = null; //-- void 대신 Address로 받게되면
 		String selectSql = "select no,id,name,phone,address from address where no=?";
-		Connection con = dataSource.getConnection();
-		PreparedStatement pstmt = con.prepareStatement(selectSql);
+		
+		Connection con = dataSource.getConnection(); // dataSource로 부터 커넥션을 받아서 쓰라고 하는 것. 리턴해야 에러 없어짐 //3★
+		PreparedStatement pstmt = con.prepareStatement(selectSql); //4 얘네 세트야 ★
 		pstmt.setInt(1, no);
 		ResultSet rs = pstmt.executeQuery();
+		// if였는데 강사님이 while로 고치셨네..
 		while (rs.next()) {
 			int n = rs.getInt("no");
 			String id = rs.getString("id");
@@ -40,7 +44,8 @@ public class AddressDao {
 		}
 		rs.close();
 		pstmt.close();
-		dataSource.releaseConnection(con);
+		//	con.close(); 닫는거 여기서 하지마
+		dataSource.releaseConnection(con); // 이렇게 닫아!
 		return findAddres;
 	}
 
@@ -74,7 +79,7 @@ public class AddressDao {
 		pstmt.setString(2, address.getName());
 		pstmt.setString(3, address.getPhone());
 		pstmt.setString(4, address.getAddress());
-		int insertRowCount = pstmt.executeUpdate();
+		int insertRowCount = pstmt.executeUpdate(); // 바인딩이 된 다음에 업데이트를 해야해
 		pstmt.close();
 		dataSource.releaseConnection(con);
 		return insertRowCount;

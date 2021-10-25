@@ -31,13 +31,14 @@ public class ResultSetMain {
 		PreparedStatement pstmt = con.prepareStatement(selectSql);
 
 		System.out.println("-------------------------ResultSet.get타입(컬럼이름)-----------------");
+		System.out.println("-- ResultSet.get타입(컬럼이름) rs.getInt(\"컬럼이름\") --");
 		ResultSet rs = pstmt.executeQuery();
 		while (rs.next()) {
-			int no = rs.getInt("no");
-			String name = rs.getString("name");
+			int no = rs.getInt("no"); // 괄호안에는 컬럼이름 쓰는거야.
+			String name = rs.getString("name"); // 알리아스 줬으면 알리아스로 뽑아야함
 			String short_desc = rs.getString("short_desc");
 			double price = rs.getDouble("price");
-			Date ipgo_date = rs.getDate("ipgo_date");
+			Date ipgo_date = rs.getDate("ipgo_date"); // Date는 util로 뽑아!
 			System.out.println(no + "\t" + name + "\t" + short_desc + "\t" + price + "\t"
 					+ new SimpleDateFormat("yyyy년 MM월 dd일").format(ipgo_date));
 		}
@@ -50,7 +51,8 @@ public class ResultSetMain {
 			String name = rs.getString(2);
 			String short_desc = rs.getString(3);
 			double price = rs.getDouble(4);
-			Date ipgo_date = rs.getDate(5);
+			Date ipgo_date = rs.getDate(5); 
+			// selectSql의 select 뒤에 있는 컬럼명들 순서대로! selectSql에 select no from 으로 no밖에 없으면 인덱스는 1밖에 없음
 			System.out.println(no + "\t" + name + "\t" + short_desc + "\t" + price + "\t"
 					+ new SimpleDateFormat("yyyy년 MM월 dd일").format(ipgo_date));
 		}
@@ -74,6 +76,12 @@ public class ResultSetMain {
 			Object short_desc = rs.getObject("short_desc");
 			Object price = rs.getObject("price");
 			Object ipgo_date = rs.getObject("ipgo_date");
+			// Object no, Object price 에 들어가는건 wrapper임. 숫자는 BigDecimal 형태로 들어옴
+			/*
+			 * 기본데이타형으로는 int,boolean,double 등이 제공됩니다.
+			 * 이런 기본데이타형을 객체로 사용할 수 있는 방법으로 Wrapper 클래스가 제공됩니다.
+			 */
+			// 나머지 원래 스트링이었던 애들에는 string이 들어감
 			System.out.println(no + "\t" + name + "\t" + short_desc + "\t" + price + "\t" + ipgo_date);
 		}
 		rs.close();
