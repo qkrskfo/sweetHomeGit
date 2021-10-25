@@ -10,5 +10,9 @@ create table GUEST(guest_no number(10) not null primary key,
 drop sequence guest_no_seq;
 create sequence guest_no_seq  increment by 1 start with 1;
 
-desc guest;
+
+
+
+
+
 

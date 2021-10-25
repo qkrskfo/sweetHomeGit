@@ -4,7 +4,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.Statement;
 
-public class AddressUpdateByNoMain {
+public class AddressDeleteByNoMain {
 
 	public static void main(String[] args) throws Exception {
 		/*********************************************/
@@ -13,14 +13,14 @@ public class AddressUpdateByNoMain {
 		String user = "javadeveloper0";
 		String password = "javadeveloper0";
 		/*******************************************/
-		String updateSql = "update address set id='xxx',name='김경호',phone='899-9999',address='서울시 강남구' where no = 8";//semicolon있으면 애로사항발생~~~~
+		String deleteSql = "delete from address where no=3";//semicolon있으면 애로사항발생~~~~
 
 		Class.forName(driverClass);
 		Connection con = DriverManager.getConnection(url, user, password);
 		Statement stmt = con.createStatement();
 
-		int updateRowCount = stmt.executeUpdate(updateSql);
-		System.out.println(">> " + updateRowCount + " 행 update");
+		int deleteRowCount = stmt.executeUpdate(deleteSql);
+		System.out.println(">> " + deleteRowCount + " 행 delete");
 		stmt.close();
 		con.close();
 	}

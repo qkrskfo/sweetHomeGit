@@ -15,10 +15,13 @@ update address set id='xxx',name='김경호',phone='899-9999',address='서울시
 commit;
 
 --delete (pk delete)
-delete from address where no=1;
+--delete from address where no=1;
 commit;
 
 --select (pk select)
 select no,id,name,phone,address from address where no = 3;
 --select(all select)
 select no,id,name,phone,address from address; 
+
+
+

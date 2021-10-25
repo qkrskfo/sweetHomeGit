@@ -8,20 +8,16 @@ import java.sql.Statement;
 public class AddressSelectByNoMain {
 
 	public static void main(String[] args) throws Exception {
-		/**************DB 접속 정보*************/
-		String driverClass= "oracle.jdbc.OracleDriver";
+		/*********************************************/
+		String driverClass = "oracle.jdbc.OracleDriver";
 		String url = "jdbc:oracle:thin:@182.237.126.19:1521:xe";
-		String user = "javadeveloper2";
-		String password = "javadeveloper2";
-		/**************************************/
-
-		String selectSql = "select no,id,name,phone,address from address where no = 6";
-		
-		
+		String user = "javadeveloper0";
+		String password = "javadeveloper0";
+		/*******************************************/
+		String selectSql = "select no,id,name,phone,address from address where no=8";//semicolon있으면 애로사항발생~~~~
 		Class.forName(driverClass);
 		Connection con = DriverManager.getConnection(url, user, password);
 		Statement stmt = con.createStatement();
-		
 		/*
 		ResultSet executeQuery(String sql)  throws SQLException;
 			Executes the given SQL statement, which returns a single ResultSet object.
@@ -31,17 +27,7 @@ public class AddressSelectByNoMain {
 			Returns:
 				a ResultSet object that contains the data produced by the given query; never null
 		 */
-		
-		
-		
 		ResultSet rs = stmt.executeQuery(selectSql);
-		// 인터페이스임! 주황색 글씨!
-		
-		/* Retrieving Result
-		 * 		before first BOF
-		 * 		after last   EOF
-		 */
-	
 		/*
 		 << ResultSet >>
 		 boolean next() throws SQLException;
@@ -51,28 +37,25 @@ public class AddressSelectByNoMain {
 			  the second call makes the second row the current row, and so on.
 			- When a call to the next method returns false, the cursor is positioned after the last row
 		 */
-		
-		
-		if(rs.next()) {
-			int no = rs.getInt("NO");
+		while (rs.next()) {
+			/*
+			 * DB number   --> int,double
+			 *    varchar2 --> String
+			 *    date     --> Date
+			 *  XXX var=rs.getXXX("컬럼이름")   
+			 */
+			int no = rs.getInt("no");
 			String id = rs.getString("id");
 			String name = rs.getString("name");
 			String phone = rs.getString("phone");
 			String address = rs.getString("address");
 			System.out.println(no + "\t" + id + "\t" + name + "\t" + phone + "\t" + address);
 		}
-		
-		/*
-		 * DB number -> int, double
-		 * varchar2 -> String
-		 * date -> Date
-		 * XXX var = rs.getXXX("컬럼이름")
-		 */
-		
+
 		rs.close();
 		stmt.close();
 		con.close();
-		
+
 	}
 
 }

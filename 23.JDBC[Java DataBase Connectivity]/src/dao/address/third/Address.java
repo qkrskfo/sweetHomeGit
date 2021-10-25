@@ -1,44 +1,49 @@
 package dao.address.third;
 
-
 /*
-VO(Value Object), DTO(Data Transfer Object)
-  	- 한 개의 주소객체 데이타를 가지고있다.(VO, Value Object)
-  	- 한 개의 주소객체 데이타 이동(파라메타, 리턴데이터) 시키기 위한 객체 (DTO)
-  	- 특정 테이블과 동일한 속성을 멤버변수로 가지는 객체
+VO(Value Object),DTO(Data Transfer Object)
+  	- 한개의 주소객체  데이타를 가지고있다.(VO)
+  	- 한개의 주소객체  데이타이동(파라메타,리턴데이타)시키기위한객체(DTO)
+  	- 특정 테이블과 동일한 속성을 멤버변수로가지는 객체
  */
-
+/*
+이름      널?       유형           
+------- -------- ------------ 
+NO      NOT NULL NUMBER(4)    
+ID               VARCHAR2(20) 
+NAME             VARCHAR2(50) 
+PHONE            VARCHAR2(50) 
+ADDRESS          VARCHAR2(60)
+ */
 public class Address {
-
 	/*
-	 * address table column과 대응하는 필드(멤버변수)를 가짐
+	 * address table컬럼과 대응하는멤버필드를 가짐
 	 */
-	
-	private int num;
+	private int no;
 	private String id;
 	private String name;
 	private String phone;
 	private String address;
-	
+
 	public Address() {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Address(int num, String id, String name, String phone, String address) {
+	public Address(int no, String id, String name, String phone, String address) {
 		super();
-		this.num = num;
+		this.no = no;
 		this.id = id;
 		this.name = name;
 		this.phone = phone;
 		this.address = address;
 	}
 
-	public int getNum() {
-		return num;
+	public int getNo() {
+		return no;
 	}
 
-	public void setNum(int num) {
-		this.num = num;
+	public void setNo(int no) {
+		this.no = no;
 	}
 
 	public String getId() {
@@ -72,14 +77,11 @@ public class Address {
 	public void setAddress(String address) {
 		this.address = address;
 	}
-	
-	// source - generate toString
+
 	@Override
 	public String toString() {
-		return "Address [num=" + num + ", id=" + id + ", name=" + name + ", phone=" + phone + ", address=" + address
+		return "Address [no=" + no + ", id=" + id + ", name=" + name + ", phone=" + phone + ", address=" + address
 				+ "]";
 	}
-	
-	
-	
+
 }

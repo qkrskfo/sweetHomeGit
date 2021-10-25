@@ -9,7 +9,6 @@ import java.sql.SQLFeatureNotSupportedException;
 import java.util.Properties;
 import java.util.logging.Logger;
 
-
 public class MySqlDriver implements Driver {
 
 	static {

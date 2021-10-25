@@ -1,12 +1,6 @@
 eclipse.preferences.version=1
-encoding//src/basic/01.address_create_drop.sql=UTF-8
 encoding//src/basic/01.address_insert_update_delete_select.sql=UTF-8
-encoding//src/dao/99.DTO,VO[Value\ Object].txt=UTF-8
-encoding//src/dao/99.Dao[Data\ Access\ Object].txt=UTF-8
-encoding//src/dao/99.Service[Service\ Object].txt=UTF-8
 encoding//src/dao/guest/04.guest_insert_delete_update_select.sql=UTF-8
 encoding//src/dao/guest/04.guest_table_create_drop.sql=UTF-8
-encoding//src/dao/guest/guestdao\uD074\uB798\uC2A4\uC791\uC131\uC21C\uC11C=UTF-8
 encoding//src/dao/member/member.ddl=MS949
 encoding//src/dao/member/member_insert_update_delete_select.sql=UTF-8
-encoding//src/dao/member/member_table_create_drop.sql=UTF-8

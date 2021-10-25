@@ -8,71 +8,48 @@ import java.sql.Statement;
 public class JDBCFlowMain {
 
 	public static void main(String[] args) throws Exception {
-		
-		String driverClass= "oracle.jdbc.OracleDriver";
-		String url = "jdbc:oracle:thin:@182.237.126.19:1521:xe"; // 선생님IP
-		String user = "javadeveloper2";
-		String password = "javadeveloper2";
-		
-		String selectSql = "select * from dept";
-		// 세미콜론 넣으면 안돼요 여기선~!
-		
+		String driverClass = "oracle.jdbc.OracleDriver";
+		String url = "jdbc:oracle:thin:@182.237.126.19:1521:xe";
+		String user = "javadeveloper0";
+		String password = "javadeveloper0";
+		String selectSql = "select * from dept";//semicolon있으면 애로사항발생~~~~
 		/*
-		 * 1. Driver Class loading 되면
-		 *   - Driver 클래스 객체 생성하고,
-		 *   - DriverManager객체에 등록됨
-		 */		
+		 1.Driver Class loading
+		    - A.Driver클래스객체생성
+		    - B.DriverManager객체에 등록
+		 */
 		Class.forName(driverClass);
-		System.out.println("1. Driver Class loading ");
-		
-		
+		System.out.println("1.Driver Class loading");
 		/*
-		 * 2. Connection 객체 생성 (DB Server에 연결)
-		 */		
+		 * 2.Connection객체생성(DBServer에연결객체)
+		 */
 		Connection con = DriverManager.getConnection(url, user, password);
-		// java.sql 에 있는 인터페이스 Connection을 선택해야함.
-		System.out.println("2. Connection 객체 생성 (DB Server에 연결): "+con);
-		
-		
+		System.out.println("2.Connection객체생성(DBServer에연결):" + con);
 		/*
-		 * 3. Statement 객체 생성(SQL전송객체)
+		 * 3.Statement객체생성(SQL문전송객체)
 		 */
 		Statement stmt = con.createStatement();
-		// java.sql에 있는 인터페이스 Statement를 선택해야함.
-		System.out.println("3. Statement 객체 생성(SQL전송객체): "+stmt);
-		
-		
+		System.out.println("3.Statement객체생성(SQL문전송객체):" + stmt);
 		/*
-		 * 4. SQL문 전송
-		 * 5. ResultSet 얻기
+		 * 4.SQL문 전송
+		 * 5.ResultSet얻기
 		 */
-		
-		 ResultSet rs = stmt.executeQuery(selectSql);
-		 // java.sql에 있는 인터페이스 ResultSet을 선택해야함.
-		 System.out.println("4. SQL문 전송: "+selectSql);
-		 System.out.println("5. ResultSet(결과집합) 얻기: "+rs);
-		 
-		 System.out.println("-----------------------------------");
-		 
-		 // rs.next()는 iterator.hasnext() 처럼 rs에서 커서를 움직여주는것.
-		 while(rs.next()) {
-			 int deptno = rs.getInt("deptno"); // 컬럼이름
-			 String dname = rs.getString("dname");
-			 String loc = rs.getString("loc");
-			 System.out.println(deptno+"\t"+dname+"\t"+loc);
-		 }
-		 
-		 
-		 /*
-		  * 6. resource 해지
-		  */
-		 
-		 rs.close();
-		 stmt.close();
-		 con.close();
-		 System.out.println("6. resource 해지 close() ");
-		 
-		 
+		ResultSet rs = stmt.executeQuery(selectSql);
+		System.out.println("4.SQL문 전송:" + selectSql);
+		System.out.println("5.ResultSet(결과집합)얻기:" + rs);
+		System.out.println("--------------------------------------------");
+		while (rs.next()) {
+			int deptno = rs.getInt("deptno");
+			String dname = rs.getString("dname");
+			String loc = rs.getString("loc");
+			System.out.println(deptno + "\t" + dname + "\t" + loc);
+		}
+		/*
+		 * 6.resource해지
+		 */
+		rs.close();
+		stmt.close();
+		con.close();
+		System.out.println("6.resource해지 close()");
 	}
-
 }

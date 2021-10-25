@@ -13,22 +13,20 @@ public class OracleDriver implements Driver {
 
 	static {
 		/*
-		 * 1. Driver Class loading 되면
-		 *   1) Driver 클래스 객체 생성하고,
-		 *   2) DriverManager객체에 등록됨
+		  - A.Driver클래스객체생성
+		  - B.DriverManager객체에 등록
 		 */
-		System.out.println("---------- static block start ----------");
+		System.out.println("-----------------static block start---------------");
 		try {
-			System.out.println("1. Driver 클래스 객체 생성");
+			System.out.println("1.Driver클래스객체생성");
 			OracleDriver oracleDriver = new OracleDriver();
-			System.out.println("2) DriverManager객체에 등록됨");
+			System.out.println("2.DriverManager객체에 등록");
 			DriverManager.registerDriver(oracleDriver);
-			
 		} catch (Exception e) {
-			
+			// TODO: handle exception
 		}
-		
-		System.out.println("---------- static block end ----------");
+		System.out.println("-----------------static block end  ---------------");
+
 	}
 
 	@Override
@@ -72,5 +70,5 @@ public class OracleDriver implements Driver {
 		// TODO Auto-generated method stub
 		return null;
 	}
-	
+
 }
